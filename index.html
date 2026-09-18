@@ -1,11 +1,120 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Mon Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nina Lê — Portfolio</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Ton Nom</h1>
-  <p>Bienvenue sur mon portfolio.</p>
+
+<header class="site">
+  <div class="wrap">
+    <div class="logo"><a href="index.html">Nina Lê</a></div>
+    <nav class="main">
+      <a href="architecture.html">Architecture</a>
+      <a href="design.html">Design</a>
+      <a href="photo.html">Photo</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap" style="display:grid; grid-template-columns: 1.5fr 1fr; gap:60px;">
+    <h1>Concevoir des espaces et des images qui prennent le temps d'être regardés.</h1>
+    <div class="deck">
+      <p>Architecture, design d'objet et photographie — une pratique qui circule entre l'échelle du bâtiment et celle du détail.</p>
+      <div class="location">Paris, France</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="section-head">
+    <h2>Travaux sélectionnés</h2>
+    <div class="note">Architecture · Design · Photo</div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="work-grid">
+
+    <a class="work-card" href="projects/architecture-maison-lumiere.html">
+      <figure>
+        <div class="frame"><img src="https://picsum.photos/seed/nina-arch-1/900/700" alt="Maison de la Lumière"></div>
+        <figcaption>
+          <div class="cat">Architecture</div>
+          <div class="title">Maison de la Lumière</div>
+          <div class="dek">Une maison organisée autour d'un puits de lumière central</div>
+        </figcaption>
+      </figure>
+    </a>
+
+    <a class="work-card" href="projects/design-identite-laurel.html">
+      <figure>
+        <div class="frame"><img src="https://picsum.photos/seed/nina-design-1/900/700" alt="Identité Laurel"></div>
+        <figcaption>
+          <div class="cat">Design</div>
+          <div class="title">Identité Laurel</div>
+          <div class="dek">Système visuel pour une maison d'édition indépendante</div>
+        </figcaption>
+      </figure>
+    </a>
+
+    <a class="work-card" href="projects/photo-lisbonne.html">
+      <figure>
+        <div class="frame"><img src="https://picsum.photos/seed/nina-photo-1/900/700" alt="Lisbonne, hiver"></div>
+        <figcaption>
+          <div class="cat">Photo</div>
+          <div class="title">Lisbonne, hiver</div>
+          <div class="dek">Carnet photographique sur trois semaines</div>
+        </figcaption>
+      </figure>
+    </a>
+
+    <a class="work-card" href="projects/architecture-atelier-nord.html">
+      <figure>
+        <div class="frame"><img src="https://picsum.photos/seed/nina-arch-2/900/700" alt="Atelier Nord"></div>
+        <figcaption>
+          <div class="cat">Architecture</div>
+          <div class="title">Atelier Nord</div>
+          <div class="dek">Reconversion d'un atelier industriel en espace de travail</div>
+        </figcaption>
+      </figure>
+    </a>
+
+    <a class="work-card" href="projects/design-mobilier-brut.html">
+      <figure>
+        <div class="frame"><img src="https://picsum.photos/seed/nina-design-2/900/700" alt="Mobilier Brut"></div>
+        <figcaption>
+          <div class="cat">Design</div>
+          <div class="title">Mobilier Brut</div>
+          <div class="dek">Une collection de mobilier en bois massif et métal patiné</div>
+        </figcaption>
+      </figure>
+    </a>
+
+    <a class="work-card" href="projects/photo-portraits.html">
+      <figure>
+        <div class="frame"><img src="https://picsum.photos/seed/nina-photo-2/900/700" alt="Portraits d'atelier"></div>
+        <figcaption>
+          <div class="cat">Photo</div>
+          <div class="title">Portraits d'atelier</div>
+          <div class="dek">Série de portraits d'artisans dans leur lieu de travail</div>
+        </figcaption>
+      </figure>
+    </a>
+
+  </div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div>Nina Lê</div>
+    <div>© 2026</div>
+  </div>
+</footer>
+
 </body>
 </html>
