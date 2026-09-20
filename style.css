@@ -1,18 +1,15 @@
 /* Nina Lê — Portfolio
-   Chaleureux, éditorial, papier & serif */
+   Dessiné à la main, noir & blanc, grille d'images pures */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=Work+Sans:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Work+Sans:wght@400;500;600&display=swap');
 
 :root {
-  --paper: #ece6d8;
-  --paper-deep: #e2dac6;
-  --ink: #26221a;
-  --ink-soft: #635c4c;
-  --accent: #a1663a;      /* argile / ochre brûlé */
-  --accent-deep: #454d3c; /* vert olive profond */
-  --line: #c9bda2;
-  --serif-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
-  --serif-body: 'Source Serif 4', Georgia, serif;
+  --paper: #ffffff;
+  --paper-deep: #f2f2f0;
+  --ink: #111111;
+  --ink-soft: #5c5c5c;
+  --line: #111111;
+  --hand: 'Permanent Marker', cursive;
   --sans: 'Work Sans', -apple-system, sans-serif;
 }
 
@@ -24,245 +21,168 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--serif-body);
-  font-size: 18px;
+  font-family: var(--sans);
+  font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 img { max-width: 100%; display: block; }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+a { color: inherit; text-decoration: none; }
 
 .wrap {
-  max-width: 1180px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 48px;
 }
 
-/* ---------- Header ---------- */
+/* ---------- Header / hand-drawn nav ---------- */
 
 header.site {
-  padding: 34px 0 22px;
-  border-bottom: 1px solid var(--line);
+  padding: 30px 0 46px;
 }
 
 header.site .wrap {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 18px;
+  gap: 28px;
 }
 
 .logo {
-  font-family: var(--serif-display);
-  font-style: italic;
-  font-weight: 500;
-  font-size: 26px;
-  letter-spacing: 0.01em;
+  font-family: var(--hand);
+  font-size: 40px;
+  line-height: 1;
+  color: var(--ink);
+  transform: rotate(-2deg);
+  display: inline-block;
 }
 
 .logo a { color: var(--ink); }
 
 nav.main {
   display: flex;
-  gap: 34px;
-  font-family: var(--sans);
-  font-size: 15px;
-  letter-spacing: 0.02em;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
-nav.main a {
+.bubble {
   position: relative;
-  padding-bottom: 4px;
-  color: var(--ink-soft);
-  transition: color 0.2s ease;
-}
-
-nav.main a::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 100%;
-  bottom: 0;
-  height: 1px;
-  background: var(--accent);
-  transition: right 0.25s ease;
-}
-
-nav.main a:hover,
-nav.main a.active {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 26px;
+  font-family: var(--hand);
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   color: var(--ink);
+  white-space: nowrap;
 }
 
-nav.main a:hover::after,
-nav.main a.active::after {
-  right: 0;
+.bubble svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
 }
 
-/* ---------- Hero ---------- */
-
-.hero {
-  padding: 90px 0 70px;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 60px;
-  border-bottom: 1px solid var(--line);
+.bubble svg path {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.hero h1 {
-  font-family: var(--serif-display);
-  font-weight: 500;
-  font-size: clamp(38px, 5.4vw, 64px);
-  line-height: 1.08;
-  margin: 0;
-  max-width: 14ch;
+.bubble span { position: relative; z-index: 1; }
+
+.bubble:nth-child(4n+1) { transform: rotate(-2deg); }
+.bubble:nth-child(4n+2) { transform: rotate(1.5deg); }
+.bubble:nth-child(4n+3) { transform: rotate(-1deg); }
+.bubble:nth-child(4n+4) { transform: rotate(2deg); }
+
+.bubble {
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.hero .deck {
-  align-self: end;
-  font-size: 17px;
-  color: var(--ink-soft);
+.bubble:hover,
+.bubble.active {
+  background: var(--ink);
+  color: var(--paper);
 }
 
-.hero .deck p { margin: 0 0 16px; }
-
-.hero .location {
-  font-family: var(--sans);
-  font-size: 13px;
-  color: var(--accent);
+.bubble:hover svg path,
+.bubble.active svg path {
+  stroke: var(--ink);
 }
 
-/* ---------- Section heading ---------- */
+.bubble.active { transform: rotate(0deg) scale(1.03); }
+
+/* ---------- Section intro (used on category & about pages) ---------- */
 
 .section-head {
-  padding: 60px 0 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 20px;
+  padding: 10px 0 40px;
 }
 
-.section-head h2 {
-  font-family: var(--serif-display);
-  font-style: italic;
-  font-weight: 500;
-  font-size: 28px;
+.section-head h1 {
+  font-family: var(--hand);
+  font-weight: 400;
+  font-size: clamp(34px, 5vw, 54px);
+  margin: 0 0 14px;
+  transform: rotate(-1deg);
+  display: inline-block;
+}
+
+.section-head p {
+  max-width: 56ch;
+  color: var(--ink-soft);
   margin: 0;
 }
 
-.section-head .note {
-  font-family: var(--sans);
-  font-size: 14px;
-  color: var(--ink-soft);
-}
+/* ---------- Pure image grid (home + category pages) ---------- */
 
-/* ---------- Work grid (home) ---------- */
-
-.work-grid {
+.image-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 44px 32px;
+  gap: 40px 32px;
   padding-bottom: 90px;
+  align-items: start;
 }
 
-.work-grid figure {
-  margin: 0;
-}
-
-.work-card {
+.image-grid a {
   display: block;
-}
-
-.work-card .frame {
-  overflow: hidden;
   background: var(--paper-deep);
+  overflow: hidden;
 }
 
-.work-card img {
+.image-grid img {
   width: 100%;
-  height: 340px;
+  display: block;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
-.work-card:hover img {
-  transform: scale(1.035);
+.image-grid a:hover img {
+  transform: scale(1.03);
 }
 
-.work-card figcaption {
-  padding-top: 14px;
-}
+.image-grid.two-col { grid-template-columns: repeat(2, 1fr); }
 
-.work-card .cat {
-  font-family: var(--sans);
-  font-size: 12.5px;
-  color: var(--accent);
-  margin-bottom: 6px;
-}
-
-.work-card .title {
-  font-family: var(--serif-display);
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.work-card .dek {
-  font-size: 14.5px;
-  color: var(--ink-soft);
-  font-style: italic;
-  margin-top: 4px;
-}
-
-/* ---------- Category intro ---------- */
-
-.cat-intro {
-  padding: 70px 0 20px;
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 60px;
-  border-bottom: 1px solid var(--line);
-}
-
-.cat-intro h1 {
-  font-family: var(--serif-display);
-  font-style: italic;
-  font-weight: 500;
-  font-size: 46px;
-  margin: 0;
-}
-
-.cat-intro p {
-  color: var(--ink-soft);
-  margin: 0;
-}
-
-/* Category grid — asymmetric, two sizes */
-.cat-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 50px 32px;
-  padding: 60px 0 100px;
-}
-
-.cat-grid .work-card:nth-child(3n+1) {
-  grid-column: span 2;
-}
-
-.cat-grid .work-card:nth-child(3n+1) img {
-  height: 460px;
-}
+/* varied aspect ratios so the grid reads as hand-curated, not a template */
+.image-grid a.tall img { aspect-ratio: 3 / 4.3; height: auto; }
+.image-grid a.wide img { aspect-ratio: 4 / 3; height: auto; }
+.image-grid a.square img { aspect-ratio: 1 / 1; height: auto; }
 
 /* ---------- Project page ---------- */
 
-.project-hero {
-  padding: 60px 0 0;
-}
+.project-hero { padding: 10px 0 0; }
 
-.project-hero .frame img {
+.project-hero img {
   width: 100%;
   height: 62vh;
   min-height: 340px;
@@ -270,47 +190,38 @@ nav.main a.active::after {
 }
 
 .project-meta {
-  padding: 40px 0 20px;
+  padding: 44px 0 24px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 2px solid var(--line);
 }
 
 .project-meta .cat {
-  font-family: var(--sans);
-  font-size: 13px;
-  color: var(--accent);
+  font-family: var(--hand);
+  font-size: 15px;
   margin-bottom: 10px;
+  transform: rotate(-1deg);
+  display: inline-block;
 }
 
 .project-meta h1 {
-  font-family: var(--serif-display);
-  font-weight: 500;
-  font-size: 38px;
-  margin: 0 0 18px;
+  font-family: var(--hand);
+  font-weight: 400;
+  font-size: 40px;
+  margin: 0;
   line-height: 1.15;
 }
 
 .project-meta .facts {
-  font-family: var(--sans);
   font-size: 14px;
   color: var(--ink-soft);
   line-height: 2;
 }
 
 .project-body {
-  padding: 50px 0 30px;
+  padding: 46px 0 20px;
   max-width: 62ch;
-}
-
-.project-body p:first-of-type:first-letter {
-  font-family: var(--serif-display);
-  font-size: 58px;
-  float: left;
-  line-height: 0.85;
-  padding: 6px 10px 0 0;
-  color: var(--accent);
 }
 
 .gallery {
@@ -328,39 +239,26 @@ nav.main a.active::after {
 
 .back-link {
   display: inline-block;
-  margin: 40px 0 0;
-  font-family: var(--sans);
-  font-size: 14px;
-  color: var(--accent-deep);
-  border-bottom: 1px solid currentColor;
+  margin: 36px 0 0;
+  font-family: var(--hand);
+  font-size: 16px;
+  border-bottom: 2px solid var(--ink);
   padding-bottom: 2px;
+  transform: rotate(-1deg);
 }
 
-/* ---------- Contact ---------- */
+/* ---------- Contact / About ---------- */
 
 .contact-wrap {
-  padding: 90px 0 120px;
+  padding: 10px 0 120px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
 }
 
-.contact-wrap h1 {
-  font-family: var(--serif-display);
-  font-style: italic;
-  font-weight: 500;
-  font-size: 46px;
-  margin: 0 0 24px;
-}
+.contact-wrap .intro { color: var(--ink-soft); }
 
-.contact-wrap .intro {
-  color: var(--ink-soft);
-}
-
-.contact-list {
-  font-family: var(--sans);
-  font-size: 16px;
-}
+.contact-list { font-size: 16px; }
 
 .contact-list dt {
   color: var(--ink-soft);
@@ -375,23 +273,30 @@ nav.main a.active::after {
   font-size: 19px;
 }
 
-.contact-list dd a {
-  border-bottom: 1px solid var(--line);
+.contact-list dd a { border-bottom: 2px solid var(--ink); }
+
+.about-wrap {
+  padding: 10px 0 120px;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 60px;
 }
 
-.contact-list dd a:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+.about-wrap img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
 }
+
+.about-wrap .body p { color: var(--ink-soft); }
 
 /* ---------- Footer ---------- */
 
 footer.site {
-  border-top: 1px solid var(--line);
-  padding: 26px 0;
-  font-family: var(--sans);
-  font-size: 13px;
-  color: var(--ink-soft);
+  border-top: 2px solid var(--line);
+  padding: 24px 0;
+  font-family: var(--hand);
+  font-size: 14px;
 }
 
 footer.site .wrap {
@@ -402,16 +307,15 @@ footer.site .wrap {
 /* ---------- Responsive ---------- */
 
 @media (max-width: 860px) {
-  .hero, .cat-intro, .project-meta, .contact-wrap {
+  .project-meta, .contact-wrap, .about-wrap {
     grid-template-columns: 1fr;
     gap: 24px;
   }
-  .work-grid { grid-template-columns: repeat(2, 1fr); }
-  .cat-grid { grid-template-columns: 1fr; }
-  .cat-grid .work-card:nth-child(3n+1) { grid-column: span 1; }
+  .image-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery { grid-template-columns: 1fr; }
   .wrap { padding: 0 22px; }
-  nav.main { gap: 20px; font-size: 14px; }
+  .bubble { padding: 11px 20px; font-size: 14px; }
+  .logo { font-size: 32px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
