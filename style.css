@@ -173,6 +173,37 @@ nav.main {
 
 .image-grid.two-col { grid-template-columns: repeat(2, 1fr); }
 
+/* Masonry grid — 3 columns, images keep their natural ratio, no captions */
+.masonry {
+  column-count: 3;
+  column-gap: 1cm;
+}
+
+.masonry a {
+  display: block;
+  margin-bottom: 1cm;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  background: var(--paper-deep);
+  overflow: hidden;
+}
+
+.masonry img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.masonry a:hover img {
+  transform: scale(1.03);
+}
+
+@media (max-width: 860px) {
+  .masonry { column-count: 2; column-gap: 0.6cm; }
+  .masonry a { margin-bottom: 0.6cm; }
+}
+
 /* varied aspect ratios so the grid reads as hand-curated, not a template */
 .image-grid a.tall img { aspect-ratio: 3 / 4.3; height: auto; }
 .image-grid a.wide img { aspect-ratio: 4 / 3; height: auto; }
