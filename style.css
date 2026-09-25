@@ -4,11 +4,11 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,400;1,500;1,600&family=Work+Sans:wght@400;500;600&display=swap');
 
 :root {
-  --paper: #ffffff;
-  --paper-deep: #f2f2f0;
-  --ink: #111111;
-  --ink-soft: #5c5c5c;
-  --line: #111111;
+  --paper: #faf7f2;
+  --paper-deep: #f0ece3;
+  --ink: #b3261e;
+  --ink-soft: #8a5450;
+  --line: #b3261e;
   --hand: 'EB Garamond', 'Times New Roman', Georgia, serif;
   --sans: 'Work Sans', -apple-system, sans-serif;
 }
@@ -369,10 +369,9 @@ footer.site .wrap {
   position: fixed;
   top: 0;
   left: 0;
-  width: 37px;
-  height: 23px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  border: 2px solid var(--ink);
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
@@ -388,6 +387,6 @@ body.has-custom-cursor * {
 }
 
 #custom-cursor.is-large {
-  width: 48px;
-  height: 30px;
+  width: 26px;
+  height: 14px;
 }
