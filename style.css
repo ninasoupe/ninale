@@ -369,8 +369,8 @@ footer.site .wrap {
   position: fixed;
   top: 0;
   left: 0;
-  width: 74px;
-  height: 46px;
+  width: 37px;
+  height: 23px;
   border-radius: 50%;
   border: 2px solid var(--ink);
   pointer-events: none;
@@ -388,6 +388,6 @@ body.has-custom-cursor * {
 }
 
 #custom-cursor.is-large {
-  width: 96px;
-  height: 60px;
+  width: 48px;
+  height: 30px;
 }
