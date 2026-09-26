@@ -20,12 +20,4 @@
   document.addEventListener('mouseenter', function () {
     cursor.style.opacity = '1';
   });
-
-  // Léger agrandissement au survol des liens
-  document.addEventListener('mouseover', function (e) {
-    if (e.target.closest('a')) cursor.classList.add('is-large');
-  });
-  document.addEventListener('mouseout', function (e) {
-    if (e.target.closest('a')) cursor.classList.remove('is-large');
-  });
 })();
