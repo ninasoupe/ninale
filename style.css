@@ -69,16 +69,15 @@ header.site .wrap {
 .nav-side {
   display: flex;
   align-items: center;
-  gap: 18px;
-  flex-wrap: wrap;
+  width: 100%;
 }
 
-.nav-left { justify-content: flex-end; }
-.nav-right { justify-content: flex-start; }
+.nav-left { justify-content: space-between; }
+.nav-right { justify-content: space-between; }
 
 .nav-label {
   font-family: var(--hand);
-  font-size: 10px;
+  font-size: 20px;
   text-align: right;
   letter-spacing: 0.03em;
   color: var(--ink);
@@ -320,7 +319,7 @@ footer.site .wrap {
   .image-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery { grid-template-columns: 1fr; }
   .wrap { padding: 0 22px; }
-  .nav-label { font-size: 9px; }
+  .nav-label { font-size: 18px; }
   .logo { font-size: 18px; }
   header.site .wrap { grid-template-columns: 1fr; justify-items: center; gap: 10px; }
   .nav-left, .nav-right { justify-content: center; }
