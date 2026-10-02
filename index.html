@@ -1,72 +1,20 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nina Lê — Portfolio</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* ---------- Header / nav ---------- */
 
-<header class="site">
-  <div class="wrap">
-    <nav class="nav-side nav-left">
-      <a class="nav-label" href="architecture.html">Architecture</a>
-      <a class="nav-label" href="design.html">Design</a>
-      <a class="nav-label" href="photo.html">Photo</a>
-      <a class="nav-label" href="surprise.html">Surprise</a>
-    </nav>
-    <div class="logo"><a href="index.html">[N]</a></div>
-    <nav class="nav-side nav-right">
-      <a class="nav-label" href="archives.html">Archives</a>
-      <a class="nav-label" href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+header.site {
+  height: 3cm; /* Fixe la hauteur du header à 3 cm */
+  display: flex;
+  align-items: center; /* Centre verticalement le contenu */
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 500;
+  background: transparent;
+}
 
-<div class="wrap">
-  <div class="masonry">
-
-    <a href="projects/architecture-maison-lumiere.html">
-      <img src="https://picsum.photos/seed/nina-arch-1/900/1180" alt="Maison de la Lumière">
-    </a>
-
-    <a href="projects/design-identite-laurel.html">
-      <img src="https://picsum.photos/seed/nina-design-1/900/700" alt="Identité Laurel">
-    </a>
-
-    <a href="projects/photo-lisbonne.html">
-      <img src="https://picsum.photos/seed/nina-photo-1/900/1020" alt="Lisbonne, hiver">
-    </a>
-
-    <a href="projects/architecture-atelier-nord.html">
-      <img src="https://picsum.photos/seed/nina-arch-2/900/620" alt="Atelier Nord">
-    </a>
-
-    <a href="projects/biopsy.html">
-      <img src="projects/img/biopsy/img-biopsy-1.JPG" alt="Biopsy">
-    </a>
-
-    <a href="projects/photo-portraits.html">
-      <img src="https://picsum.photos/seed/nina-photo-2/900/1150" alt="Portraits d'atelier">
-    </a>
-
-    <a href="projects/musette.html">
-      <img src="projects/img/musette/img-musette-1.JPG" alt="Musette">
-    </a>
-
-  </div>
-</div>
-
-<footer class="site">
-  <div class="wrap">
-    <div>Nina Lê</div>
-    <div>© 2026</div>
-  </div>
-</footer>
-
-<div id="custom-cursor"></div>
-<script src="cursor.js"></script>
-
-</body>
-</html>
+header.site .wrap {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+}
