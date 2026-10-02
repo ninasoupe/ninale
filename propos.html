@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>À propos — Nina Lê</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À propos — Nina Lê</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="site">
   <div class="wrap">
-    <div class="logo"><a href="../index.html">[N]</a></div>
-    <a class="nav-label active" href="../architecture.html">Architecture</a>
-    <a class="nav-label" href="../design.html">Design</a>
-    <a class="nav-label" href="../photo.html">Photo</a>
-    <a class="nav-label" href="../surprise.html">Surprise</a>
-    <a class="nav-label" href="../a-propos.html">À propos</a>
-    <a class="nav-label" href="../contact.html">Contact</a>
+    <div class="logo"><a href="index.html">[N]</a></div>
+    <a class="nav-label" href="architecture.html">Architecture</a>
+    <a class="nav-label" href="design.html">Design</a>
+    <a class="nav-label" href="photo.html">Photo</a>
+    <a class="nav-label" href="surprise.html">Surprise</a>
+    <a class="nav-label active" href="a-propos.html">À propos</a> <!-- Lien actif corrigé -->
+    <a class="nav-label" href="contact.html">Contact</a>
   </div>
 </header>
 
-<div class="wrap">
+<main class="wrap"> <!-- Utilisation de <main> -->
   <div class="about-wrap">
-    <img src="https://picsum.photos/seed/nina-portrait/900/1200" alt="Nina Lê">
+    <img src="https://picsum.photos/seed/nina-portrait/900/1200" alt="Nina Lê" width="900" height="1200">
     <div class="body">
-      <div class="section-head" style="padding-bottom:18px;"><h1>À propos</h1></div>
+      <div class="section-head" style="padding-bottom:18px;">
+        <h1>À propos</h1>
+      </div>
       <p>Nina Lê est architecte de formation, elle conçoit aussi bien des bâtiments que des objets et des images. Basée à Paris, elle travaille sur des projets résidentiels et de réhabilitation, tout en menant en parallèle des collections de mobilier et des séries photographiques personnelles.</p>
       <p>Cette circulation entre les échelles — du bâtiment au détail — est au cœur de sa pratique : une manière de garder un même regard sur la matière, la lumière et l'usage, quel que soit le format du projet.</p>
       <p>Diplômée en architecture, elle a complété sa formation par un passage en atelier de design de mobilier avant de fonder son propre studio.</p>
     </div>
   </div>
-</div>
+</main>
 
 <footer class="site">
   <div class="wrap">
