@@ -28,9 +28,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img { max-width: 100%; display: block; transition: filter 0.25s ease; }
-
-img:hover { filter: invert(1) grayscale(1); }
+img { max-width: 100%; display: block; }
 
 a { color: inherit; text-decoration: none; }
 
@@ -147,12 +145,12 @@ header.site .wrap {
 /* Masonry grid — 3 columns, images keep their natural ratio, no captions */
 .masonry {
   column-count: 3;
-  column-gap: 1cm;
+  column-gap: 0.5cm;
 }
 
 .masonry a {
   display: block;
-  margin-bottom: 1cm;
+  margin-bottom: 0.5cm;
   break-inside: avoid;
   -webkit-column-break-inside: avoid;
   background: var(--paper-deep);
@@ -171,8 +169,8 @@ header.site .wrap {
 }
 
 @media (max-width: 860px) {
-  .masonry { column-count: 2; column-gap: 0.6cm; }
-  .masonry a { margin-bottom: 0.6cm; }
+  .masonry { column-count: 2; column-gap: 0.5cm; }
+  .masonry a { margin-bottom: 0.5cm; }
 }
 
 /* varied aspect ratios so the grid reads as hand-curated, not a template */
