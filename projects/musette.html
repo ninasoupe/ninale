@@ -83,12 +83,12 @@
       opacity: 1;
     }
 
-    /* Colonne droite : images alignées à droite, hauteur 13cm, espacement 0,3cm */
+    /* Colonne droite : images alignées à droite, hauteur 13cm, espacement exact de 0,3cm */
     .project-images {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      gap: 0.3cm;
+      gap: 0.3cm; /* Écartement entre les images fixé à 0,3cm */
     }
 
     .project-images img {
@@ -174,7 +174,7 @@
 
     </div>
 
-    <!-- Colonne Droite : Images empilées (incluant l'image Hero et la galerie) -->
+    <!-- Colonne Droite : Images empilées avec un écartement de 0,3cm -->
     <div class="project-images">
       <img src="img/musette/img-musette-1.JPG" alt="Festival des Rives sonores - La musette — Vue principale">
       <img src="img/musette/img-musette-2.JPG" alt="Festival des Rives sonores - La musette — Vue 2">
