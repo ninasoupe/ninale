@@ -5,6 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Biopsy — Nina Lê</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Layout principal à deux colonnes */
+    .project-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* Colonne gauche : texte et métadonnées */
+    .project-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .project-meta .cat {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      opacity: 0.7;
+    }
+
+    .project-meta h1 {
+      font-size: 2rem;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .project-meta .facts {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+
+    /* Texte descriptif */
+    .project-body {
+      font-size: 11px;
+      line-height: 1.7;
+      max-width: 90%;
+    }
+
+    .project-body p {
+      margin: 0 0 1.2rem 0;
+      text-align: justify;
+    }
+
+    .project-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Colonne droite : images empilées */
+    .project-images {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .project-images img {
+      height: 7cm;
+      width: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Lien de retour */
+    .back-link {
+      align-self: flex-start;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+
+    .back-link:hover {
+      opacity: 1;
+    }
+
+    /* Responsive : une colonne sur mobile */
+    @media (max-width: 768px) {
+      .project-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .project-images {
+        order: -1;
+      }
+
+      .project-body {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -45,7 +146,7 @@
       <a class="back-link" href="../architecture.html">← Retour à Architecture</a>
     </div>
 
-    <!-- Colonne Droite : Images empilées (collées sans espace) -->
+    <!-- Colonne Droite : Images empilées (hauteur 7cm, largeur adaptée) -->
     <div class="project-images">
       <img src="img/biopsy/img-biopsy-1.JPG" alt="Biopsy — Vue principale du projet">
       <img src="img/biopsy/img-biopsy-2.jpg" alt="Biopsy — Façade extérieure">
