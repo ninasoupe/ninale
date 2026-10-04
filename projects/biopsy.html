@@ -25,6 +25,8 @@
       display: flex;
       flex-direction: column;
       gap: 0;
+      border: none;
+      padding: 0;
     }
 
     .project-meta h1 {
@@ -39,11 +41,13 @@
       opacity: 0.8;
     }
 
-    /* Texte descriptif */
+    /* Texte descriptif sans ligne supérieure */
     .project-body {
       font-size: 11px;
       line-height: 1.7;
       max-width: 90%;
+      border-top: none;
+      padding-top: 0;
     }
 
     .project-body p {
@@ -55,17 +59,17 @@
       margin-bottom: 0;
     }
 
-    /* Colonne droite : images empilées */
+    /* Colonne droite : images empilées (hauteur fixe 10cm, largeur auto, espacement 0,5cm) */
     .project-images {
       display: flex;
       flex-direction: column;
-      gap: 0;
+      gap: 0.5cm;
     }
 
     .project-images img {
-      height: 7cm;
+      height: 10cm;
       width: auto;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
     }
 
@@ -136,7 +140,7 @@
       <a class="back-link" href="../architecture.html">← Retour à Architecture</a>
     </div>
 
-    <!-- Colonne Droite : Images empilées (hauteur 7cm, largeur adaptée) -->
+    <!-- Colonne Droite : Images empilées (hauteur 10cm, largeur libre, espacement 0,5cm) -->
     <div class="project-images">
       <img src="img/biopsy/img-biopsy-1.JPG" alt="Biopsy — Vue principale du projet">
       <img src="img/biopsy/img-biopsy-2.jpg" alt="Biopsy — Façade extérieure">
