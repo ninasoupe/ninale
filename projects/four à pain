@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maison de la Lumière — Nina Lê</title>
+<title>Four à pain — Nina Lê</title>
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -25,14 +25,14 @@
 </header>
 
 <div class="wrap project-hero">
-  <img src="https://picsum.photos/seed/nina-arch-1/1600/1000" alt="Maison de la Lumière">
+  <img src="https://picsum.photos/seed/nina-arch-1/1600/1000" alt="Four à pain">
 </div>
 
 <div class="wrap">
   <div class="project-meta">
     <div>
       <div class="cat">Architecture — Résidentiel</div>
-      <h1>Maison de la Lumière</h1>
+      <h1>Four à pain</h1>
     </div>
     <div class="facts">
       Lieu — Yvelines, France<br>
@@ -49,10 +49,10 @@
   </div>
 
   <div class="gallery">
-    <img src="https://picsum.photos/seed/nina-arch-1b/900/700" alt="Maison de la Lumière — vue intérieure">
-    <img src="https://picsum.photos/seed/nina-arch-1c/900/700" alt="Maison de la Lumière — puits de lumière">
-    <img src="https://picsum.photos/seed/nina-arch-1d/900/700" alt="Maison de la Lumière — façade sud">
-    <img src="https://picsum.photos/seed/nina-arch-1e/900/700" alt="Maison de la Lumière — détail matière">
+    <img src="https://picsum.photos/seed/nina-arch-1b/900/700" alt="Four à pain — vue intérieure">
+    <img src="https://picsum.photos/seed/nina-arch-1c/900/700" alt="Four à pain — puits de lumière">
+    <img src="https://picsum.photos/seed/nina-arch-1d/900/700" alt="Four à pain — façade sud">
+    <img src="https://picsum.photos/seed/nina-arch-1e/900/700" alt="Four à pain — détail matière">
   </div>
 
   <a class="back-link" href="../architecture.html">← Retour à Architecture</a>
