@@ -14,24 +14,25 @@
       align-items: start;
     }
 
-    /* Colonne gauche : texte et métadonnées */
+    /* Colonne gauche : divisée en 2 sous-colonnes (5cm pour titre/meta, 1fr pour le texte) */
     .project-info {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 5cm 1fr;
       gap: 2rem;
+      align-items: start;
     }
 
     .project-meta {
       display: flex;
       flex-direction: column;
-      gap: 0;
+      gap: 1.5rem;
       border: none;
       padding: 0;
     }
 
     .project-meta h1 {
       font-size: 16px;
-      margin: 0 0 0.5rem 0;
+      margin: 0;
       line-height: 1.2;
     }
 
@@ -41,11 +42,16 @@
       opacity: 0.8;
     }
 
-    /* Texte descriptif sans ligne supérieure */
+    /* Colonne du texte descriptif */
+    .project-body-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
     .project-body {
       font-size: 11px;
       line-height: 1.7;
-      max-width: 90%;
       border-top: none;
       padding-top: 0;
     }
@@ -57,23 +63,6 @@
 
     .project-body p:last-child {
       margin-bottom: 0;
-    }
-
-    /* Colonne droite : images alignées à droite, min-hauteur 14cm, espacement 0,3cm */
-    .project-images {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 0.3cm;
-    }
-
-    .project-images img {
-      min-height: 14cm;
-      height: auto;
-      width: auto;
-      max-width: 100%;
-      object-fit: contain;
-      display: block;
     }
 
     /* Lien de retour */
@@ -90,7 +79,31 @@
       opacity: 1;
     }
 
-    /* Responsive : une colonne sur mobile */
+    /* Colonne droite : images alignées à droite, min-hauteur 12cm, espacement 0,3cm */
+    .project-images {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.3cm;
+    }
+
+    .project-images img {
+      min-height: 12cm;
+      height: auto;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Responsive : adaptation pour mobile */
+    @media (max-width: 900px) {
+      .project-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
     @media (max-width: 768px) {
       .project-layout {
         grid-template-columns: 1fr;
@@ -105,10 +118,6 @@
       .project-images img {
         min-height: auto;
         width: 100%;
-      }
-
-      .project-body {
-        max-width: 100%;
       }
     }
   </style>
@@ -130,8 +139,10 @@
 <main class="wrap">
   <div class="project-layout">
     
-    <!-- Colonne Gauche : Titre, Métadonnées & Description -->
+    <!-- Colonne Gauche : Divisée en 2 colonnes (5cm / Reste) -->
     <div class="project-info">
+      
+      <!-- Sous-colonne 1 (5cm) : Titre & Métadonnées -->
       <div class="project-meta">
         <h1>Biopsy</h1>
         <div class="facts">
@@ -140,16 +151,20 @@
         </div>
       </div>
 
-      <div class="project-body">
-        <p>Face aux exigences de la transition écologique, l’architecture cherche de nouveaux repères. La Straw Bale House en constitue un : la preuve par la matière qu’un autre mode constructif est possible.</p>
-        <p>En reproduisant à l’échelle 1:1 une section de cette œuvre emblématique pendant trois semaines de travail manuel, le projet s’est affranchi du dessin pour s’ancrer dans le réel. Manipuler le ballot de paille pour apprivoiser une technique où la simplicité du matériau brut répond à la complexité des enjeux thermiques actuels.</p>
-        <p>Cette expérience vient-elle sceller une certitude ? Et si l’alternative bas-carbone abandonnait la théorie pour s’édifier par l’expérimentation, main à main ?</p>
+      <!-- Sous-colonne 2 : Texte descriptif & Lien de retour -->
+      <div class="project-body-wrapper">
+        <div class="project-body">
+          <p>Face aux exigences de la transition écologique, l’architecture cherche de nouveaux repères. La Straw Bale House en constitue un : la preuve par la matière qu’un autre mode constructif est possible.</p>
+          <p>En reproduisant à l’échelle 1:1 une section de cette œuvre emblématique pendant trois semaines de travail manuel, le projet s’est affranchi du dessin pour s’ancrer dans le réel. Manipuler le ballot de paille pour apprivoiser une technique où la simplicité du matériau brut répond à la complexité des enjeux thermiques actuels.</p>
+          <p>Cette expérience vient-elle sceller une certitude ? Et si l’alternative bas-carbone abandonnait la théorie pour s’édifier par l’expérimentation, main à main ?</p>
+        </div>
+
+        <a class="back-link" href="../architecture.html">← Retour à Architecture</a>
       </div>
 
-      <a class="back-link" href="../architecture.html">← Retour à ... ! </a>
     </div>
 
-    <!-- Colonne Droite : Images alignées à droite (hauteur min 14cm, espacement 0,3cm) -->
+    <!-- Colonne Droite : Images alignées à droite (hauteur min 12cm, espacement 0,3cm) -->
     <div class="project-images">
       <img src="img/biopsy/img-biopsy-1.JPG" alt="Biopsy — Vue principale du projet">
       <img src="img/biopsy/img-biopsy-2.jpg" alt="Biopsy — Façade extérieure">
