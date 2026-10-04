@@ -5,67 +5,186 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Festival des Rives sonores - La musette — Nina Lê</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Layout principal à deux colonnes */
+    .project-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* Colonne gauche : divisée en 2 sous-colonnes (5cm pour titre/meta, 1fr pour le texte) */
+    .project-info {
+      display: grid;
+      grid-template-columns: 5cm 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    /* Sous-colonne 1 (5cm) : Titre & Métadonnées */
+    .project-meta-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      border: none;
+      padding: 0;
+    }
+
+    .project-meta-col h1 {
+      font-size: 16px;
+      font-weight: normal; /* Titre non gras */
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .project-meta-col .facts {
+      font-size: 11px;
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+
+    /* Sous-colonne 2 : Texte descriptif + Bouton retour */
+    .project-body-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-body {
+      font-size: 11px;
+      line-height: 1.7;
+      border-top: none;
+      padding-top: 0;
+      /* Début du texte sous la ligne de fin des métadonnées */
+      margin-top: calc(16px + 0.5rem + (11px * 1.6 * 5));
+    }
+
+    .project-body p {
+      margin: 0 0 1.2rem 0;
+      text-align: justify;
+    }
+
+    .project-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Lien de retour : positionné 1cm sous le texte */
+    .back-link {
+      align-self: flex-start;
+      margin-top: 1cm;
+      font-size: 0.95rem;
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+      line-height: 1.2;
+    }
+
+    .back-link:hover {
+      opacity: 1;
+    }
+
+    /* Colonne droite : images alignées à droite, hauteur 13cm, espacement 0,3cm */
+    .project-images {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.3cm;
+    }
+
+    .project-images img {
+      height: 13cm;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Responsive : adaptation pour mobile */
+    @media (max-width: 900px) {
+      .project-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .project-body {
+        margin-top: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .project-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .project-images {
+        order: -1;
+        align-items: stretch;
+      }
+
+      .project-images img {
+        height: auto;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header class="site">
   <div class="wrap">
-    <nav class="nav-side nav-left">
-      <a class="nav-label" href="../architecture.html">Architecture</a>
-      <a class="nav-label active" href="../design.html">Design</a>
-      <a class="nav-label" href="../photo.html">Photo</a>
-      <a class="nav-label" href="../surprise.html">Surprise</a>
-    </nav>
     <div class="logo"><a href="../index.html">[N]</a></div>
-    <nav class="nav-side nav-right">
-      <a class="nav-label" href="../archives.html">Archives</a>
-      <a class="nav-label" href="../contact.html">Contact</a>
-    </nav>
+    <a class="nav-label" href="../architecture.html">Architecture</a>
+    <a class="nav-label active" href="../design.html">Design</a>
+    <a class="nav-label" href="../photo.html">Photo</a>
+    <a class="nav-label" href="../surprise.html">Surprise</a>
+    <a class="nav-label" href="../a-propos.html">À propos</a>
+    <a class="nav-label" href="../contact.html">Contact</a>
   </div>
 </header>
 
-<!-- Image principale (Hero) -->
-<div class="wrap project-hero">
-  <img src="img/musette/img-musette-1.JPG" alt="Festival des Rives sonores - La musette — Vue principale">
-</div>
+<main class="wrap">
+  <div class="project-layout">
+    
+    <!-- Colonne Gauche : Divisée en 2 sous-colonnes (5cm / Reste) -->
+    <div class="project-info">
+      
+      <!-- Sous-colonne 1 (5cm) : Titre & Métadonnées -->
+      <div class="project-meta-col">
+        <h1>Festival des Rives sonores - La musette</h1>
+        <div class="facts">
+          Catégorie / Design — Mobilier<br>
+          Type / Collection (6 pièces)<br>
+          Année / 2023<br>
+          Matériaux / Chêne massif, métal patiné<br>
+          Statut / Production limitée
+        </div>
+      </div>
 
-<div class="wrap">
-  <div class="project-meta">
-    <div>
-      <div class="cat">Design — Mobilier</div>
-      <h1>Festival des Rives sonores - La musette</h1>
+      <!-- Sous-colonne 2 : Texte descriptif + Bouton retour (1cm sous le texte) -->
+      <div class="project-body-col">
+        <div class="project-body">
+          <p>Mobilier Brut réunit six pièces — une table basse, deux bancs, une console et deux luminaires — pensées comme un prolongement des projets d'architecture menés en parallèle. La collection assume des assemblages visibles plutôt que de les dissimuler.</p>
+          <p>Le chêne massif est laissé brut de sciage sur les chants, seules les surfaces d'usage sont poncées et huilées. Le métal, patiné à la cire, développe une réflexion et une oxydation contrôlée qui continue d'évoluer avec le temps et l'usage.</p>
+          <p>Chaque pièce est réalisée à la commande dans un atelier partenaire en Bourgogne, ce qui limite volontairement la production et garantit un suivi de fabrication pièce par pièce.</p>
+        </div>
+
+        <a class="back-link" href="../design.html">← Retour à Design</a>
+      </div>
+
     </div>
-    <div class="facts">
-      Type — Collection (6 pièces)<br>
-      Année — 2023<br>
-      Matériaux — Chêne massif, métal patiné<br>
-      Statut — Production limitée
+
+    <!-- Colonne Droite : Images empilées (incluant l'image Hero et la galerie) -->
+    <div class="project-images">
+      <img src="img/musette/img-musette-1.JPG" alt="Festival des Rives sonores - La musette — Vue principale">
+      <img src="img/musette/img-musette-2.JPG" alt="Festival des Rives sonores - La musette — Vue 2">
+      <img src="img/musette/img-musette-3.JPG" alt="Festival des Rives sonores - La musette — Vue 3">
+      <img src="img/musette/img-musette-4.JPG" alt="Festival des Rives sonores - La musette — Vue 4">
+      <img src="img/musette/img-musette-5.JPG" alt="Festival des Rives sonores - La musette — Vue 5">
     </div>
-  </div>
 
-  <div class="project-body">
-    <p>Mobilier Brut réunit six pièces — une table basse, deux bancs, une console et deux luminaires — pensées comme un prolongement des projets d'architecture menés en parallèle. La collection assume des assemblages visibles plutôt que de les dissimuler.</p>
-    <p>Le chêne massif est laissé brut de sciage sur les chants, seules les surfaces d'usage sont poncées et huilées. Le métal, patiné à la cire, développe une réflexion et une oxydation contrôlée qui continue d'évoluer avec le temps et l'usage.</p>
-    <p>Chaque pièce est réalisée à la commande dans un atelier partenaire en Bourgogne, ce qui limite volontairement la production et garantit un suivi de fabrication pièce par pièce.</p>
   </div>
-
-  <!-- Galerie d'images -->
-  <div class="gallery">
-    <img src="img/musette/img-musette-2.JPG" alt="Festival des Rives sonores - La musette — Vue 2">
-    <img src="img/musette/img-musette-3.JPG" alt="Festival des Rives sonores - La musette — Vue 3">
-    <img src="img/musette/img-musette-4.JPG" alt="Festival des Rives sonores - La musette — Vue 4">
-    <img src="img/musette/img-musette-5.JPG" alt="Festival des Rives sonores - La musette — Vue 5">
-  </div>
-
-  <a class="back-link" href="../design.html">← Retour à Design</a>
-</div>
-
-<footer class="site">
-  <div class="wrap">
-    <div>Nina Lê</div>
-    <div>© 2026</div>
-  </div>
-</footer>
+</main>
 
 <div id="custom-cursor"></div>
 <script src="../cursor.js"></script>
