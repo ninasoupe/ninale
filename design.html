@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Design — Nina Lê</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design — Nina Lê</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -12,7 +12,7 @@
   <div class="wrap">
     <div class="logo"><a href="index.html">[N]</a></div>
     <a class="nav-label" href="architecture.html">Architecture</a>
-    <a class="nav-label" href="design.html">Design</a>
+    <a class="nav-label active" href="design.html">Design</a>
     <a class="nav-label" href="photo.html">Photo</a>
     <a class="nav-label" href="surprise.html">Surprise</a>
     <a class="nav-label" href="a-propos.html">À propos</a>
@@ -20,26 +20,30 @@
   </div>
 </header>
 
-<div class="wrap">
-  <div class="masonry">
-
-    <a href="projects/design-identite-laurel.html">
-      <img src="https://picsum.photos/seed/nina-design-1/1400/1000" alt="Identité Laurel">
-    </a>
-
-    <a href="projects/design-mobilier-brut.html">
-      <img src="https://picsum.photos/seed/nina-design-2/1400/1000" alt="Mobilier Brut">
-    </a>
-
-  </div>
-</div>
-
-<footer class="site">
+<main>
   <div class="wrap">
-    <div>Nina Lê</div>
-    <div>© 2026</div>
+    <div class="section-head">
+      <h1>Design</h1>
+    </div>
   </div>
-</footer>
+
+  <div class="wrap">
+    <div class="image-grid two-col">
+
+      <a class="wide" href="projects/design-identite-laurel.html">
+        <img src="https://picsum.photos/seed/nina-design-1/1400/1000" alt="Identité Laurel" width="1400" height="1000" loading="lazy">
+      </a>
+
+      <a class="wide" href="projects/design-mobilier-brut.html">
+        <img src="https://picsum.photos/seed/nina-design-2/1400/1000" alt="Mobilier Brut" width="1400" height="1000" loading="lazy">
+      </a>
+
+    </div>
+  </div>
+</main>
+
+<!-- Espace blanc de 3 cm -->
+<div style="padding-bottom: 3cm;"></div>
 
 <div id="custom-cursor"></div>
 <script src="cursor.js"></script>
