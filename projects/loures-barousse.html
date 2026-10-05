@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loures-barousse et la maison Cachia — Nina Lê</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Layout principal à deux colonnes */
+    .project-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* Colonne gauche : divisée en 2 sous-colonnes (5cm pour titre/meta, 1fr pour le texte) */
+    .project-info {
+      display: grid;
+      grid-template-columns: 5cm 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    /* Sous-colonne 1 (5cm) : Titre & Métadonnées */
+    .project-meta-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      border: none;
+      padding: 0;
+    }
+
+    .project-meta-col h1 {
+      font-size: 16px;
+      font-weight: normal;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .project-meta-col .facts {
+      font-size: 11px;
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+
+    /* Sous-colonne 2 : Texte descriptif + Bouton retour */
+    .project-body-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-body {
+      font-size: 11px;
+      line-height: 1.7;
+      border-top: none;
+      padding-top: 0;
+      /* Ajustement vertical : débute 1 ligne sous l'année */
+      margin-top: calc(16px + 0.5rem + (11px * 1.6));
+    }
+
+    .project-body p {
+      margin: 0 0 1.2rem 0;
+      text-align: justify;
+    }
+
+    .project-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Lien de retour : positionné 1cm sous le texte */
+    .back-link {
+      align-self: flex-start;
+      margin-top: 1cm;
+      font-size: 0.95rem;
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+      line-height: 1.2;
+    }
+
+    .back-link:hover {
+      opacity: 1;
+    }
+
+    /* Colonne droite : images alignées à droite, hauteur 13cm, espacement 0,3cm */
+    .project-images {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.3cm;
+    }
+
+    .project-images img {
+      height: 13cm;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Responsive : adaptation pour mobile */
+    @media (max-width: 900px) {
+      .project-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .project-body {
+        margin-top: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .project-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .project-images {
+        order: -1;
+        align-items: stretch;
+      }
+
+      .project-images img {
+        height: auto;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <div class="logo"><a href="../index.html">[N]</a></div>
+    <a class="nav-label active" href="../architecture.html">Architecture</a>
+    <a class="nav-label" href="../design.html">Design</a>
+    <a class="nav-label" href="../photo.html">Photo</a>
+    <a class="nav-label" href="../surprise.html">Surprise</a>
+    <a class="nav-label" href="../a-propos.html">À propos</a>
+    <a class="nav-label" href="../contact.html">Contact</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="project-layout">
+    
+    <!-- Colonne Gauche : Divisée en 2 sous-colonnes (5cm / Reste) -->
+    <div class="project-info">
+      
+      <!-- Sous-colonne 1 (5cm) : Titre & Métadonnées -->
+      <div class="project-meta-col">
+        <h1>Loures-barousse et la maison Cachia</h1>
+        <div class="facts">
+          Lieu  /  Copenhagen, Danemark <br>
+          Année  /  2023
+        </div>
+      </div>
+
+      <!-- Sous-colonne 2 : Texte descriptif + Bouton retour (1cm sous le texte) -->
+      <div class="project-body-col">
+        <div class="project-body">
+          <p>Face aux exigences de la transition écologique, l’architecture cherche de nouveaux repères. La Straw Bale House en constitue un : la preuve par la matière qu’un autre mode constructif est possible.</p>
+          <p>En reproduisant à l’échelle 1:1 une section de cette œuvre emblématique pendant trois semaines de travail manuel, le projet s’est affranchi du dessin pour s’ancrer dans le réel. Manipuler le ballot de paille pour apprivoiser une technique où la simplicité du matériau brut répond à la complexité des enjeux thermiques actuels.</p>
+          <p>Cette expérience vient-elle sceller une certitude ? Et si l’alternative bas-carbone abandonnait la théorie pour s’édifier par l’expérimentation, main à main ?</p>
+        </div>
+
+        <a class="back-link" href="../architecture.html">← Retour !</a>
+      </div>
+
+    </div>
+
+    <!-- Colonne Droite : Images alignées à droite (hauteur 13cm, espacement 0,3cm) -->
+    <div class="project-images">
+      <img src="img/loure/loures-axo.jpg" alt="Loures — axonométrie">
+      <img src="img/loure/loures-acétone.jpg" alt="Loures — acétone">
+      <img src="img/loure/loures-sol.jpg" alt="Loures — coupe sol">
+    </div>
+
+  </div>
+</main>
+
+<div id="custom-cursor"></div>
+<script src="../cursor.js"></script>
+
+</body>
+</html>
