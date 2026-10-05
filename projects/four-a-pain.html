@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Four à pain et maisonnette — Nina Lê</title>
+  <title>Biopsy — Nina Lê</title>
   <link rel="stylesheet" href="../style.css">
   <style>
     /* Layout principal à deux colonnes */
@@ -55,8 +55,8 @@
       line-height: 1.7;
       border-top: none;
       padding-top: 0;
-      /* Décalage vertical : prend en compte h1 (2 lignes) + gap + facts (2 lignes) */
-      margin-top: calc((16px * 1.2 * 2) + 0.5rem + (2 * 11px * 1.6));
+      /* Ajustement vertical : débute 1 ligne sous l'année */
+      margin-top: calc(16px + 0.5rem + (11px * 1.6));
     }
 
     .project-body p {
@@ -99,7 +99,7 @@
       display: block;
     }
 
-    /* Responsive : adaptation pour tablette et mobile */
+    /* Responsive : adaptation pour mobile */
     @media (max-width: 900px) {
       .project-info {
         grid-template-columns: 1fr;
@@ -151,14 +151,14 @@
       
       <!-- Sous-colonne 1 (5cm) : Titre & Métadonnées -->
       <div class="project-meta-col">
-        <h1>Four à pain et maisonnette</h1>
+        <h1>Biopsy</h1>
         <div class="facts">
-          Lieu / Copenhagen, Danemark<br>
-          Année / 2023
+          Lieu  /  Copenhagen, Danemark <br>
+          Année  /  2023
         </div>
       </div>
 
-      <!-- Sous-colonne 2 : Texte descriptif + Bouton retour -->
+      <!-- Sous-colonne 2 : Texte descriptif + Bouton retour (1cm sous le texte) -->
       <div class="project-body-col">
         <div class="project-body">
           <p>Face aux exigences de la transition écologique, l’architecture cherche de nouveaux repères. La Straw Bale House en constitue un : la preuve par la matière qu’un autre mode constructif est possible.</p>
@@ -166,19 +166,19 @@
           <p>Cette expérience vient-elle sceller une certitude ? Et si l’alternative bas-carbone abandonnait la théorie pour s’édifier par l’expérimentation, main à main ?</p>
         </div>
 
-        <a class="back-link" href="../architecture.html">← Retour à Architecture</a>
+        <a class="back-link" href="../architecture.html">← Retour !</a>
       </div>
 
     </div>
 
-    <!-- Colonne Droite : Images alignées à droite -->
+    <!-- Colonne Droite : Images alignées à droite (hauteur 13cm, espacement 0,3cm) -->
     <div class="project-images">
-      <img src="img/four-a-pain/four-1.jpeg" alt="four — Vue principale du projet" loading="lazy" decoding="async">
-      <img src="img/four-a-pain/four-2.jpeg" alt="four — détail 1" loading="lazy" decoding="async">
-      <img src="img/four-a-pain/four-3.jpeg" alt="four — détail 2" loading="lazy" decoding="async">
-      <img src="img/four-a-pain/four-4.jpeg" alt="four — détail 3" loading="lazy" decoding="async">
-      <img src="img/four-a-pain/four-5.jpeg" alt="four — détail 4" loading="lazy" decoding="async">
-      <img src="img/four-a-pain/four-6.jpeg" alt="four — détail 5" loading="lazy" decoding="async">
+      <img src="img/biopsy/img-biopsy-1.JPG" alt="Biopsy — Vue principale du projet">
+      <img src="img/biopsy/img-biopsy-2.jpg" alt="Biopsy — Façade extérieure">
+      <img src="img/biopsy/img-biopsy-3.jpg" alt="Biopsy — Charpente métallique">
+      <img src="img/biopsy/img-biopsy-4.jpg" alt="Biopsy — Verrières intérieures">
+      <img src="img/biopsy/img-biopsy-5.jpg" alt="Biopsy — Espace commun">
+      <img src="img/biopsy/img-biopsy-6.jpg" alt="Biopsy — Détail du sol en béton">
     </div>
 
   </div>
