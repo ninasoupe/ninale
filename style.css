@@ -1,5 +1,5 @@
 /* Nina Lê — Portfolio
-   Dessiné à la hand, noir & blanc, grille d'images pures */
+   Dessiné à la main, noir & blanc, grille d'images pures */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
@@ -13,9 +13,13 @@
   --sans: 'Inter', -apple-system, sans-serif;
 }
 
-* { box-sizing: border-box; }
+* { 
+  box-sizing: border-box; 
+}
 
-html { scroll-behavior: smooth; }
+html { 
+  scroll-behavior: smooth; 
+}
 
 body {
   margin: 0;
@@ -28,9 +32,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img { max-width: 100%; display: block; }
+img { 
+  max-width: 100%; 
+  display: block; 
+}
 
-a { color: inherit; text-decoration: none; }
+a { 
+  color: inherit; 
+  text-decoration: none; 
+}
 
 .wrap {
   max-width: 1320px;
@@ -38,7 +48,7 @@ a { color: inherit; text-decoration: none; }
   padding: 0 48px;
 }
 
-/* ---------- Header / nav ---------- */
+/* ---------- Header / Nav ---------- */
 
 header.site {
   height: 3cm;
@@ -75,19 +85,22 @@ header.site .wrap {
   font-size: 22px;
 }
 
-.logo a { color: var(--ink); text-decoration: none; }
+.logo a { 
+  color: var(--ink); 
+  text-decoration: none; 
+}
 
 .nav-label {
   letter-spacing: 0.03em;
   text-decoration: none;
 }
 
-/* Effet survol classique sur les éléments non actifs */
+/* Effet au survol uniquement pour les liens NON actifs */
 .nav-label:hover:not(.active) {
   text-decoration: underline;
 }
 
-/* Élément actif : réduction de 2px + parenthèses */
+/* Lien actif : réduction de 2px de la taille de police et parenthèses automatiques */
 .nav-label.active {
   text-decoration: none;
   font-size: 18px;
@@ -101,7 +114,7 @@ header.site .wrap {
   content: ")";
 }
 
-/* ---------- Section intro (used on category & about pages) ---------- */
+/* ---------- Section Intro (Catégories / À propos) ---------- */
 
 .section-head {
   padding: 10px 0 40px;
@@ -122,7 +135,7 @@ header.site .wrap {
   margin: 0;
 }
 
-/* ---------- Pure image grid (home + category pages) ---------- */
+/* ---------- Grilles d'images ---------- */
 
 .image-grid {
   display: grid;
@@ -149,9 +162,11 @@ header.site .wrap {
   transform: scale(1.03);
 }
 
-.image-grid.two-col { grid-template-columns: repeat(2, 1fr); }
+.image-grid.two-col { 
+  grid-template-columns: repeat(2, 1fr); 
+}
 
-/* Masonry grid — 3 columns, images keep their natural ratio, no captions */
+/* Masonry grid — 3 colonnes, ratios naturels des images */
 .masonry {
   column-count: 3;
   column-gap: 0.5cm;
@@ -177,19 +192,16 @@ header.site .wrap {
   transform: scale(1.03);
 }
 
-@media (max-width: 860px) {
-  .masonry { column-count: 2; column-gap: 0.5cm; }
-  .masonry a { margin-bottom: 0.5cm; }
-}
-
-/* varied aspect ratios so the grid reads as hand-curated, not a template */
+/* Ratios personnalisés pour variabilité visuelle */
 .image-grid a.tall img { aspect-ratio: 3 / 4.3; height: auto; }
 .image-grid a.wide img { aspect-ratio: 4 / 3; height: auto; }
 .image-grid a.square img { aspect-ratio: 1 / 1; height: auto; }
 
-/* ---------- Project page ---------- */
+/* ---------- Page Projet ---------- */
 
-.project-hero { padding: 10px 0 0; }
+.project-hero { 
+  padding: 10px 0 0; 
+}
 
 .project-hero img {
   width: 100%;
@@ -267,9 +279,13 @@ header.site .wrap {
   gap: 60px;
 }
 
-.contact-wrap .intro { color: var(--ink-soft); }
+.contact-wrap .intro { 
+  color: var(--ink-soft); 
+}
 
-.contact-list { font-size: 16px; }
+.contact-list { 
+  font-size: 16px; 
+}
 
 .contact-list dt {
   color: var(--ink-soft);
@@ -277,14 +293,18 @@ header.site .wrap {
   margin-top: 22px;
 }
 
-.contact-list dt:first-child { margin-top: 0; }
+.contact-list dt:first-child { 
+  margin-top: 0; 
+}
 
 .contact-list dd {
   margin: 4px 0 0;
   font-size: 19px;
 }
 
-.contact-list dd a { border-bottom: 2px solid var(--ink); }
+.contact-list dd a { 
+  border-bottom: 2px solid var(--ink); 
+}
 
 .about-wrap {
   padding: 10px 0 120px;
@@ -299,7 +319,9 @@ header.site .wrap {
   object-fit: cover;
 }
 
-.about-wrap .body p { color: var(--ink-soft); }
+.about-wrap .body p { 
+  color: var(--ink-soft); 
+}
 
 /* ---------- Footer ---------- */
 
@@ -318,16 +340,46 @@ footer.site .wrap {
 /* ---------- Responsive ---------- */
 
 @media (max-width: 860px) {
-  .project-meta, .contact-wrap, .about-wrap {
+  .project-meta, 
+  .contact-wrap, 
+  .about-wrap {
     grid-template-columns: 1fr;
     gap: 24px;
   }
-  .image-grid { grid-template-columns: repeat(2, 1fr); }
-  .gallery { grid-template-columns: 1fr; }
-  .wrap { padding: 0 22px; }
-  .nav-label { font-size: 18px; }
-  .nav-label.active { font-size: 16px; }
-  .logo { font-size: 18px; }
+
+  .image-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+  .masonry { 
+    column-count: 2; 
+    column-gap: 0.5cm; 
+  }
+
+  .masonry a { 
+    margin-bottom: 0.5cm; 
+  }
+
+  .gallery { 
+    grid-template-columns: 1fr; 
+  }
+
+  .wrap { 
+    padding: 0 22px; 
+  }
+
+  .nav-label { 
+    font-size: 18px; 
+  }
+
+  .nav-label.active { 
+    font-size: 16px; /* Réduction adaptée sur mobile (18px -> 16px) */
+  }
+
+  .logo { 
+    font-size: 18px; 
+  }
+
   header.site .wrap {
     flex-wrap: wrap;
     gap: 12px;
@@ -336,10 +388,13 @@ footer.site .wrap {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; scroll-behavior: auto !important; }
+  * { 
+    transition: none !important; 
+    scroll-behavior: auto !important; 
+  }
 }
 
-/* ---------- Custom cursor: negative lens ---------- */
+/* ---------- Curseur personnalisé : lentille négative ---------- */
 
 #custom-cursor {
   position: fixed;
