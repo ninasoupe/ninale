@@ -1,69 +1,188 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Identité Laurel — Nina Lê</title>
-<link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biopsy — Nina Lê</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Layout principal à deux colonnes */
+    .project-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* Colonne gauche : divisée en 2 sous-colonnes (5cm pour titre/meta, 1fr pour le texte) */
+    .project-info {
+      display: grid;
+      grid-template-columns: 5cm 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    /* Sous-colonne 1 (5cm) : Titre & Métadonnées */
+    .project-meta-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      border: none;
+      padding: 0;
+    }
+
+    .project-meta-col h1 {
+      font-size: 16px;
+      font-weight: normal;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .project-meta-col .facts {
+      font-size: 11px;
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+
+    /* Sous-colonne 2 : Texte descriptif + Bouton retour */
+    .project-body-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-body {
+      font-size: 11px;
+      line-height: 1.7;
+      border-top: none;
+      padding-top: 0;
+      /* Ajustement vertical : débute 1 ligne sous l'année */
+      margin-top: calc(16px + 0.5rem + (11px * 1.6));
+    }
+
+    .project-body p {
+      margin: 0 0 1.2rem 0;
+      text-align: justify;
+    }
+
+    .project-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Lien de retour : positionné 1cm sous le texte */
+    .back-link {
+      align-self: flex-start;
+      margin-top: 1cm;
+      font-size: 0.95rem;
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+      line-height: 1.2;
+    }
+
+    .back-link:hover {
+      opacity: 1;
+    }
+
+    /* Colonne droite : images alignées à droite, hauteur 13cm, espacement 0,3cm */
+    .project-images {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.3cm;
+    }
+
+    .project-images img {
+      height: 13cm;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Responsive : adaptation pour mobile */
+    @media (max-width: 900px) {
+      .project-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .project-body {
+        margin-top: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .project-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .project-images {
+        order: -1;
+        align-items: stretch;
+      }
+
+      .project-images img {
+        height: auto;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header class="site">
   <div class="wrap">
-    <nav class="nav-side nav-left">
-      <a class="nav-label" href="../architecture.html">Architecture</a>
-      <a class="nav-label active" href="../design.html">Design</a>
-      <a class="nav-label" href="../photo.html">Photo</a>
-      <a class="nav-label" href="../surprise.html">Surprise</a>
-    </nav>
     <div class="logo"><a href="../index.html">[N]</a></div>
-    <nav class="nav-side nav-right">
-      <a class="nav-label" href="../archives.html">Archives</a>
-      <a class="nav-label" href="../contact.html">Contact</a>
-    </nav>
+    <a class="nav-label active" href="../architecture.html">Architecture</a>
+    <a class="nav-label" href="../design.html">Design</a>
+    <a class="nav-label" href="../photo.html">Photo</a>
+    <a class="nav-label" href="../surprise.html">Surprise</a>
+    <a class="nav-label" href="../a-propos.html">À propos</a>
+    <a class="nav-label" href="../contact.html">Contact</a>
   </div>
 </header>
 
-<div class="wrap project-hero">
-  <img src="https://picsum.photos/seed/nina-design-1/1600/1000" alt="Identité Laurel">
-</div>
+<main class="wrap">
+  <div class="project-layout">
+    
+    <!-- Colonne Gauche : Divisée en 2 sous-colonnes (5cm / Reste) -->
+    <div class="project-info">
+      
+      <!-- Sous-colonne 1 (5cm) : Titre & Métadonnées -->
+      <div class="project-meta-col">
+        <h1>Biopsy</h1>
+        <div class="facts">
+          Lieu  /  Copenhagen, Danemark <br>
+          Année  /  2023
+        </div>
+      </div>
 
-<div class="wrap">
-  <div class="project-meta">
-    <div>
-      <div class="cat">Design — Identité visuelle</div>
-      <h1>Identité Laurel</h1>
+      <!-- Sous-colonne 2 : Texte descriptif + Bouton retour (1cm sous le texte) -->
+      <div class="project-body-col">
+        <div class="project-body">
+          <p>Face aux exigences de la transition écologique, l’architecture cherche de nouveaux repères. La Straw Bale House en constitue un : la preuve par la matière qu’un autre mode constructif est possible.</p>
+          <p>En reproduisant à l’échelle 1:1 une section de cette œuvre emblématique pendant trois semaines de travail manuel, le projet s’est affranchi du dessin pour s’ancrer dans le réel. Manipuler le ballot de paille pour apprivoiser une technique où la simplicité du matériau brut répond à la complexité des enjeux thermiques actuels.</p>
+          <p>Cette expérience vient-elle sceller une certitude ? Et si l’alternative bas-carbone abandonnait la théorie pour s’édifier par l’expérimentation, main à main ?</p>
+        </div>
+
+        <a class="back-link" href="../architecture.html">← Retour !</a>
+      </div>
+
     </div>
-    <div class="facts">
-      Client — Éditions Laurel<br>
-      Année — 2025<br>
-      Champ — Logotype, papeterie, couvertures<br>
-      Statut — En cours
+
+    <!-- Colonne Droite : Images alignées à droite (hauteur 13cm, espacement 0,3cm) -->
+    <div class="project-images">
+      <img src="img/biopsy/img-biopsy-1.JPG" alt="Biopsy — Vue principale du projet">
+      <img src="img/biopsy/img-biopsy-2.jpg" alt="Biopsy — Façade extérieure">
+      <img src="img/biopsy/img-biopsy-3.jpg" alt="Biopsy — Charpente métallique">
+      <img src="img/biopsy/img-biopsy-4.jpg" alt="Biopsy — Verrières intérieures">
+      <img src="img/biopsy/img-biopsy-5.jpg" alt="Biopsy — Espace commun">
+      <img src="img/biopsy/img-biopsy-6.jpg" alt="Biopsy — Détail du sol en béton">
     </div>
-  </div>
 
-  <div class="project-body">
-    <p>Laurel est une maison d'édition indépendante spécialisée dans les récits de voyage. L'identité devait porter cette idée de déplacement sans tomber dans les clichés habituels du genre — malles de voyage, cartes anciennes, compas.</p>
-    <p>Le logotype s'appuie sur une lettre L qui se déplie légèrement, comme une page qu'on tourne. La palette, volontairement restreinte, s'inspire des couvertures de livres de poche des années 1970 : un ivoire chaud, un vert de gris et un rouge brique profond.</p>
-    <p>Le système typographique décline une serif pour les titres et une sans-serif discrète pour les folios et mentions légales, afin de garder une lisibilité claire sur les couvertures comme sur le site de la maison d'édition.</p>
   </div>
-
-  <div class="gallery">
-    <img src="https://picsum.photos/seed/nina-design-1b/900/700" alt="Identité Laurel — logotype">
-    <img src="https://picsum.photos/seed/nina-design-1c/900/700" alt="Identité Laurel — papeterie">
-    <img src="https://picsum.photos/seed/nina-design-1d/900/700" alt="Identité Laurel — couvertures">
-    <img src="https://picsum.photos/seed/nina-design-1e/900/700" alt="Identité Laurel — palette">
-  </div>
-
-  <a class="back-link" href="../design.html">← Retour à Design</a>
-</div>
-
-<footer class="site">
-  <div class="wrap">
-    <div>Nina Lê</div>
-    <div>© 2026</div>
-  </div>
-</footer>
+</main>
 
 <div id="custom-cursor"></div>
 <script src="../cursor.js"></script>
