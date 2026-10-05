@@ -55,8 +55,8 @@
       line-height: 1.7;
       border-top: none;
       padding-top: 0;
-      /* Ajustement vertical : débute 1 ligne sous l'année */
-      margin-top: calc(16px + 0.5rem + (11px * 1.6));
+      /* Ajustement vertical : débute sous la 2e ligne de métadonnées */
+      margin-top: calc(16px + 0.5rem + (2 * 11px * 1.6));
     }
 
     .project-body p {
@@ -153,8 +153,8 @@
       <div class="project-meta-col">
         <h1>Four à pain et maisonnette</h1>
         <div class="facts">
-          Lieu  /  Copenhagen, Danemark <br>
-          Année  /  2023
+          Lieu / Copenhagen, Danemark<br>
+          Année / 2023
         </div>
       </div>
 
@@ -166,7 +166,7 @@
           <p>Cette expérience vient-elle sceller une certitude ? Et si l’alternative bas-carbone abandonnait la théorie pour s’édifier par l’expérimentation, main à main ?</p>
         </div>
 
-        <a class="back-link" href="../architecture.html">← Retour !</a>
+        <a class="back-link" href="../architecture.html">← Retour à Architecture</a>
       </div>
 
     </div>
@@ -174,7 +174,7 @@
     <!-- Colonne Droite : Images alignées à droite (hauteur 13cm, espacement 0,3cm) -->
     <div class="project-images">
       <img src="img/four-a-pain/four-1.JPG" alt="four — Vue principale du projet">
-      <img src="img/four-a-pain/four-2.JPG.jpg" alt="four — détail 1>
+      <img src="img/four-a-pain/four-2.jpg" alt="four — détail 1">
       <img src="img/four-a-pain/four-3.jpg" alt="four — détail 2">
       <img src="img/four-a-pain/four-4.jpg" alt="four — détail 3">
       <img src="img/four-a-pain/four-5.jpg" alt="four — détail 4">
