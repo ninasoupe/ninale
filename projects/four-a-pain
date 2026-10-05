@@ -173,12 +173,12 @@
 
     <!-- Colonne Droite : Images alignées à droite (hauteur 13cm, espacement 0,3cm) -->
     <div class="project-images">
-      <img src="img/four-a-pain/four-1.JPG" alt="four — Vue principale du projet" loading="lazy" decoding="async">
-      <img src="img/four-a-pain/four-2.jpg" alt="four — détail 1" loading="lazy" decoding="async">
-      <img src="img/four-a-pain/four-3.jpg" alt="four — détail 2" loading="lazy" decoding="async">
-      <img src="img/four-a-pain/four-4.jpg" alt="four — détail 3" loading="lazy" decoding="async">
-      <img src="img/four-a-pain/four-5.jpg" alt="four — détail 4" loading="lazy" decoding="async">
-      <img src="img/four-a-pain/four-6.jpg" alt="four — détail 5" loading="lazy" decoding="async">
+      <img src="img/four-a-pain/four-1.jpeg" alt="four — Vue principale du projet" loading="lazy" decoding="async">
+      <img src="img/four-a-pain/four-2.jpeg" alt="four — détail 1" loading="lazy" decoding="async">
+      <img src="img/four-a-pain/four-3.jpeg" alt="four — détail 2" loading="lazy" decoding="async">
+      <img src="img/four-a-pain/four-4.jpeg" alt="four — détail 3" loading="lazy" decoding="async">
+      <img src="img/four-a-pain/four-5.jpeg" alt="four — détail 4" loading="lazy" decoding="async">
+      <img src="img/four-a-pain/four-6.jpeg" alt="four — détail 5" loading="lazy" decoding="async">
     </div>
 
   </div>
