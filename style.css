@@ -1,5 +1,5 @@
 /* Nina Lê — Portfolio
-   Dessiné à la main, noir & blanc, grille d'images pures */
+   Dessiné à la hand, noir & blanc, grille d'images pures */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
@@ -82,9 +82,23 @@ header.site .wrap {
   text-decoration: none;
 }
 
-.nav-label:hover,
-.nav-label.active {
+/* Effet survol classique sur les éléments non actifs */
+.nav-label:hover:not(.active) {
   text-decoration: underline;
+}
+
+/* Élément actif : réduction de 2px + parenthèses */
+.nav-label.active {
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-label.active::before {
+  content: "(";
+}
+
+.nav-label.active::after {
+  content: ")";
 }
 
 /* ---------- Section intro (used on category & about pages) ---------- */
@@ -312,6 +326,7 @@ footer.site .wrap {
   .gallery { grid-template-columns: 1fr; }
   .wrap { padding: 0 22px; }
   .nav-label { font-size: 18px; }
+  .nav-label.active { font-size: 16px; }
   .logo { font-size: 18px; }
   header.site .wrap {
     flex-wrap: wrap;
