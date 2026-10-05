@@ -55,8 +55,8 @@
       line-height: 1.7;
       border-top: none;
       padding-top: 0;
-      /* Ajustement vertical : débute sous la 2e ligne de métadonnées */
-      margin-top: calc(16px + 0.5rem + (2 * 11px * 1.6));
+      /* Décalage vertical : prend en compte h1 (2 lignes) + gap + facts (2 lignes) */
+      margin-top: calc((16px * 1.2 * 2) + 0.5rem + (2 * 11px * 1.6));
     }
 
     .project-body p {
@@ -99,7 +99,7 @@
       display: block;
     }
 
-    /* Responsive : adaptation pour mobile */
+    /* Responsive : adaptation pour tablette et mobile */
     @media (max-width: 900px) {
       .project-info {
         grid-template-columns: 1fr;
@@ -173,12 +173,12 @@
 
     <!-- Colonne Droite : Images alignées à droite (hauteur 13cm, espacement 0,3cm) -->
     <div class="project-images">
-      <img src="img/four-a-pain/four-1.JPG" alt="four — Vue principale du projet">
-      <img src="img/four-a-pain/four-2.jpg" alt="four — détail 1">
-      <img src="img/four-a-pain/four-3.jpg" alt="four — détail 2">
-      <img src="img/four-a-pain/four-4.jpg" alt="four — détail 3">
-      <img src="img/four-a-pain/four-5.jpg" alt="four — détail 4">
-      <img src="img/four-a-pain/four-6.jpg" alt="four — détail 5">
+      <img src="img/four-a-pain/four-1.JPG" alt="four — Vue principale du projet" loading="lazy" decoding="async">
+      <img src="img/four-a-pain/four-2.jpg" alt="four — détail 1" loading="lazy" decoding="async">
+      <img src="img/four-a-pain/four-3.jpg" alt="four — détail 2" loading="lazy" decoding="async">
+      <img src="img/four-a-pain/four-4.jpg" alt="four — détail 3" loading="lazy" decoding="async">
+      <img src="img/four-a-pain/four-5.jpg" alt="four — détail 4" loading="lazy" decoding="async">
+      <img src="img/four-a-pain/four-6.jpg" alt="four — détail 5" loading="lazy" decoding="async">
     </div>
 
   </div>
