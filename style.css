@@ -63,17 +63,16 @@ header.site .wrap {
   height: 100%;
   margin-bottom: 0; /* Évite d'appliquer la marge sous le header */
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
-/* Distribue équitablement les liens de navigation dans l'espace disponible */
+/* Distribue les liens de navigation avec un espacement rigoureusement égal (gap) */
 header.site nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-grow: 1;
-  margin-left: 3rem; /* Espace minimal entre le logo [N] et le premier lien */
+  justify-content: flex-start;
+  gap: 2.5rem;        /* Distance fixe et égale entre chaque bouton du menu */
+  margin-left: 3rem;  /* Espace entre le logo et le premier lien */
 }
 
 /* Normalisation du logo et des liens */
@@ -395,6 +394,7 @@ footer.site .wrap {
     margin-left: 0;
     width: 100%;
     justify-content: space-around;
+    gap: 1rem;
   }
 }
 
