@@ -12,7 +12,7 @@
   --hand: 'Inter', -apple-system, sans-serif;
   --sans: 'Inter', -apple-system, sans-serif;
   
-  /* Police Hubbuch / Équivalent Monospace Light */
+  /* Police Monospace Light unifiée pour tout le header */
   --mono-light: 'Hubbuch', 'DM Mono', 'Space Mono', monospace;
 }
 
@@ -60,6 +60,7 @@ header.site {
   top: 0;
   z-index: 500;
   background: transparent;
+  font-family: var(--mono-light); /* Application globale à tout le header */
 }
 
 header.site .wrap {
@@ -79,13 +80,13 @@ header.site nav {
   margin-left: 3rem;
 }
 
-/* Normalisation du logo */
+/* Style du Logo [N] */
 .logo {
   display: inline-flex;
   align-items: center;
   font-family: var(--mono-light);
   font-weight: 300;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1;
   color: var(--ink);
   margin: 0;
@@ -98,13 +99,13 @@ header.site nav {
   text-decoration: none; 
 }
 
-/* Style des liens avec police monospace light pour un alignement parfait */
+/* Style des liens de navigation */
 .nav-label {
   display: inline-flex;
   align-items: center;
   gap: 0.45em;
   font-family: var(--mono-light);
-  font-weight: 300; /* Force le rendu ultra-light */
+  font-weight: 300;
   font-size: 17px;
   line-height: 1;
   color: var(--ink);
