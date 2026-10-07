@@ -100,7 +100,7 @@ header.site nav {
   display: inline-flex;
   align-items: center;
   gap: 0.45em;
-  font-family: monospace, var(--hand); /* Polices à largeur fixe pour un [    ] égal à [ ● ] */
+  font-family: monospace, var(--hand); /* Polices à largeur fixe pour un [ ] égal à [●] */
   font-size: 18px;
   line-height: 1;
   color: var(--ink);
@@ -113,13 +113,13 @@ header.site nav {
 
 /* Lien INACTIF : insère [    ] avec 4 espaces insecables */
 .nav-label::before {
-  content: "[\00a0\00a0\00a0\00a0]";
+  content: "[\00a0]";
   white-space: pre;
 }
 
 /* Lien ACTIF : remplace par [ ● ] */
 .nav-label.active::before {
-  content: "[\00a0●\00a0]";
+  content: "[●]";
   font-weight: bold;
 }
 
