@@ -312,41 +312,58 @@ header.site nav {
   transform: rotate(-1deg);
 }
 
-/* ---------- Contact / About ---------- */
+/* ---------- Page Contact Uniquement (3 Colonnes Égales) ---------- */
 
-.contact-wrap {
-  padding: 10px 0 0;
+.contact-grid-3col {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes de largeur strictement égale */
+  gap: 0.5cm;                           /* Alignement cohérent avec le reste du site */
+  width: 100%;
+  padding-top: 1cm;
+  align-items: start;
 }
 
-.contact-wrap .intro { 
-  color: var(--ink-soft); 
+.col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre l'image et le texte dans la colonne centrale */
+  width: 100%;
 }
 
-.contact-list { 
-  font-size: 18px; 
+.business-card-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.contact-list dt {
-  color: var(--ink-soft);
+.business-card-img img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.contact-info-block {
+  margin-top: 1cm;     /* Espacement exact de 1cm sous l'image */
+  width: 4cm;          /* Largeur stricte du bloc texte */
+  max-width: 100%;
+  text-align: center;  /* Texte centré */
   font-size: 15px;
-  margin-top: 22px;
+  line-height: 1.5;
+  color: var(--ink-soft);
 }
 
-.contact-list dt:first-child { 
-  margin-top: 0; 
+.contact-info-block p {
+  margin: 0;
 }
 
-.contact-list dd {
-  margin: 4px 0 0;
-  font-size: 21px;
+.contact-info-block a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
-.contact-list dd a { 
-  border-bottom: 2px solid var(--ink); 
-}
+/* ---------- Page About / Anciens styles ---------- */
 
 .about-wrap {
   padding: 10px 0 0;
@@ -384,10 +401,17 @@ footer.site .wrap {
 
 @media (max-width: 860px) {
   .project-meta, 
-  .contact-wrap, 
   .about-wrap {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .contact-grid-3col {
+    grid-template-columns: 1fr; /* Bascule sur 1 seule colonne centré sur mobile */
+  }
+
+  .col-left, .col-right {
+    display: none;
   }
 
   .image-grid { 
