@@ -59,23 +59,31 @@ header.site {
   background: transparent;
 }
 
-/* Flexbox pour aligner tous les éléments sur une seule ligne équidistante */
 header.site .wrap {
   height: 100%;
-  margin-bottom: 0; /* Évite d'appliquer les 3cm de marge sous le header */
+  margin-bottom: 0; /* Évite d'appliquer la marge sous le header */
   display: flex;
-  justify-content: space-between; /* Distribue un espace égal entre chaque élément */
-  align-items: center;            /* Aligne parfaitement les centres verticaux */
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Normalisation du logo et des liens pour éviter tout décalage vertical */
+/* Distribue équitablement les liens de navigation dans l'espace disponible */
+header.site nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  margin-left: 3rem; /* Espace minimal entre le logo [N] et le premier lien */
+}
+
+/* Normalisation du logo et des liens */
 .logo,
 .nav-label {
   display: inline-flex;
   align-items: center;
   font-family: var(--hand);
   font-size: 20px;
-  line-height: 1;                 /* Hauteur de ligne identique pour tous */
+  line-height: 1;
   color: var(--ink);
   margin: 0;
   padding: 0;
@@ -97,7 +105,7 @@ header.site .wrap {
   text-decoration: none;
 }
 
-/* Effet au survol uniquement pour les liens NON actifs */
+/* Effet au survol uniquement pour les liens non actifs */
 .nav-label:hover:not(.active) {
   text-decoration: underline;
 }
@@ -333,7 +341,7 @@ footer.site {
 }
 
 footer.site .wrap {
-  margin-bottom: 0; /* Évite d'ajouter une marge supplémentaire sous le footer */
+  margin-bottom: 0;
   display: flex;
   justify-content: space-between;
 }
@@ -381,6 +389,12 @@ footer.site .wrap {
     flex-wrap: wrap;
     gap: 12px;
     justify-content: center;
+  }
+
+  header.site nav {
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-around;
   }
 }
 
