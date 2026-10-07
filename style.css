@@ -1,5 +1,5 @@
 /* Nina Lê — Portfolio
-   Dessiné à la main, noir & blanc, grille d'images pures */
+   Dessiné à la hand, noir & blanc, grille d'images pures */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
@@ -42,9 +42,10 @@ a {
   text-decoration: none; 
 }
 
+/* Conteneur principal avec marge inférieure de 3cm */
 .wrap {
   max-width: 1320px;
-  margin: 0 auto;
+  margin: 0 auto 3cm;
   padding: 0 48px;
 }
 
@@ -61,6 +62,7 @@ header.site {
 /* Flexbox pour aligner tous les éléments sur une seule ligne équidistante */
 header.site .wrap {
   height: 100%;
+  margin-bottom: 0; /* Évite d'appliquer les 3cm de marge sous le header */
   display: flex;
   justify-content: space-between; /* Distribue un espace égal entre chaque élément */
   align-items: center;            /* Aligne parfaitement les centres verticaux */
@@ -100,10 +102,9 @@ header.site .wrap {
   text-decoration: underline;
 }
 
-/* Lien actif : réduction de 2px de la taille de police et parenthèses automatiques */
+/* Lien actif : parenthèses automatiques, conserve sa taille (20px) */
 .nav-label.active {
   text-decoration: none;
-  font-size: 18px;
 }
 
 .nav-label.active::before {
@@ -141,7 +142,6 @@ header.site .wrap {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px 32px;
-  padding-bottom: 90px;
   align-items: start;
 }
 
@@ -247,7 +247,7 @@ header.site .wrap {
 }
 
 .gallery {
-  padding: 40px 0 100px;
+  padding: 40px 0 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
@@ -273,7 +273,7 @@ header.site .wrap {
 /* ---------- Contact / About ---------- */
 
 .contact-wrap {
-  padding: 10px 0 120px;
+  padding: 10px 0 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
@@ -307,7 +307,7 @@ header.site .wrap {
 }
 
 .about-wrap {
-  padding: 10px 0 120px;
+  padding: 10px 0 0;
   display: grid;
   grid-template-columns: 1fr 1.3fr;
   gap: 60px;
@@ -333,6 +333,7 @@ footer.site {
 }
 
 footer.site .wrap {
+  margin-bottom: 0; /* Évite d'ajouter une marge supplémentaire sous le footer */
   display: flex;
   justify-content: space-between;
 }
@@ -370,10 +371,6 @@ footer.site .wrap {
 
   .nav-label { 
     font-size: 18px; 
-  }
-
-  .nav-label.active { 
-    font-size: 16px; /* Réduction adaptée sur mobile (18px -> 16px) */
   }
 
   .logo { 
