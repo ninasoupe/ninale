@@ -11,31 +11,42 @@
 <header class="site">
   <div class="wrap">
     <div class="logo"><a href="index.html">[N]</a></div>
-    <a class="nav-label" href="architectures.html">Architectures</a>
-    <a class="nav-label" href="pratiques-chantiers.html">Pratiques / Chantiers</a>
-    <a class="nav-label" href="annexes.html">Annexes</a>
-    <a class="nav-label" href="surprise.html">Surprise</a>
-    <a class="nav-label active" href="contact.html">Contact</a>
+    <nav>
+      <a class="nav-label" href="architectures.html">Architectures</a>
+      <a class="nav-label" href="pratiques-chantiers.html">Pratiques / Chantiers</a>
+      <a class="nav-label" href="annexes.html">Annexes</a>
+      <a class="nav-label" href="surprise.html">Surprise</a>
+      <a class="nav-label active" href="contact.html">Contact</a>
+    </nav>
   </div>
 </header>
 
 <main class="wrap">
-  <div class="contact-card-container">
-    <!-- Photo de la carte de visite -->
-    <div class="business-card-img">
-      <img src="projects/img/carte-visite/carte-visite-1.png" alt="Carte de visite Nina Lê" width="500" height="350">
+  <div class="contact-grid-3col">
+    <!-- Colonne 1 : vide pour créer la structure 3 colonnes -->
+    <div class="col-left"></div>
+
+    <!-- Colonne 2 (Centrale) : contient la carte et les infos -->
+    <div class="col-center">
+      <!-- Photo de la carte de visite -->
+      <div class="business-card-img">
+        <img src="img/carte-de-visite.jpg" alt="Carte de visite Nina Lê" width="600" height="400">
+      </div>
+
+      <!-- Bloc texte de 4cm de large, situé 1cm sous l'image -->
+      <div class="contact-info-block">
+        <p>
+          Nina Lê<br>
+          Architecte DE<br>
+          <a href="mailto:ninalanchi.le@gmail.com">ninalanchi.le@gmail.com</a><br>
+          +33 (0)7 82 22 93 13<br>
+          Paris, France
+        </p>
+      </div>
     </div>
 
-    <!-- Bloc texte de 4cm de large, situé 1cm sous l'image -->
-    <div class="contact-info-block">
-      <p>
-        Nina Lê<br>
-        Architecte / Artiste<br>
-        <a href="mailto:contact@ninale.com">contact@ninale.com</a><br>
-        +33 (0)6 00 00 00 00<br>
-        Paris, France
-      </p>
-    </div>
+    <!-- Colonne 3 : vide pour équilibrer la grille -->
+    <div class="col-right"></div>
   </div>
 </main>
 
