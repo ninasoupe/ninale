@@ -47,9 +47,10 @@ a {
 
 /* Conteneur principal avec marge inférieure de 3cm */
 .wrap {
-  max-width: 1320px;
-  margin: 0 auto 3cm;
-  padding: 0 48px;
+  width: calc(100% - 2cm); /* Prend 100% de l'écran moins 1cm de chaque côté */
+  max-width: none;         /* Supprime la limite de largeur à 1320px */
+  margin: 0 auto 3cm;      /* Centre le contenu horizontalement et garde la marge de 3cm en bas */
+  padding: 0;              /* Supprime les paddings internes pour un calage exact */
 }
 
 /* ---------- Header / Nav ---------- */
