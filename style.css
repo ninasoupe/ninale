@@ -11,8 +11,6 @@
   --line: #111111;
   --hand: 'Cormorant Garamond', serif;
   --sans: 'Cormorant Garamond', serif;
-  
-  /* Toutes les variantes de police utilisent désormais Cormorant Garamond */
   --mono-light: 'Cormorant Garamond', serif;
 }
 
@@ -20,17 +18,21 @@
   box-sizing: border-box; 
 }
 
+/* Force la présence de la barre de défilement pour éviter les décalages d'une page à l'autre */
 html { 
   scroll-behavior: smooth; 
+  overflow-y: scroll;
+  width: 100%;
 }
 
 body {
   margin: 0;
+  width: 100%;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
   font-weight: 300;
-  font-size: 19px; /* Taille légèrement augmentée pour la lisibilité de Cormorant Garamond */
+  font-size: 19px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -45,12 +47,12 @@ a {
   text-decoration: none; 
 }
 
-/* Conteneur principal avec marge inférieure de 3cm */
+/* Conteneur principal : Pleine largeur avec 1cm de marge à gauche et à droite */
 .wrap {
-  width: calc(100% - 2cm); /* Prend 100% de l'écran moins 1cm de chaque côté */
-  max-width: none;         /* Supprime la limite de largeur à 1320px */
-  margin: 0 auto 3cm;      /* Centre le contenu horizontalement et garde la marge de 3cm en bas */
-  padding: 0;              /* Supprime les paddings internes pour un calage exact */
+  width: calc(100% - 2cm);
+  max-width: none;
+  margin: 0 auto 3cm;
+  padding: 0;
 }
 
 /* ---------- Header / Nav ---------- */
@@ -61,7 +63,7 @@ header.site {
   top: 0;
   z-index: 500;
   background: transparent;
-  font-family: var(--mono-light); /* Application globale à tout le header */
+  font-family: var(--mono-light);
 }
 
 header.site .wrap {
@@ -72,13 +74,13 @@ header.site .wrap {
   align-items: center;
 }
 
-/* Navigation équidistante sur toute la longueur du bandeau */
+/* Navigation avec espacements stricts et fixes */
 header.site nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  margin-left: 3rem;
+  gap: 2.5rem;
+  margin-left: auto;
+  width: auto;
 }
 
 /* Style du Logo [N] */
@@ -117,19 +119,26 @@ header.site nav {
   text-decoration: none;
 }
 
-/* Lien INACTIF : insère [    ] avec 4 espaces insécables */
+/* Stabilisation de la largeur des crochets [    ] et [ ● ] */
 .nav-label::before {
-  content: "[\00a0\00a0\00a0\00a0]";
+  display: inline-block;
+  width: 2.4ch;
+  text-align: center;
   white-space: pre;
 }
 
-/* Lien ACTIF : affiche [ ● ] */
+/* Lien INACTIF */
+.nav-label:not(.active)::before {
+  content: "[\00a0\00a0\00a0\00a0]";
+}
+
+/* Lien ACTIF */
 .nav-label.active::before {
   content: "[\2009●\2009]";
   font-weight: 400;
 }
 
-/* Effet au survol uniquement pour les liens non actifs */
+/* Survol */
 .nav-label:hover:not(.active) {
   text-decoration: underline;
 }
@@ -166,6 +175,7 @@ header.site nav {
   grid-template-columns: repeat(3, 1fr);
   gap: 40px 32px;
   align-items: start;
+  width: 100%;
 }
 
 .image-grid a {
@@ -189,8 +199,9 @@ header.site nav {
   grid-template-columns: repeat(2, 1fr); 
 }
 
-/* Masonry grid — 3 colonnes, ratios naturels des images */
+/* Masonry grid — 3 colonnes pleine largeur */
 .masonry {
+  width: 100%;
   column-count: 3;
   column-gap: 0.5cm;
 }
@@ -215,7 +226,7 @@ header.site nav {
   transform: scale(1.03);
 }
 
-/* Ratios personnalisés pour variabilité visuelle */
+/* Ratios personnalisés */
 .image-grid a.tall img { aspect-ratio: 3 / 4.3; height: auto; }
 .image-grid a.wide img { aspect-ratio: 4 / 3; height: auto; }
 .image-grid a.square img { aspect-ratio: 1 / 1; height: auto; }
@@ -388,10 +399,6 @@ footer.site .wrap {
     grid-template-columns: 1fr; 
   }
 
-  .wrap { 
-    padding: 0 22px; 
-  }
-
   .nav-label { 
     font-size: 17px; 
   }
@@ -410,6 +417,7 @@ footer.site .wrap {
     margin-left: 0;
     width: 100%;
     justify-content: space-around;
+    gap: 1rem;
   }
 }
 
@@ -420,7 +428,7 @@ footer.site .wrap {
   }
 }
 
-/* ---------- Curseur personnalisé : lentille négative ---------- */
+/* ---------- Curseur personnalisé ---------- */
 
 #custom-cursor {
   position: fixed;
