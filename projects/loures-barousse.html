@@ -48,15 +48,14 @@
     .project-body-col {
       display: flex;
       flex-direction: column;
+      /* Aligne le début du paragraphe exactement sous la hauteur du titre (16px * 1.2 + 0.5rem gap) */
+      padding-top: calc(16px * 1.2 + 0.5rem);
     }
 
     .project-body {
       font-size: 11px;
       line-height: 1.7;
       border-top: none;
-      padding-top: 0;
-      /* Ajustement vertical : débute 1 ligne sous l'année */
-      margin-top: calc(16px + 0.5rem + (11px * 1.6));
     }
 
     .project-body p {
@@ -99,15 +98,15 @@
       display: block;
     }
 
-    /* Responsive : adaptation pour mobile */
+    /* Responsive : adaptation mobile et tablettes */
     @media (max-width: 900px) {
       .project-info {
         grid-template-columns: 1fr;
         gap: 1.5rem;
       }
 
-      .project-body {
-        margin-top: 0;
+      .project-body-col {
+        padding-top: 0;
       }
     }
 
@@ -133,10 +132,9 @@
 
 <header class="site">
   <div class="wrap">
-    <!-- Remonter d'un dossier pour retourner à la racine -->
     <div class="logo"><a href="../index.html">[N]</a></div>
     <nav>
-      <a class="nav-label" href="../index.html">Architectures</a>
+      <a class="nav-label active" href="../index.html">Architectures</a>
       <a class="nav-label" href="../pratiques-chantiers.html">Pratiques / Chantiers</a>
       <a class="nav-label" href="../annexes.html">Annexes</a>
       <a class="nav-label" href="../surprise.html">Surprise</a>
@@ -167,7 +165,7 @@
           <p>Pourquoi ne pas offrir l’espace public à la liberté offerte à l’enfance? C’est en voyant des enfants jouer spontanément sur un muret d’autrefois qu’est née l’intervention : le dessin d’un tracé de pierre locale qui serpente à travers le site. En métamorphosant ce campus en un jardin commun reliant la gare, les écoles et la Maison Cachia restaurée, cette ligne minérale efface les frontières pour retisser du lien. En se déployant face à la montagne, ce muret de pierre dépasse sa fonction d’obstacle pour réintégrer le paysage au cœur de l’expérience quotidienne.</p>
         </div>
 
-        <a class="back-link" href="../architecture.html">← Retour !</a>
+        <a class="back-link" href="../index.html">← Retour</a>
       </div>
 
     </div>
