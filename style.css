@@ -49,7 +49,7 @@ a {
 
 /* Conteneur principal : Pleine largeur avec 1cm de marge à gauche et à droite */
 .wrap {
-  width: calc(100% - 2cm);
+  width: calc(100% - 4cm);
   max-width: none;
   margin: 0 auto 3cm;
   padding: 0;
