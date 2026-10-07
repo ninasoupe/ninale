@@ -1,52 +1,45 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Nina Lê</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Nina Lê</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="site">
   <div class="wrap">
     <div class="logo"><a href="index.html">[N]</a></div>
-    <a class="nav-label" href="architectures.html">Architectures</a>
-    <a class="nav-label" href="pratiques-chantiers.html">Pratiques / Chantiers</a>
-    <a class="nav-label" href="annexes.html">Annexes</a>
-    <a class="nav-label" href="surprise.html">Surprise</a>
-    <a class="nav-label active" href="contact.html">Contact</a>
+    <nav>
+      <a class="nav-label" href="architectures.html">Architectures</a>
+      <a class="nav-label" href="pratiques-chantiers.html">Pratiques / Chantiers</a>
+      <a class="nav-label" href="annexes.html">Annexes</a>
+      <a class="nav-label" href="surprise.html">Surprise</a>
+      <a class="nav-label active" href="contact.html">Contact</a>
+    </nav>
   </div>
 </header>
 
-<div class="wrap">
-  <div class="contact-wrap">
-    <div>
-      <div class="section-head" style="padding-bottom:18px;"><h1>Contact</h1></div>
-      <p class="intro">Pour un projet, une collaboration ou simplement échanger — n'hésitez pas à écrire.</p>
+<main class="wrap">
+  <div class="contact-card-container">
+    <!-- Photo de la carte de visite -->
+    <div class="business-card-img">
+      <img src="img/carte-de-visite.jpg" alt="Carte de visite Nina Lê" width="600" height="400">
     </div>
-    <dl class="contact-list">
-      <dt>Email</dt>
-      <dd><a href="mailto:bonjour@ninale.fr">bonjour@ninale.fr</a></dd>
 
-      <dt>Téléphone</dt>
-      <dd><a href="tel:+330000000000">+33 0 00 00 00 00</a></dd>
-
-      <dt>Instagram</dt>
-      <dd><a href="https://instagram.com/" target="_blank" rel="noopener">@ninale.studio</a></dd>
-
-      <dt>Basée à</dt>
-      <dd>Paris, France</dd>
-    </dl>
+    <!-- Bloc texte de 4cm de large, situé 1cm sous l'image -->
+    <div class="contact-info-block">
+      <p>
+        Nina Lê<br>
+        Architecte / Artiste<br>
+        <a href="mailto:contact@ninale.com">contact@ninale.com</a><br>
+        +33 (0)6 00 00 00 00<br>
+        Paris, France
+      </p>
+    </div>
   </div>
-</div>
-
-<footer class="site">
-  <div class="wrap">
-    <div>Nina Lê</div>
-    <div>© 2026</div>
-  </div>
-</footer>
+</main>
 
 <div id="custom-cursor"></div>
 <script src="cursor.js"></script>
