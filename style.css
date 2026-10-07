@@ -312,49 +312,56 @@ header.site nav {
   transform: rotate(-1deg);
 }
 
-/* ---------- Page Contact Uniquement (3 Colonnes Égales) ---------- */
+/* ---------- Page Contact Uniquement (3 Colonnes Égales & Centrage Parfait) ---------- */
 
 .contact-grid-3col {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 colonnes de largeur strictement égale */
-  gap: 0.5cm;                           /* Alignement cohérent avec la grille du site */
+  gap: 0.5cm;                           /* Alignement cohérent avec le reste du site */
   width: 100%;
   padding-top: 1cm;
   align-items: start;
 }
 
+/* La colonne 2 centrale devient un conteneur centré */
 .col-center {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centre l'image et le texte dans la colonne centrale */
+  align-items: center;    /* Centre horizontalement tous les enfants (image + texte) */
+  justify-content: center;
   width: 100%;
+  margin: 0 auto;         /* Centrage absolu au milieu de la colonne */
+  text-align: center;
 }
 
 .business-card-img {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .business-card-img img {
   width: 100%;
+  max-width: 100%;
   height: auto;
   object-fit: contain;
   display: block;
+  margin: 0 auto;         /* Centrage propre de l'image */
 }
 
 .contact-info-block {
-  margin-top: 1cm;     /* Espacement exact de 1cm sous l'image */
-  width: 4cm;          /* Largeur stricte du bloc texte */
-  max-width: 100%;
-  text-align: center;  /* Texte centré */
+  margin-top: 1cm;        /* Espacement exact de 1cm sous l'image */
+  max-width: 100%;        /* Supprime la contrainte rigide pour permettre un centrage parfait */
+  text-align: center;     /* Aligne le texte au centre */
   font-size: 15px;
   line-height: 1.5;
   color: var(--ink-soft);
 }
 
 .contact-info-block p {
-  margin: 0;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .contact-info-block a {
