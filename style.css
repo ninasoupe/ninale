@@ -1,7 +1,7 @@
 /* Nina Lê — Portfolio
    Dessiné à la main, noir & blanc, grille d'images pures */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Hubballi&family=Inter:wght@300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
   --paper: #ffffff;
@@ -11,6 +11,9 @@
   --line: #111111;
   --hand: 'Inter', -apple-system, sans-serif;
   --sans: 'Inter', -apple-system, sans-serif;
+  
+  /* Police Hubbuch / Équivalent Monospace Light */
+  --mono-light: 'Hubbuch', 'DM Mono', 'Space Mono', monospace;
 }
 
 * { 
@@ -61,7 +64,7 @@ header.site {
 
 header.site .wrap {
   height: 100%;
-  margin-bottom: 0; /* Évite d'appliquer la marge sous le header */
+  margin-bottom: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,19 +73,19 @@ header.site .wrap {
 /* Navigation équidistante sur toute la longueur du bandeau */
 header.site nav {
   display: flex;
-  justify-content: space-between; /* Distribue l'espace égal entre tous les liens */
+  justify-content: space-between;
   align-items: center;
-  width: 100%;                    /* Étend le menu sur toute la longueur */
-  margin-left: 3rem;              /* Espace minimal entre le logo [N] et le premier lien */
+  width: 100%;
+  margin-left: 3rem;
 }
 
 /* Normalisation du logo */
 .logo {
   display: inline-flex;
   align-items: center;
-  font-family: var(--hand);
-  font-size: 22px;
+  font-family: var(--mono-light);
   font-weight: 300;
+  font-size: 22px;
   line-height: 1;
   color: var(--ink);
   margin: 0;
@@ -95,13 +98,14 @@ header.site nav {
   text-decoration: none; 
 }
 
-/* Style des liens de navigation avec police monospace pour alignement parfait */
+/* Style des liens avec police monospace light pour un alignement parfait */
 .nav-label {
   display: inline-flex;
   align-items: center;
   gap: 0.45em;
-  font-family: monospace, var(--hand); /* Polices à largeur fixe pour un [ ] égal à [●] */
-  font-size: 18px;
+  font-family: var(--mono-light);
+  font-weight: 300; /* Force le rendu ultra-light */
+  font-size: 17px;
   line-height: 1;
   color: var(--ink);
   margin: 0;
@@ -111,16 +115,16 @@ header.site nav {
   text-decoration: none;
 }
 
-/* Lien INACTIF : réserve la place [   ] pour éviter les sauts de mise en page */
+/* Lien INACTIF : insère [    ] avec 4 espaces insécables */
 .nav-label::before {
-  content: "[\00a0\00a0]";
+  content: "[\00a0\00a0\00a0\00a0]";
   white-space: pre;
 }
 
 /* Lien ACTIF : affiche [ ● ] */
 .nav-label.active::before {
   content: "[\2009●\2009]";
-  font-weight: bold;
+  font-weight: 400;
 }
 
 /* Effet au survol uniquement pour les liens non actifs */
@@ -128,7 +132,6 @@ header.site nav {
   text-decoration: underline;
 }
 
-/* Reset des anciens marqueurs */
 .nav-label.active::after {
   content: "";
 }
@@ -388,7 +391,7 @@ footer.site .wrap {
   }
 
   .nav-label { 
-    font-size: 16px; 
+    font-size: 15px; 
   }
 
   .logo { 
