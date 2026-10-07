@@ -18,16 +18,18 @@
   box-sizing: border-box; 
 }
 
-/* Force la présence de la barre de défilement pour éviter les décalages d'une page à l'autre */
+/* Force la présence de la barre de défilement pour éviter les décalages entre les pages */
 html { 
   scroll-behavior: smooth; 
-  overflow-y: scroll;
-  width: 100%;
+  overflow-y: scroll !important;
+  width: 100% !important;
 }
 
 body {
-  margin: 0;
-  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
@@ -47,12 +49,18 @@ a {
   text-decoration: none; 
 }
 
-/* Conteneur principal : Pleine largeur avec 1cm de marge à gauche et à droite */
+/* ==========================================================================
+   Conteneur principal : Pleine largeur avec EXACTEMENT 2cm de marge à gauche et à droite
+   ========================================================================== */
 .wrap {
-  width: calc(100% - 4cm);
-  max-width: none;
-  margin: 0 auto 3cm;
-  padding: 0;
+  width: calc(100% - 4cm) !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 0 !important;
+  margin-bottom: 3cm !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 /* ---------- Header / Nav ---------- */
@@ -68,7 +76,7 @@ header.site {
 
 header.site .wrap {
   height: 100%;
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -367,7 +375,7 @@ footer.site {
 }
 
 footer.site .wrap {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
   display: flex;
   justify-content: space-between;
 }
