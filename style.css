@@ -111,15 +111,15 @@ header.site nav {
   text-decoration: none;
 }
 
-/* Lien INACTIF : insère [    ] avec 4 espaces insecables */
+/* Lien INACTIF : réserve la place [   ] pour éviter les sauts de mise en page */
 .nav-label::before {
-  content: "[\00a0]";
+  content: "[\00a0\00a0]";
   white-space: pre;
 }
 
-/* Lien ACTIF : remplace par [ ● ] */
+/* Lien ACTIF : affiche [ ● ] */
 .nav-label.active::before {
-  content: "[●]";
+  content: "[\2009●\2009]";
   font-weight: bold;
 }
 
