@@ -1,5 +1,5 @@
 /* Nina Lê — Portfolio
-   Dessiné à la hand, noir & blanc, grille d'images pures */
+   Dessiné à la main, noir & blanc, grille d'images pures */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
@@ -67,22 +67,22 @@ header.site .wrap {
   align-items: center;
 }
 
-/* Distribue équitablement les liens de navigation dans tout l'espace du bandeau */
+/* Navigation équidistante sur toute la longueur du bandeau */
 header.site nav {
   display: flex;
   justify-content: space-between; /* Distribue l'espace égal entre tous les liens */
   align-items: center;
-  width: 100%;                    /* Étend le menu sur toute la longueur du conteneur */
+  width: 100%;                    /* Étend le menu sur toute la longueur */
   margin-left: 3rem;              /* Espace minimal entre le logo [N] et le premier lien */
 }
 
-/* Normalisation du logo et des liens */
-.logo,
-.nav-label {
+/* Normalisation du logo */
+.logo {
   display: inline-flex;
   align-items: center;
   font-family: var(--hand);
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: 300;
   line-height: 1;
   color: var(--ink);
   margin: 0;
@@ -90,19 +90,37 @@ header.site nav {
   white-space: nowrap;
 }
 
-.logo {
-  font-weight: 300;
-  font-size: 22px;
-}
-
 .logo a { 
   color: var(--ink); 
   text-decoration: none; 
 }
 
+/* Style des liens de navigation avec police monospace pour alignement parfait */
 .nav-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-family: monospace, var(--hand); /* Polices à largeur fixe pour un [    ] égal à [ ● ] */
+  font-size: 18px;
+  line-height: 1;
+  color: var(--ink);
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
   letter-spacing: 0.03em;
   text-decoration: none;
+}
+
+/* Lien INACTIF : insère [    ] avec 4 espaces insecables */
+.nav-label::before {
+  content: "[\00a0\00a0\00a0\00a0]";
+  white-space: pre;
+}
+
+/* Lien ACTIF : remplace par [ ● ] */
+.nav-label.active::before {
+  content: "[\00a0●\00a0]";
+  font-weight: bold;
 }
 
 /* Effet au survol uniquement pour les liens non actifs */
@@ -110,17 +128,9 @@ header.site nav {
   text-decoration: underline;
 }
 
-/* Lien actif : parenthèses automatiques, conserve sa taille (20px) */
-.nav-label.active {
-  text-decoration: none;
-}
-
-.nav-label.active::before {
-  content: "(";
-}
-
+/* Reset des anciens marqueurs */
 .nav-label.active::after {
-  content: ")";
+  content: "";
 }
 
 /* ---------- Section Intro (Catégories / À propos) ---------- */
@@ -378,7 +388,7 @@ footer.site .wrap {
   }
 
   .nav-label { 
-    font-size: 18px; 
+    font-size: 16px; 
   }
 
   .logo { 
