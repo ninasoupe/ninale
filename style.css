@@ -317,7 +317,7 @@ header.site nav {
 .contact-grid-3col {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 colonnes de largeur strictement égale */
-  gap: 0.5cm;                           /* Alignement cohérent avec le reste du site */
+  gap: 0.5cm;                           /* Alignement cohérent avec la grille du site */
   width: 100%;
   padding-top: 1cm;
   align-items: start;
@@ -407,7 +407,7 @@ footer.site .wrap {
   }
 
   .contact-grid-3col {
-    grid-template-columns: 1fr; /* Bascule sur 1 seule colonne centré sur mobile */
+    grid-template-columns: 1fr; /* Bascule sur 1 seule colonne centrée sur mobile */
   }
 
   .col-left, .col-right {
@@ -470,15 +470,4 @@ footer.site .wrap {
   height: 14px;
   border-radius: 50%;
   pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  backdrop-filter: invert(1) grayscale(1);
-  -webkit-backdrop-filter: invert(1) grayscale(1);
-}
-
-body.has-custom-cursor,
-body.has-custom-cursor * {
-  cursor: none;
-}
+  z-index: 9999
