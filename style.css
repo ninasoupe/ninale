@@ -66,13 +66,13 @@ header.site .wrap {
   align-items: center;
 }
 
-/* Distribue les liens de navigation avec un espacement rigoureusement égal (gap) */
+/* Étend la navigation sur toute la largeur restante jusqu'au bord droit du bandeau */
 header.site nav {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 2.5rem;        /* Distance fixe et égale entre chaque bouton du menu */
-  margin-left: 3rem;  /* Espace entre le logo et le premier lien */
+  justify-content: space-between; /* Distribue l'espace égal entre tous les liens */
+  flex: 1;                        /* S'étend sur toute la longueur disponible */
+  margin-left: 3rem;              /* Espace entre le logo [N] et le premier lien */
 }
 
 /* Normalisation du logo et des liens */
@@ -394,7 +394,6 @@ footer.site .wrap {
     margin-left: 0;
     width: 100%;
     justify-content: space-around;
-    gap: 1rem;
   }
 }
 
