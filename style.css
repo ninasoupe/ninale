@@ -137,12 +137,12 @@ header.site nav {
 
 /* Lien INACTIF */
 .nav-label:not(.active)::before {
-  content: "[\00a0\00a0\00a0\00a0]";
+  content: "[\00a0\00a0\00a0\00a0]\2009";
 }
 
 /* Lien ACTIF */
 .nav-label.active::before {
-  content: "[\2009●\2009]";
+  content: "[\2009●\2009]\2009";
   font-weight: 400;
 }
 
