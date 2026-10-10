@@ -114,7 +114,6 @@ header.site nav {
 .nav-label {
   display: inline-flex;
   align-items: center;
-  gap: 0.45em;
   font-family: var(--mono-light);
   font-weight: 300;
   font-size: 19px;
@@ -127,32 +126,25 @@ header.site nav {
   text-decoration: none;
 }
 
-/* Stabilisation de la largeur des crochets [    ] et [ ● ] */
+/* Pseudo-élément pour la parenthèse ouvrante '(' */
 .nav-label::before {
-  display: inline-block;
-  width: 2.4ch;
-  text-align: center;
-  white-space: pre;
+  content: "";
+  display: inline;
 }
 
-/* Lien INACTIF */
-.nav-label:not(.active)::before {
-  content: "[\00a0\00a0\00a0\00a0]\2009";
-}
-
-/* Lien ACTIF */
+/* Lien ACTIF : Ajoute '( ' avant le mot */
 .nav-label.active::before {
-  content: "[\2009●\2009]\2009";
-  font-weight: 400;
+  content: "(\00a0";
 }
 
-/* Survol */
+/* Lien ACTIF : Ajoute ' )' après le mot */
+.nav-label.active::after {
+  content: "\00a0)";
+}
+
+/* Survol pour liens inactifs */
 .nav-label:hover:not(.active) {
   text-decoration: underline;
-}
-
-.nav-label.active::after {
-  content: "";
 }
 
 /* ---------- Section Intro (Catégories / À propos) ---------- */
@@ -477,4 +469,15 @@ footer.site .wrap {
   height: 14px;
   border-radius: 50%;
   pointer-events: none;
-  z-index: 9999
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  backdrop-filter: invert(1) grayscale(1);
+  -webkit-backdrop-filter: invert(1) grayscale(1);
+}
+
+body.has-custom-cursor,
+body.has-custom-cursor * {
+  cursor: none;
+}
