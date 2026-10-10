@@ -1,54 +1,83 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Surprise — Nina Lê</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surprise — Nina Lê</title>
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
 <header class="site">
   <div class="wrap">
     <div class="logo"><a href="index.html">[N]</a></div>
-    <a class="nav-label" href="architectures.html">Architectures</a>
-    <a class="nav-label" href="pratiques-chantiers.html">Pratiques / Chantiers</a>
-    <a class="nav-label" href="annexes.html">Annexes</a>
-    <a class="nav-label active" href="surprise.html">Surprise</a>
-    <a class="nav-label" href="contact.html">Contact</a>
+    <nav>
+      <a class="nav-label" href="architectures.html">Architectures</a>
+      <a class="nav-label" href="pratiques-chantiers.html">Pratiques / Chantiers</a>
+      <a class="nav-label" href="annexes.html">Annexes</a>
+      <a class="nav-label active" href="surprise.html">Surprise</a>
+      <a class="nav-label" href="contact.html">Contact</a>
+    </nav>
   </div>
 </header>
 
-<div class="wrap">
-  <div class="section-head">
-    <h1>Surprise</h1>
-    <p>Une catégorie transversale — les projets qui ne rentrent pas dans une seule case, ou qui méritent d'être regardés autrement. Un projet peut appartenir à Surprise en plus d'Architecture, Design ou Photo.</p>
+<main class="wrap surprise-main">
+  <div class="window-container">
+    <p class="window-hint">Ouvrir la fenêtre</p>
+
+    <!-- Fenêtre de 60x90mm -->
+    <div class="window-frame" id="surpriseWindow" onclick="openSurpriseWindow()">
+      
+      <!-- Contenu révélé (Projet aléatoire) -->
+      <a href="#" id="projectLink" class="window-reveal-content">
+        <img id="projectImage" src="" alt="Projet aléatoire">
+        <span id="projectTitle" class="window-project-title"></span>
+      </a>
+
+      <!-- Volets fermés -->
+      <div class="shutter shutter-left"></div>
+      <div class="shutter shutter-right"></div>
+    </div>
+
+    <!-- Action pour relancer un tirage -->
+    <button id="anotherBtn" class="another-btn" onclick="getRandomProject()">Découvrir un autre projet</button>
   </div>
-</div>
-
-<div class="wrap">
-  <div class="image-grid two-col">
-
-    <a href="projects/design-mobilier-brut.html">
-      <img src="https://picsum.photos/seed/nina-design-2/1400/1000" alt="Mobilier Brut">
-    </a>
-
-    <a href="projects/photo-portraits.html">
-      <img src="https://picsum.photos/seed/nina-photo-2/1400/1000" alt="Portraits d'atelier">
-    </a>
-
-  </div>
-</div>
-
-<footer class="site">
-  <div class="wrap">
-    <div>Nina Lê</div>
-    <div>© 2026</div>
-  </div>
-</footer>
+</main>
 
 <div id="custom-cursor"></div>
 <script src="cursor.js"></script>
+
+<script>
+  // Liste de tes projets de l'index (à ajuster selon tes vrais chemins d'images et liens)
+  const projects = [
+    { title: "Projet 01", img: "projects/img/projet-1.jpg", url: "projet-1.html" },
+    { title: "Projet 02", img: "projects/img/projet-2.jpg", url: "projet-2.html" },
+    { title: "Projet 03", img: "projects/img/projet-3.jpg", url: "projet-3.html" },
+    { title: "Projet 04", img: "projects/img/projet-4.jpg", url: "projet-4.html" },
+    { title: "Projet 05", img: "projects/img/projet-5.jpg", url: "projet-5.html" }
+  ];
+
+  let isOpened = false;
+
+  function getRandomProject() {
+    const randomIndex = Math.floor(Math.random() * projects.length);
+    const selected = projects[randomIndex];
+
+    document.getElementById('projectImage').src = selected.img;
+    document.getElementById('projectTitle').innerText = selected.title;
+    document.getElementById('projectLink').href = selected.url;
+  }
+
+  function openSurpriseWindow() {
+    if (!isOpened) {
+      getRandomProject();
+      document.getElementById('surpriseWindow').classList.add('open');
+      document.querySelector('.window-hint').style.opacity = '0';
+      document.getElementById('anotherBtn').style.display = 'inline-block';
+      isOpened = true;
+    }
+  }
+</script>
 
 </body>
 </html>
