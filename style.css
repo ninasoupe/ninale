@@ -1,4 +1,257 @@
-/* ---------- Page Surprise Centrée avec Effet (Largeur Max 8cm) ---------- */
+/* Nina Lê — Portfolio
+   Dessiné à la main, noir & blanc, grille d'images pures */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+  --paper: #ffffff;
+  --paper-deep: #f2f2f0;
+  --ink: #111111;
+  --ink-soft: #5c5c5c;
+  --line: #111111;
+  --hand: 'Cormorant Garamond', serif;
+  --sans: 'Cormorant Garamond', serif;
+  --mono-light: 'Cormorant Garamond', serif;
+}
+
+* { 
+  box-sizing: border-box; 
+}
+
+/* Force la barre de défilement permanente */
+html { 
+  scroll-behavior: smooth; 
+  overflow-y: scroll !important;
+  width: 100% !important;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { 
+  max-width: 100%; 
+  display: block; 
+}
+
+a { 
+  color: inherit; 
+  text-decoration: none; 
+}
+
+/* ==========================================================================
+   Conteneur principal : Pleine largeur avec EXACTEMENT 2cm de marge
+   ========================================================================== */
+.wrap {
+  width: calc(100% - 4cm) !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 0 !important;
+  margin-bottom: 3cm !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* ---------- Header / Nav ---------- */
+
+header.site {
+  height: 3cm;
+  position: sticky;
+  top: 0;
+  z-index: 500;
+  background: transparent;
+  font-family: var(--mono-light);
+}
+
+header.site .wrap {
+  height: 100%;
+  margin-bottom: 0 !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header.site nav {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin-left: auto;
+  width: auto;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--mono-light);
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--ink);
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+/* ---------- Navigation : Liens Actifs entre Parenthèses ---------- */
+
+.nav-label {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--mono-light);
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 1;
+  color: var(--ink);
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+}
+
+/* Annule tout ancien pseudo-élément */
+.nav-label::before,
+.nav-label::after {
+  content: "" !important;
+  width: auto !important;
+  display: inline !important;
+}
+
+/* Mode ACTIF : ( catégorie ) */
+.nav-label.active::before {
+  content: "(\00a0" !important;
+}
+
+.nav-label.active::after {
+  content: "\00a0)" !important;
+}
+
+.nav-label:hover:not(.active) {
+  text-decoration: underline;
+}
+
+/* ---------- Grilles & Layouts ---------- */
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 32px;
+  align-items: start;
+  width: 100%;
+}
+
+.image-grid a {
+  display: block;
+  background: var(--paper-deep);
+  overflow: hidden;
+}
+
+.image-grid img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.image-grid a:hover img {
+  transform: scale(1.03);
+}
+
+.masonry {
+  width: 100%;
+  column-count: 3;
+  column-gap: 0.5cm;
+}
+
+.masonry a {
+  display: block;
+  margin-bottom: 0.5cm;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  background: var(--paper-deep);
+  overflow: hidden;
+}
+
+.masonry img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.masonry a:hover img {
+  transform: scale(1.03);
+}
+
+/* ---------- Page Contact Uniquement (3 Colonnes Égales) ---------- */
+
+.contact-grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 0.5cm;
+  width: 100%;
+  padding-top: 1cm;
+  align-items: start;
+}
+
+.col-center {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.business-card-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.business-card-img img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.contact-info-block {
+  margin-top: 1cm;
+  max-width: 100%;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.contact-info-block p {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-info-block a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Page Surprise (Largeur Max 8cm & Centrage) ---------- */
 
 .surprise-main {
   min-height: calc(100vh - 6cm);
@@ -16,29 +269,27 @@
   width: 100%;
 }
 
-/* Carte image centrée fixée à 8cm max */
 .surprise-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  width: 8cm;               /* Largeur cible de 8cm */
-  max-width: 100%;          /* Adaptation responsive si l'écran est très petit */
+  width: 8cm !important;
+  max-width: 100%;
   opacity: 0;
   transform: scale(0.92) translateY(12px) rotate(-1deg);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
               transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Effet d'apparition (Reveal) */
 .surprise-card.reveal {
-  opacity: 1;
-  transform: scale(1) translateY(0) rotate(0deg);
+  opacity: 1 !important;
+  transform: scale(1) translateY(0) rotate(0deg) !important;
 }
 
 .surprise-card img {
   width: 100%;
-  max-width: 8cm;           /* Limite stricte à 8cm de large */
+  max-width: 8cm !important;
   height: auto;
   object-fit: cover;
   border: 1px solid var(--ink);
@@ -46,12 +297,10 @@
   transition: transform 0.4s ease;
 }
 
-/* Survol de l'image */
 .surprise-card:hover img {
   transform: scale(1.03);
 }
 
-/* Titre sous l'image */
 .surprise-title {
   margin-top: 0.8rem;
   font-family: var(--hand);
@@ -61,7 +310,6 @@
   text-align: center;
 }
 
-/* Bouton pour changer d'image */
 .reload-btn {
   background: transparent;
   border: none;
@@ -76,4 +324,47 @@
 .reload-btn:hover {
   color: var(--ink);
   text-decoration: underline;
+}
+
+/* ---------- Footer & Responsive ---------- */
+
+footer.site {
+  border-top: 2px solid var(--line);
+  padding: 24px 0;
+  font-family: var(--hand);
+  font-size: 18px;
+}
+
+footer.site .wrap {
+  margin-bottom: 0 !important;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 860px) {
+  .contact-grid-3col {
+    grid-template-columns: 1fr !important;
+  }
+
+  .col-left, .col-right {
+    display: none;
+  }
+
+  .image-grid, .masonry {
+    grid-template-columns: repeat(2, 1fr);
+    column-count: 2;
+  }
+
+  header.site .wrap {
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  header.site nav {
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-around;
+    gap: 1rem;
+  }
 }
