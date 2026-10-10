@@ -1,483 +1,79 @@
-/* Nina Lê — Portfolio
-   Dessiné à la main, noir & blanc, grille d'images pures */
+/* ---------- Page Surprise Centrée avec Effet (Largeur Max 8cm) ---------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
-
-:root {
-  --paper: #ffffff;
-  --paper-deep: #f2f2f0;
-  --ink: #111111;
-  --ink-soft: #5c5c5c;
-  --line: #111111;
-  --hand: 'Cormorant Garamond', serif;
-  --sans: 'Cormorant Garamond', serif;
-  --mono-light: 'Cormorant Garamond', serif;
-}
-
-* { 
-  box-sizing: border-box; 
-}
-
-/* Force la présence de la barre de défilement pour éviter les décalages entre les pages */
-html { 
-  scroll-behavior: smooth; 
-  overflow-y: scroll !important;
-  width: 100% !important;
-}
-
-body {
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--sans);
-  font-weight: 300;
-  font-size: 19px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-img { 
-  max-width: 100%; 
-  display: block; 
-}
-
-a { 
-  color: inherit; 
-  text-decoration: none; 
-}
-
-/* ==========================================================================
-   Conteneur principal : Pleine largeur avec EXACTEMENT 2cm de marge à gauche et à droite
-   ========================================================================== */
-.wrap {
-  width: calc(100% - 4cm) !important;
-  max-width: none !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  margin-top: 0 !important;
-  margin-bottom: 3cm !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-/* ---------- Header / Nav ---------- */
-
-header.site {
-  height: 3cm;
-  position: sticky;
-  top: 0;
-  z-index: 500;
-  background: transparent;
-  font-family: var(--mono-light);
-}
-
-header.site .wrap {
-  height: 100%;
-  margin-bottom: 0 !important;
+.surprise-main {
+  min-height: calc(100vh - 6cm);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
-/* Navigation avec espacements stricts et fixes */
-header.site nav {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-  margin-left: auto;
-  width: auto;
-}
-
-/* Style du Logo [N] */
-.logo {
-  display: inline-flex;
-  align-items: center;
-  font-family: var(--mono-light);
-  font-weight: 300;
-  font-size: 22px;
-  line-height: 1;
-  color: var(--ink);
-  margin: 0;
-  padding: 0;
-  white-space: nowrap;
-}
-
-.logo a { 
-  color: var(--ink); 
-  text-decoration: none; 
-}
-
-/* Style des liens de navigation */
-.nav-label {
-  display: inline-flex;
-  align-items: center;
-  font-family: var(--mono-light);
-  font-weight: 300;
-  font-size: 19px;
-  line-height: 1;
-  color: var(--ink);
-  margin: 0;
-  padding: 0;
-  white-space: nowrap;
-  letter-spacing: 0.03em;
-  text-decoration: none;
-}
-
-/* Pseudo-élément pour la parenthèse ouvrante '(' */
-.nav-label::before {
-  content: "";
-  display: inline;
-}
-
-/* Lien ACTIF : Ajoute '( ' avant le mot */
-.nav-label.active::before {
-  content: "(\00a0";
-}
-
-/* Lien ACTIF : Ajoute ' )' après le mot */
-.nav-label.active::after {
-  content: "\00a0)";
-}
-
-/* Survol pour liens inactifs */
-.nav-label:hover:not(.active) {
-  text-decoration: underline;
-}
-
-/* ---------- Section Intro (Catégories / À propos) ---------- */
-
-.section-head {
-  padding: 10px 0 40px;
-}
-
-.section-head h1 {
-  font-family: var(--hand);
-  font-weight: 300;
-  font-size: clamp(34px, 5vw, 58px);
-  margin: 0 0 14px;
-  transform: rotate(-1deg);
-  display: inline-block;
-}
-
-.section-head p {
-  max-width: 56ch;
-  color: var(--ink-soft);
-  margin: 0;
-}
-
-/* ---------- Grilles d'images ---------- */
-
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px 32px;
-  align-items: start;
-  width: 100%;
-}
-
-.image-grid a {
-  display: block;
-  background: var(--paper-deep);
-  overflow: hidden;
-}
-
-.image-grid img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.image-grid a:hover img {
-  transform: scale(1.03);
-}
-
-.image-grid.two-col { 
-  grid-template-columns: repeat(2, 1fr); 
-}
-
-/* Masonry grid — 3 colonnes pleine largeur */
-.masonry {
-  width: 100%;
-  column-count: 3;
-  column-gap: 0.5cm;
-}
-
-.masonry a {
-  display: block;
-  margin-bottom: 0.5cm;
-  break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  background: var(--paper-deep);
-  overflow: hidden;
-}
-
-.masonry img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.5s ease;
-}
-
-.masonry a:hover img {
-  transform: scale(1.03);
-}
-
-/* Ratios personnalisés */
-.image-grid a.tall img { aspect-ratio: 3 / 4.3; height: auto; }
-.image-grid a.wide img { aspect-ratio: 4 / 3; height: auto; }
-.image-grid a.square img { aspect-ratio: 1 / 1; height: auto; }
-
-/* ---------- Page Projet ---------- */
-
-.project-hero { 
-  padding: 10px 0 0; 
-}
-
-.project-hero img {
-  width: 100%;
-  height: 62vh;
-  min-height: 340px;
-  object-fit: cover;
-}
-
-.project-meta {
-  padding: 44px 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  border-bottom: 2px solid var(--line);
-}
-
-.project-meta .cat {
-  font-family: var(--hand);
-  font-weight: 300;
-  font-size: 19px;
-  margin-bottom: 10px;
-  transform: rotate(-1deg);
-  display: inline-block;
-}
-
-.project-meta h1 {
-  font-family: var(--hand);
-  font-weight: 300;
-  font-size: 42px;
-  margin: 0;
-  line-height: 1.15;
-}
-
-.project-meta .facts {
-  font-size: 16px;
-  color: var(--ink-soft);
-  line-height: 2;
-}
-
-.project-body {
-  padding: 46px 0 20px;
-  max-width: 62ch;
-}
-
-.gallery {
-  padding: 40px 0 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-.gallery img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-}
-
-.back-link {
-  display: inline-block;
-  margin: 36px 0 0;
-  font-family: var(--hand);
-  font-weight: 300;
-  font-size: 20px;
-  border-bottom: 2px solid var(--ink);
-  padding-bottom: 2px;
-  transform: rotate(-1deg);
-}
-
-/* ---------- Page Contact Uniquement (3 Colonnes Égales & Centrage Parfait) ---------- */
-
-.contact-grid-3col {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colonnes de largeur strictement égale */
-  gap: 0.5cm;                           /* Alignement cohérent avec le reste du site */
-  width: 100%;
-  padding-top: 1cm;
-  align-items: start;
-}
-
-/* La colonne 2 centrale devient un conteneur centré */
-.col-center {
+.surprise-container {
   display: flex;
   flex-direction: column;
-  align-items: center;    /* Centre horizontalement tous les enfants (image + texte) */
-  justify-content: center;
-  width: 100%;
-  margin: 0 auto;         /* Centrage absolu au milieu de la colonne */
-  text-align: center;
-}
-
-.business-card-img {
-  width: 100%;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
 }
 
-.business-card-img img {
+/* Carte image centrée fixée à 8cm max */
+.surprise-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  width: 8cm;               /* Largeur cible de 8cm */
+  max-width: 100%;          /* Adaptation responsive si l'écran est très petit */
+  opacity: 0;
+  transform: scale(0.92) translateY(12px) rotate(-1deg);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Effet d'apparition (Reveal) */
+.surprise-card.reveal {
+  opacity: 1;
+  transform: scale(1) translateY(0) rotate(0deg);
+}
+
+.surprise-card img {
   width: 100%;
-  max-width: 100%;
+  max-width: 8cm;           /* Limite stricte à 8cm de large */
   height: auto;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;         /* Centrage propre de l'image */
-}
-
-.contact-info-block {
-  margin-top: 1cm;        /* Espacement exact de 1cm sous l'image */
-  max-width: 100%;        /* Supprime la contrainte rigide pour permettre un centrage parfait */
-  text-align: center;     /* Aligne le texte au centre */
-  font-size: 15px;
-  line-height: 1.5;
-  color: var(--ink-soft);
-}
-
-.contact-info-block p {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.contact-info-block a {
-  color: var(--ink);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-/* ---------- Page About / Anciens styles ---------- */
-
-.about-wrap {
-  padding: 10px 0 0;
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 60px;
-}
-
-.about-wrap img {
-  width: 100%;
-  aspect-ratio: 3/4;
   object-fit: cover;
+  border: 1px solid var(--ink);
+  background: var(--paper-deep);
+  transition: transform 0.4s ease;
 }
 
-.about-wrap .body p { 
-  color: var(--ink-soft); 
+/* Survol de l'image */
+.surprise-card:hover img {
+  transform: scale(1.03);
 }
 
-/* ---------- Footer ---------- */
-
-footer.site {
-  border-top: 2px solid var(--line);
-  padding: 24px 0;
+/* Titre sous l'image */
+.surprise-title {
+  margin-top: 0.8rem;
   font-family: var(--hand);
   font-size: 18px;
+  color: var(--ink);
+  letter-spacing: 0.03em;
+  text-align: center;
 }
 
-footer.site .wrap {
-  margin-bottom: 0 !important;
-  display: flex;
-  justify-content: space-between;
+/* Bouton pour changer d'image */
+.reload-btn {
+  background: transparent;
+  border: none;
+  font-family: var(--mono-light);
+  font-size: 16px;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: color 0.2s ease;
+  margin-top: 0.5rem;
 }
 
-/* ---------- Responsive ---------- */
-
-@media (max-width: 860px) {
-  .project-meta, 
-  .about-wrap {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .contact-grid-3col {
-    grid-template-columns: 1fr; /* Bascule sur 1 seule colonne centrée sur mobile */
-  }
-
-  .col-left, .col-right {
-    display: none;
-  }
-
-  .image-grid { 
-    grid-template-columns: repeat(2, 1fr); 
-  }
-
-  .masonry { 
-    column-count: 2; 
-    column-gap: 0.5cm; 
-  }
-
-  .masonry a { 
-    margin-bottom: 0.5cm; 
-  }
-
-  .gallery { 
-    grid-template-columns: 1fr; 
-  }
-
-  .nav-label { 
-    font-size: 17px; 
-  }
-
-  .logo { 
-    font-size: 20px; 
-  }
-
-  header.site .wrap {
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-  }
-
-  header.site nav {
-    margin-left: 0;
-    width: 100%;
-    justify-content: space-around;
-    gap: 1rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * { 
-    transition: none !important; 
-    scroll-behavior: auto !important; 
-  }
-}
-
-/* ---------- Curseur personnalisé ---------- */
-
-#custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  backdrop-filter: invert(1) grayscale(1);
-  -webkit-backdrop-filter: invert(1) grayscale(1);
-}
-
-body.has-custom-cursor,
-body.has-custom-cursor * {
-  cursor: none;
+.reload-btn:hover {
+  color: var(--ink);
+  text-decoration: underline;
 }
