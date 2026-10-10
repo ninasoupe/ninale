@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Surprise — Nina Lê</title>
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -22,25 +22,15 @@
 </header>
 
 <main class="wrap surprise-main">
-  <div class="window-container">
-    <p class="window-hint">Ouvrir la fenêtre</p>
+  <div class="surprise-container">
+    <!-- Image cliquable centrée -->
+    <a href="#" id="surpriseLink" class="surprise-card">
+      <img id="surpriseImage" src="" alt="Projet surprise">
+      <span id="surpriseTitle" class="surprise-title"></span>
+    </a>
 
-    <!-- Fenêtre de 60x90mm -->
-    <div class="window-frame" id="surpriseWindow" onclick="openSurpriseWindow()">
-      
-      <!-- Contenu révélé (Projet aléatoire) -->
-      <a href="#" id="projectLink" class="window-reveal-content">
-        <img id="projectImage" src="" alt="Projet aléatoire">
-        <span id="projectTitle" class="window-project-title"></span>
-      </a>
-
-      <!-- Volets fermés -->
-      <div class="shutter shutter-left"></div>
-      <div class="shutter shutter-right"></div>
-    </div>
-
-    <!-- Action pour relancer un tirage -->
-    <button id="anotherBtn" class="another-btn" onclick="getRandomProject()">Découvrir un autre projet</button>
+    <!-- Bouton discret pour relancer une image sans recharger la page -->
+    <button class="reload-btn" onclick="loadRandomProject()">[ Autre projet ]</button>
   </div>
 </main>
 
@@ -48,35 +38,37 @@
 <script src="cursor.js"></script>
 
 <script>
-  // Liste de tes projets de l'index (à ajuster selon tes vrais chemins d'images et liens)
+  // Liste des projets de ton portfolio
   const projects = [
-    { title: "Projet 01", img: "projects/img/projet-1.jpg", url: "projet-1.html" },
-    { title: "Projet 02", img: "projects/img/projet-2.jpg", url: "projet-2.html" },
-    { title: "Projet 03", img: "projects/img/projet-3.jpg", url: "projet-3.html" },
-    { title: "Projet 04", img: "projects/img/projet-4.jpg", url: "projet-4.html" },
-    { title: "Projet 05", img: "projects/img/projet-5.jpg", url: "projet-5.html" }
+    { title: "Projet 01", img: "projects/img/carte-visite/carte-visite-1.png", url: "architectures.html" },
+    { title: "Projet 02", img: "projects/img/carte-visite/carte-visite-1.png", url: "pratiques-chantiers.html" },
+    { title: "Projet 03", img: "projects/img/carte-visite/carte-visite-1.png", url: "annexes.html" }
   ];
 
-  let isOpened = false;
+  function loadRandomProject() {
+    if (projects.length === 0) return;
 
-  function getRandomProject() {
-    const randomIndex = Math.floor(Math.random() * projects.length);
-    const selected = projects[randomIndex];
+    const card = document.querySelector('.surprise-card');
+    
+    // Réinitialise l'animation
+    card.classList.remove('reveal');
+    
+    // Déclenche le tirage aléatoire après une micro-pause
+    setTimeout(() => {
+      const randomIndex = Math.floor(Math.random() * projects.length);
+      const selected = projects[randomIndex];
 
-    document.getElementById('projectImage').src = selected.img;
-    document.getElementById('projectTitle').innerText = selected.title;
-    document.getElementById('projectLink').href = selected.url;
+      document.getElementById('surpriseImage').src = selected.img;
+      document.getElementById('surpriseTitle').innerText = selected.title;
+      document.getElementById('surpriseLink').href = selected.url;
+
+      // Lance l'effet d'apparition
+      card.classList.add('reveal');
+    }, 50);
   }
 
-  function openSurpriseWindow() {
-    if (!isOpened) {
-      getRandomProject();
-      document.getElementById('surpriseWindow').classList.add('open');
-      document.querySelector('.window-hint').style.opacity = '0';
-      document.getElementById('anotherBtn').style.display = 'inline-block';
-      isOpened = true;
-    }
-  }
+  // Lancement automatique dès l'arrivée sur la page
+  window.addEventListener('DOMContentLoaded', loadRandomProject);
 </script>
 
 </body>
