@@ -1,79 +1,75 @@
-/* ---------- Page Surprise Centrée avec Effet (Largeur Max 8cm) ---------- */
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surprise — Nina Lê</title>
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
 
-.surprise-main {
-  min-height: calc(100vh - 6cm);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+<header class="site">
+  <div class="wrap">
+    <div class="logo"><a href="index.html">[N]</a></div>
+    <nav>
+      <a class="nav-label" href="architectures.html">Architectures</a>
+      <a class="nav-label" href="pratiques-chantiers.html">Pratiques / Chantiers</a>
+      <a class="nav-label" href="annexes.html">Annexes</a>
+      <a class="nav-label active" href="surprise.html">Surprise</a>
+      <a class="nav-label" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-.surprise-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  width: 100%;
-}
+<main class="wrap surprise-main">
+  <div class="surprise-container">
+    <!-- Image cliquable centrée -->
+    <a href="#" id="surpriseLink" class="surprise-card">
+      <img id="surpriseImage" src="" alt="Projet surprise">
+      <span id="surpriseTitle" class="surprise-title"></span>
+    </a>
 
-/* Carte image centrée fixée à 8cm max */
-.surprise-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  width: 8cm;               /* Largeur cible de 8cm */
-  max-width: 100%;          /* Adaptation responsive si l'écran est très petit */
-  opacity: 0;
-  transform: scale(0.92) translateY(12px) rotate(-1deg);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
+    <!-- Bouton discret pour relancer une image sans recharger la page -->
+    <button class="reload-btn" onclick="loadRandomProject()">[ Autre projet ]</button>
+  </div>
+</main>
 
-/* Effet d'apparition (Reveal) */
-.surprise-card.reveal {
-  opacity: 1;
-  transform: scale(1) translateY(0) rotate(0deg);
-}
+<div id="custom-cursor"></div>
+<script src="cursor.js"></script>
 
-.surprise-card img {
-  width: 100%;
-  max-width: 8cm;           /* Limite stricte à 8cm de large */
-  height: auto;
-  object-fit: cover;
-  border: 1px solid var(--ink);
-  background: var(--paper-deep);
-  transition: transform 0.4s ease;
-}
+<script>
+  // Liste des projets de ton portfolio
+  const projects = [
+    { title: "Projet 01", img: "projects/img/carte-visite/carte-visite-1.png", url: "architectures.html" },
+    { title: "Projet 02", img: "projects/img/carte-visite/carte-visite-1.png", url: "pratiques-chantiers.html" },
+    { title: "Projet 03", img: "projects/img/carte-visite/carte-visite-1.png", url: "annexes.html" }
+  ];
 
-/* Survol de l'image */
-.surprise-card:hover img {
-  transform: scale(1.03);
-}
+  function loadRandomProject() {
+    if (projects.length === 0) return;
 
-/* Titre sous l'image */
-.surprise-title {
-  margin-top: 0.8rem;
-  font-family: var(--hand);
-  font-size: 18px;
-  color: var(--ink);
-  letter-spacing: 0.03em;
-  text-align: center;
-}
+    const card = document.querySelector('.surprise-card');
+    
+    // Réinitialise l'animation
+    card.classList.remove('reveal');
+    
+    // Déclenche le tirage aléatoire après une micro-pause
+    setTimeout(() => {
+      const randomIndex = Math.floor(Math.random() * projects.length);
+      const selected = projects[randomIndex];
 
-/* Bouton pour changer d'image */
-.reload-btn {
-  background: transparent;
-  border: none;
-  font-family: var(--mono-light);
-  font-size: 16px;
-  color: var(--ink-soft);
-  cursor: pointer;
-  transition: color 0.2s ease;
-  margin-top: 0.5rem;
-}
+      document.getElementById('surpriseImage').src = selected.img;
+      document.getElementById('surpriseTitle').innerText = selected.title;
+      document.getElementById('surpriseLink').href = selected.url;
 
-.reload-btn:hover {
-  color: var(--ink);
-  text-decoration: underline;
-}
+      // Lance l'effet d'apparition
+      card.classList.add('reveal');
+    }, 50);
+  }
+
+  // Lancement automatique dès l'arrivée sur la page
+  window.addEventListener('DOMContentLoaded', loadRandomProject);
+</script>
+
+</body>
+</html>
