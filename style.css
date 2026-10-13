@@ -104,7 +104,7 @@ header.site nav {
 }
 
 .logo img {
-  height: 30px !important;
+  height: 17px !important;
   width: auto !important;
   display: block;
   object-fit: contain;
@@ -116,7 +116,7 @@ header.site nav {
   align-items: center;
   font-family: var(--mono-light);
   font-weight: 300;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1;
   color: var(--ink);
   margin: 0;
