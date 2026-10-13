@@ -91,23 +91,30 @@ header.site nav {
   width: auto;
 }
 
-/* Logo PNG aligné exactement sur la hauteur du texte (19px) */
+/* ---------- Logo sous forme de Texte / Police ---------- */
+
 .logo {
   display: inline-flex;
   align-items: center;
 }
 
 .logo a {
-  display: flex;
-  align-items: center;
+  display: inline-block;
   text-decoration: none;
+  color: var(--ink);
+  line-height: 1;
+
+  /* --- PARAMÈTRES MODIFIABLES DU LOGO --- */
+  font-family: var(--hand);        /* Choix de la police : ex. var(--hand), 'Cormorant Garamond', serif */
+  font-size: 18px !important;      /* Taille de la police du logo (ex: 18px, 22px, 26px) */
+  letter-spacing: 0.15em !important;/* Espacement entre les lettres (ex: 0.05em, 0.15em, 0.2em) */
+  font-weight: 400;                /* Épaisseur de la police (ex: 300, 400, 600) */
+  text-transform: uppercase;       /* Passage en majuscules (optionnel : uppercase / none) */
 }
 
-.logo img {
-  height: 17px !important;
-  width: auto !important;
-  display: block;
-  object-fit: contain;
+/* Effet au survol du logo (optionnel) */
+.logo a:hover {
+  opacity: 0.7;
 }
 
 /* Style des liens de navigation */
