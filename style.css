@@ -116,13 +116,13 @@ header.site nav {
   align-items: center;
   font-family: var(--mono-light);
   font-weight: 300;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1;
   color: var(--ink);
   margin: 0;
   padding: 0;
   white-space: nowrap;
-  letter-spacing: 0.5em;
+  letter-spacing: 0.15em;
   text-decoration: none;
 }
 
