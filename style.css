@@ -273,7 +273,7 @@ header.site nav {
   text-underline-offset: 3px;
 }
 
-/* ---------- Curseur Personnalisé ---------- */
+/* ---------- Curseur Personnalisé (Origine) ---------- */
 
 #custom-cursor {
   position: fixed;
@@ -293,5 +293,5 @@ header.site nav {
 
 body.has-custom-cursor,
 body.has-custom-cursor * {
-  cursor: none;
+  cursor: none !important;
 }
