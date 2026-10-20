@@ -443,6 +443,14 @@ header.site nav {
   body.has-custom-cursor * {
     cursor: auto !important;
   }
+  
+/* Inverse l'ordre : le texte s'affiche avant la galerie/images sur mobile */
+  .project-layout,
+  .project-container {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+  }
+
 }
 
 /* ---------- Curseur Personnalisé (Origine) ---------- */
