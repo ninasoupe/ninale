@@ -215,6 +215,64 @@ header.site nav {
   }
 }
 
+/* ---------- Page Contact (3 Colonnes Égales) ---------- */
+
+.contact-grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 0.5cm;
+  width: 100%;
+  padding-top: 1cm;
+  align-items: start;
+}
+
+.col-center {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.business-card-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.business-card-img img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.contact-info-block {
+  margin-top: 1cm;
+  width: 4cm;
+  max-width: 100%;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.contact-info-block p {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-info-block a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* ---------- Curseur Personnalisé ---------- */
 
 #custom-cursor {
