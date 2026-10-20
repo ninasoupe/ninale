@@ -4,6 +4,7 @@
 
 :root {
   --paper: #ffffff;
+  --paper-deep: #f9f9f9;
   --ink: #111111;
   --ink-soft: #5c5c5c;
   --hand: 'Cormorant Garamond', serif;
@@ -15,6 +16,7 @@
   box-sizing: border-box; 
 }
 
+/* Force la barre de défilement pour éviter les sauts de mise en page */
 html { 
   scroll-behavior: smooth; 
   overflow-y: scroll !important;
@@ -107,7 +109,7 @@ header.site nav {
   opacity: 0.7;
 }
 
-/* Liens de navigation */
+/* Navigation */
 .nav-label {
   display: inline-flex;
   align-items: center;
@@ -147,13 +149,13 @@ header.site nav {
   position: relative;
   width: 100%;
   display: flex;
-  justify-content: center; /* Centre la grille dans la page */
+  justify-content: center;
   margin: 0 auto;
 }
 
 .dot-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr) !important; /* 5 colonnes de large */
+  grid-template-columns: repeat(5, 1fr) !important;
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
@@ -166,7 +168,7 @@ header.site nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.3cm !important; /* Marge interne de 0,3 cm */
+  padding: 0.3cm !important; /* Marge interne de 0,3 cm entre le bord de la case et l'image */
 }
 
 /* Point noir aux intersections (angle supérieur gauche) */
@@ -196,51 +198,6 @@ header.site nav {
   z-index: 10;
   pointer-events: none;
 }
-/* Conteneur de l'image */
-.grid-cell a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-/* Respect du format d'origine de l'image */
-.grid-cell img {
-  max-width: 100% !important;
-  max-height: 100% !important;
-  width: auto !important;
-  height: auto !important;
-  object-fit: contain !important;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.grid-cell a:hover img {
-  transform: scale(1.05);
-}
-
-/* Responsive mobile */
-@media (max-width: 860px) {
-  .dot-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
-}
-
-/* Point noir aux intersections (angle supérieur gauche) */
-.grid-cell::before {
-  content: "";
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  width: 6px;
-  height: 6px;
-  background-color: var(--ink);
-  border-radius: 50%;
-  z-index: 10;
-  pointer-events: none;
-}
 
 /* Conteneur de l'image */
 .grid-cell a {
@@ -252,7 +209,7 @@ header.site nav {
   overflow: hidden;
 }
 
-/* Respect du format d'origine de l'image */
+/* Images au format d'origine */
 .grid-cell img {
   max-width: 100% !important;
   max-height: 100% !important;
@@ -267,28 +224,7 @@ header.site nav {
   transform: scale(1.05);
 }
 
-/* Responsive mobile */
-@media (max-width: 860px) {
-  .dot-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
-}
-/* Images au format d'origine (non découpées / réduites pour respecter la marge) */
-.grid-cell img {
-  max-width: 100% !important;
-  max-height: 100% !important;
-  width: auto !important;
-  height: auto !important;
-  object-fit: contain !important;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.grid-cell a:hover img {
-  transform: scale(1.05);
-}
-
-/* Textes placés dans certaines cases */
+/* Textes placés éventuellement dans certaines cases */
 .cell-text {
   font-family: var(--mono-light);
   font-size: 12px;
@@ -347,14 +283,6 @@ header.site nav {
   transform: scale(1.03);
 }
 
-/* ---------- Responsive ---------- */
-
-@media (max-width: 860px) {
-  .dot-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
-}
-
 /* ---------- Page Contact (3 Colonnes Égales) ---------- */
 
 .contact-grid-3col {
@@ -411,6 +339,43 @@ header.site nav {
   color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+/* ---------- Responsive Mobile / Tablette ---------- */
+
+@media (max-width: 860px) {
+  .dot-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* Réajustement du point de fin de ligne à 3 colonnes */
+  .grid-cell:nth-child(5n)::after {
+    content: none;
+  }
+  .grid-cell:nth-child(3n)::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 6px;
+    height: 6px;
+    background-color: var(--ink);
+    border-radius: 50%;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .masonry {
+    column-count: 2;
+  }
+
+  .contact-grid-3col {
+    grid-template-columns: 1fr !important;
+  }
+
+  .col-left, .col-right {
+    display: none;
+  }
 }
 
 /* ---------- Curseur Personnalisé (Origine) ---------- */
