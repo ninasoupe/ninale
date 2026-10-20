@@ -183,6 +183,19 @@ header.site nav {
   pointer-events: none;
 }
 
+/* Point noir supplémentaire pour fermer le bord supérieur droit de la dernière colonne */
+.grid-cell:nth-child(5n)::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 6px;
+  height: 6px;
+  background-color: var(--ink);
+  border-radius: 50%;
+  z-index: 10;
+  pointer-events: none;
+}
 /* Conteneur de l'image */
 .grid-cell a {
   display: flex;
