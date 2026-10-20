@@ -341,18 +341,53 @@ header.site nav {
   text-underline-offset: 3px;
 }
 
-/* ---------- Responsive Mobile / Tablette ---------- */
+/* ==========================================================================
+   Responsive Mobile & Tablette (Écrans < 860px)
+   ========================================================================== */
 
 @media (max-width: 860px) {
-  .dot-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
+
+  /* 1. Marges latérales : Passage de 2cm à 1.5cm sur mobile */
+  .wrap {
+    width: calc(100% - 3cm) !important;
+    margin-bottom: 1.5cm !important;
   }
 
-  /* Réajustement du point de fin de ligne à 3 colonnes */
-  .grid-cell:nth-child(5n)::after {
-    content: none;
+  /* 2. Header & Navigation */
+  header.site {
+    height: 2.2cm;
   }
-  .grid-cell:nth-child(3n)::after {
+
+  header.site .wrap {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header.site nav {
+    gap: 1rem; /* Réduit l'espace entre les liens du menu */
+  }
+
+  .nav-label {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .logo a {
+    font-size: 16px !important;
+  }
+
+  /* 3. Grille Index : Passage de 5 à 2 colonnes sur smartphone */
+  .dot-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Ajustement des points aux intersections pour 2 colonnes */
+  .grid-cell:nth-child(5n)::after {
+    content: none; /* Désactive le point de la 5e colonne */
+  }
+
+  .grid-cell:nth-child(2n)::after {
     content: "";
     position: absolute;
     top: -3px;
@@ -365,16 +400,48 @@ header.site nav {
     pointer-events: none;
   }
 
-  .masonry {
-    column-count: 2;
+  .grid-cell {
+    padding: 0.15cm !important; /* Réduit la marge interne sur petit écran */
   }
 
+  /* 4. Pages Secondaires (Architectures, Pratiques, Divers) : Masonry sur 1 colonne */
+  .masonry {
+    column-count: 1 !important;
+    margin-top: 0.5cm;
+  }
+
+  .section-head {
+    padding: 0 0 20px;
+  }
+
+  .section-head h1 {
+    font-size: 32px;
+  }
+
+  /* 5. Page Contact : 1 seule colonne centrée */
   .contact-grid-3col {
     grid-template-columns: 1fr !important;
+    padding-top: 0.5cm;
   }
 
-  .col-left, .col-right {
-    display: none;
+  .col-left, 
+  .col-right {
+    display: none; /* Masque les colonnes vides latérales */
+  }
+
+  .contact-info-block {
+    width: 100%;
+    margin-top: 0.8cm;
+  }
+
+  /* 6. Curseur : Réactivé en pointeur tactile naturel sur mobile */
+  #custom-cursor {
+    display: none !important;
+  }
+
+  body.has-custom-cursor,
+  body.has-custom-cursor * {
+    cursor: auto !important;
   }
 }
 
