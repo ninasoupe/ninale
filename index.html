@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nina Lê — Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=105">
 </head>
 <body>
 
@@ -26,24 +26,42 @@
 </header>
 
 <main class="wrap">
-  <div class="masonry">
+  <div class="square-grid-wrapper">
+    <div class="square-grid">
 
-    <a href="projects/loures-barousse.html">
-      <img src="projects/img/loures/loures-acetone.jpg" alt="Loures-Barousse" width="900" height="620" loading="lazy" decoding="async">
-    </a>
+      <!-- Case 1 avec image -->
+      <div class="square-item">
+        <a href="projects/loures-barousse.html">
+          <img src="projects/img/loures/loures-acetone.jpg" alt="Loures-Barousse" width="900" height="620" loading="lazy" decoding="async">
+        </a>
+      </div>
 
-    <a href="projects/biopsy.html">
-      <img src="projects/img/biopsy/img-biopsy-1.JPG" alt="Biopsy" width="900" height="1200" loading="lazy" decoding="async">
-    </a>
+      <!-- Case 2 avec image -->
+      <div class="square-item">
+        <a href="projects/biopsy.html">
+          <img src="projects/img/biopsy/img-biopsy-1.JPG" alt="Biopsy" width="900" height="1200" loading="lazy" decoding="async">
+        </a>
+      </div>
 
-    <a href="projects/musette.html">
-      <img src="projects/img/musette/img-musette-1.JPG" alt="Festival des Rives sonores - La musette" width="900" height="1200" loading="lazy" decoding="async">
-    </a>
+      <!-- Case 3 avec image -->
+      <div class="square-item">
+        <a href="projects/musette.html">
+          <img src="projects/img/musette/img-musette-1.JPG" alt="Festival des Rives sonores - La musette" width="900" height="1200" loading="lazy" decoding="async">
+        </a>
+      </div>
 
-    <a href="projects/four-a-pain.html">
-      <img src="projects/img/four-a-pain/four-1.jpeg" alt="Four à pain et maisonnette" width="900" height="1200" loading="lazy" decoding="async">
-    </a>
+      <!-- Case 4 avec image -->
+      <div class="square-item">
+        <a href="projects/four-a-pain.html">
+          <img src="projects/img/four-a-pain/four-1.jpeg" alt="Four à pain et maisonnette" width="900" height="1200" loading="lazy" decoding="async">
+        </a>
+      </div>
 
+      <!-- Cases 5 et 6 vides pour compléter la première ligne de 6 carrés -->
+      <div class="square-item"></div>
+      <div class="square-item"></div>
+
+    </div>
   </div>
 </main>
 
