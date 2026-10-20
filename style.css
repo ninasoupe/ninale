@@ -141,17 +141,22 @@ header.site nav {
   text-decoration: underline;
 }
 
-/* ---------- Grille 6 Colonnes avec Points aux Angles (Index) ---------- */
+/* ---------- Grille 6 Colonnes Centrée avec Points (Index) ---------- */
 
 .dot-grid-wrapper {
   position: relative;
   width: 100%;
+  display: flex;
+  justify-content: center; /* Centre la grille dans la page */
+  margin: 0 auto;
 }
 
 .dot-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr) !important;
   width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .grid-cell {
@@ -161,10 +166,10 @@ header.site nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.3cm !important; /* Marge de 0,3cm entre les bords de la case et l'image */
+  padding: 0.3cm !important; /* Marge interne de 0,3 cm */
 }
 
-/* Point noir à l'angle supérieur gauche de chaque case */
+/* Point noir aux intersections (angle supérieur gauche) */
 .grid-cell::before {
   content: "";
   position: absolute;
@@ -188,6 +193,27 @@ header.site nav {
   overflow: hidden;
 }
 
+/* Respect du format d'origine de l'image */
+.grid-cell img {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.grid-cell a:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsive mobile */
+@media (max-width: 860px) {
+  .dot-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
 /* Images au format d'origine (non découpées / réduites pour respecter la marge) */
 .grid-cell img {
   max-width: 100% !important;
