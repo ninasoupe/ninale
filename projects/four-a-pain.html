@@ -83,18 +83,18 @@
       opacity: 1;
     }
 
-    /* Colonne droite : images centrées, largeur 12cm, espacement 1cm */
+    /* Colonne droite : images centrées de 12cm de large, espacées de 1cm */
     .project-images {
       display: flex;
       flex-direction: column;
-      align-items: center; /* Centre les images dans la colonne */
-      gap: 1cm;           /* Espacement de 1cm entre chaque image */
+      align-items: center; /* Centre les images dans la colonne de droite */
+      gap: 1cm;           /* Espacement vertical de 1cm entre les images */
     }
 
     .project-images img {
       width: 12cm;         /* Largeur fixe de 12cm */
-      height: auto;        /* Hauteur automatique pour conserver les proportions */
-      max-width: 100%;     /* Évite tout débordement sur petit écran */
+      height: auto;        /* Hauteur automatique pour préserver le ratio */
+      max-width: 100%;     /* Sécurité responsive sur petit écran */
       object-fit: contain;
       display: block;
     }
@@ -170,7 +170,10 @@
           <p>Au cœur d’un massif boisé, une petite clairière abrite une maisonnette et son four à pain, tous deux décrépis et détériorés par le temps.</p>
           <p>Pour redonner vie à ce lieu, un chantier participatif a été organisé selon une suite logique d’étapes : la maçonnerie a d’abord permis de redresser les murs en pierres et mortier de chaux jusqu’à leur arase, puis une petite mezzanine a été aménagée au-dessus du four, avant de couronner l’ensemble par la pose d’une nouvelle toiture.</p>
         </div>
-        
+
+        <a class="back-link" href="../architectures.html">← Retour !</a>
+      </div>
+
     </div>
 
     <!-- Colonne Droite : Images centrées de 12cm espacées de 1cm -->
