@@ -398,10 +398,10 @@ header.site nav {
   .grid-cell:nth-child(2n)::after {
     content: "";
     position: absolute;
-    top: -1px;
-    right: -1px;
-    width: 2px;
-    height: 2px;
+    top: -2px;
+    right: -2px;
+    width: 4px;
+    height: 4px;
     background-color: var(--ink);
     border-radius: 50%;
     z-index: 10;
