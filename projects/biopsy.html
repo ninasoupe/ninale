@@ -68,18 +68,18 @@
       margin-bottom: 0;
     }
 
-    /* Colonne droite : images alignées à droite, hauteur 13cm, espacement 0,3cm */
+    /* Colonne droite : images centrées, largeur 12cm, espacement 1cm */
     .project-images {
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
-      gap: 0.3cm;
+      align-items: center; /* Centre les images dans la colonne */
+      gap: 1cm;           /* Espacement de 1cm entre chaque image */
     }
 
     .project-images img {
-      height: 13cm;
-      width: auto;
-      max-width: 100%;
+      width: 12cm;         /* Largeur fixe de 12cm */
+      height: auto;        /* Hauteur automatique pour conserver les proportions */
+      max-width: 100%;     /* Évite tout débordement sur petit écran */
       object-fit: contain;
       display: block;
     }
@@ -104,7 +104,7 @@
 
       .project-images {
         order: -1;
-        align-items: stretch;
+        align-items: center;
       }
 
       .project-images img {
@@ -120,7 +120,7 @@
   <div class="wrap">
     <!-- Logo sous forme de texte -->
     <div class="logo">
-      <a href="index.html">NINA LÊ /</a>
+      <a href="../index.html">NINA LÊ /</a>
     </div>
 
     <!-- Navigation principale -->
@@ -148,17 +148,18 @@
         </div>
       </div>
 
-      <!-- Sous-colonne 2 : Texte descriptif + Bouton retour -->
+      <!-- Sous-colonne 2 : Texte descriptif -->
       <div class="project-body-col">
         <div class="project-body">
           <p>Face aux exigences de la transition écologique, l’architecture cherche de nouveaux repères. La Straw Bale House en constitue un : la preuve par la matière qu’un autre mode constructif est possible.</p>
           <p>En reproduisant à l’échelle 1:1 une section de cette œuvre emblématique pendant trois semaines de travail manuel, le projet s’est affranchi du dessin pour s’ancrer dans le réel. Manipuler le ballot de paille pour apprivoiser une technique où la simplicité du matériau brut répond à la complexité des enjeux thermiques actuels.</p>
           <p>Cette expérience vient-elle sceller une certitude ? Et si l’alternative bas-carbone abandonnait la théorie pour s’édifier par l’expérimentation, main à main ?</p>
         </div>
+      </div>
 
     </div>
 
-    <!-- Colonne Droite : Images alignées à droite -->
+    <!-- Colonne Droite : Images centrées de 12cm espacées de 1cm -->
     <div class="project-images">
       <img src="img/biopsy/img-biopsy-1.JPG" alt="Biopsy — détail 1">
       <img src="img/biopsy/img-biopsy-2.jpg" alt="Biopsy — détail 2">
