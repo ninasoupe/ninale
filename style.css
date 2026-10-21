@@ -363,15 +363,15 @@ header.site nav {
   header.site .wrap {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Aligne le logo en haut à gauche */
+    align-items: flex-start;
   }
 
   /* 3. Navigation : Alignement vertical sur la droite */
   header.site nav {
     display: flex;
-    flex-direction: column !important; /* Empile les catégories */
-    align-items: flex-end !important;   /* Aligne le texte à droite */
-    gap: 0.6rem;                       /* Espace vertical entre chaque catégorie */
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    gap: 0.6rem;
     margin-left: auto;
     width: auto;
   }
@@ -386,12 +386,12 @@ header.site nav {
     font-size: 16px !important;
   }
 
-  /* 4. Grille Index : Passage à 2 colonnes sur smartphone */
+  /* 4. Grille Index : Passage à 3 colonnes sur smartphone */
   .dot-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(3, 1fr) !important;
   }
 
-  /* Réduction de la taille des points de grille à 3px sur mobile */
+  /* Point de 3px sur mobile */
   .grid-cell::before {
     width: 3px !important;
     height: 3px !important;
@@ -403,7 +403,8 @@ header.site nav {
     content: none;
   }
 
-  .grid-cell:nth-child(2n)::after {
+  /* Point supplémentaire sur la 3e colonne (fin de ligne mobile) */
+  .grid-cell:nth-child(3n)::after {
     content: "";
     position: absolute;
     top: -1.5px !important;
@@ -417,13 +418,18 @@ header.site nav {
   }
 
   .grid-cell {
-    padding: 0.25cm !important;
+    padding: 0.2cm !important;
   }
 
-  /* 5. Pages Secondaires (Masonry 1 colonne sur mobile) */
+  /* 5. Pages Secondaires (Architectures, Pratiques, Divers) : 2 colonnes sur mobile */
   .masonry {
-    column-count: 1 !important;
+    column-count: 2 !important;
+    column-gap: 0.3cm;
     margin-top: 0.5cm;
+  }
+
+  .masonry a {
+    margin-bottom: 0.3cm;
   }
 
   /* 6. Page Contact (1 colonne sur mobile) */
@@ -452,7 +458,7 @@ header.site nav {
     cursor: auto !important;
   }
 
-  /* Inverse l'ordre : le texte s'affiche avant la galerie/images sur mobile */
+  /* Inversion Texte / Galerie sur les pages projets sur mobile */
   .project-layout,
   .project-container {
     display: flex !important;
