@@ -342,7 +342,7 @@ header.site nav {
 }
 
 /* ==========================================================================
-   Responsive Mobile (< 860px) : Header avec liens empilés à droite
+   Responsive Mobile (< 860px)
    ========================================================================== */
 
 @media (max-width: 860px) {
@@ -391,6 +391,14 @@ header.site nav {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 
+  /* Réduction de la taille des points de grille à 3px sur mobile */
+  .grid-cell::before {
+    width: 3px !important;
+    height: 3px !important;
+    top: -1.5px !important;
+    left: -1.5px !important;
+  }
+
   .grid-cell:nth-child(5n)::after {
     content: none;
   }
@@ -398,10 +406,10 @@ header.site nav {
   .grid-cell:nth-child(2n)::after {
     content: "";
     position: absolute;
-    top: -2px;
-    right: -2px;
-    width: 4px;
-    height: 4px;
+    top: -1.5px !important;
+    right: -1.5px !important;
+    width: 3px !important;
+    height: 3px !important;
     background-color: var(--ink);
     border-radius: 50%;
     z-index: 10;
@@ -424,8 +432,8 @@ header.site nav {
     padding-top: 0.5cm;
   }
 
-  .col-left, 
-  .col-right {
+  .contact-grid-3col .col-left, 
+  .contact-grid-3col .col-right {
     display: none;
   }
 
@@ -443,14 +451,13 @@ header.site nav {
   body.has-custom-cursor * {
     cursor: auto !important;
   }
-  
-/* Inverse l'ordre : le texte s'affiche avant la galerie/images sur mobile */
+
+  /* Inverse l'ordre : le texte s'affiche avant la galerie/images sur mobile */
   .project-layout,
   .project-container {
     display: flex !important;
     flex-direction: column-reverse !important;
   }
-
 }
 
 /* ---------- Curseur Personnalisé (Origine) ---------- */
