@@ -39,7 +39,8 @@ body {
 
 /* --- Filtre Noir et Blanc --- */
 .bw-img {
-  filter: grayscale(100%);
+  filter: grayscale(100%) !important;
+  -webkit-filter: grayscale(100%) !important; /* Pour la compatibilité Safari/Mac */
 }
 
 img { 
