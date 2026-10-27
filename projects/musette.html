@@ -55,8 +55,8 @@
       line-height: 1.7;
       border-top: none;
       padding-top: 0;
-      /* Début du texte sous la ligne de fin des métadonnées */
-      margin-top: calc(16px + 0.5rem + (11px * 1.6 * 5));
+      /* Ajustement du décalage pour s'aligner sous les métadonnées */
+      margin-top: calc(16px + 0.5rem + (13px * 1.6 * 3));
     }
 
     .project-body p {
@@ -83,12 +83,12 @@
       opacity: 1;
     }
 
-    /* Colonne droite : images alignées à droite, hauteur 11cm, espacement exact de 0,3cm */
+    /* Colonne droite : images alignées à droite, hauteur 11cm, espacement de 0.3cm */
     .project-images {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      gap: 0.3cm; /* Écartement entre les images fixé à 0,3cm */
+      gap: 0.3cm;
     }
 
     .project-images img {
@@ -99,7 +99,7 @@
       display: block;
     }
 
-    /* Responsive : adaptation pour mobile */
+    /* Responsive : adaptation pour mobile et tablette */
     @media (max-width: 900px) {
       .project-info {
         grid-template-columns: 1fr;
@@ -135,7 +135,7 @@
   <div class="wrap">
     <!-- Logo sous forme de texte -->
     <div class="logo">
-      <a href="index.html">NINA LÊ /</a>
+      <a href="../index.html">NINA LÊ /</a>
     </div>
 
     <!-- Navigation principale -->
@@ -147,6 +147,7 @@
     </nav>
   </div>
 </header>
+
 <main class="wrap">
   <div class="project-layout">
     
@@ -157,35 +158,13 @@
       <div class="project-meta-col">
         <h1>Festival des Rives sonores</h1>
         <div class="facts">
-          Lieu / La musette,<br>
-          Saint-rome-de-tarn<br>
+          Lieu / La Musette,<br>
+          Saint-Rome-de-Tarn<br>
           Année / 2026
         </div>
       </div>
 
-      <!-- Sous-colonne 2 : Texte descriptif + Bouton retour (1cm sous le texte) -->
+      <!-- Sous-colonne 2 : Texte descriptif -->
       <div class="project-body-col">
         <div class="project-body">
-          <p>Au fond d’une vallée encaissée où serpentent la Muse, les arbres et les roches, le site de la Musette — un ancien entrepôt et fabrique de parpaings en béton — s’approprie au fil des éditions.</p>
-          <p>Pour la troisième édition des Rives Sonores, la scénographie s’y déploie pour inscrire de nouveaux points de repère. Des structures en bois façonnent le lieu, tandis qu’au-dessus de la scène extérieure prend corps une voilure d’ombrage faite de draps de récupération cousus en bandes de vingt mètres. Suspendant son mouvement au vent qui s’engouffre et la fait danser, cette toile textile structure enfin le paysage : le site du festival a trouvé son territoire.</p>
-        </div>
-
-    </div>
-
-    <!-- Colonne Droite : Images empilées avec un écartement de 0,3cm -->
-    <div class="project-images">
-      <img src="img/musette/img-musette-1.JPG" alt="Festival des Rives sonores - La musette — Vue principale">
-      <img src="img/musette/img-musette-2.JPG" alt="Festival des Rives sonores - La musette — Vue 2">
-      <img src="img/musette/img-musette-3.JPG" alt="Festival des Rives sonores - La musette — Vue 3">
-      <img src="img/musette/img-musette-4.JPG" alt="Festival des Rives sonores - La musette — Vue 4">
-      <img src="img/musette/img-musette-5.JPG" alt="Festival des Rives sonores - La musette — Vue 5">
-    </div>
-
-  </div>
-</main>
-
-<div id="custom-cursor"></div>
-<script src="../cursor.js"></script>
-
-</body>
-</html>
+          <p>Au fond d’une vallée encaissée
