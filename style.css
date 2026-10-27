@@ -37,6 +37,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* --- Filtre Noir et Blanc --- */
+.bw-img {
+  filter: grayscale(100%);
+}
+
 img { 
   max-width: 100%; 
   display: block; 
@@ -48,7 +53,7 @@ a {
 }
 
 /* ==========================================================================
-   Conteneur principal (2cm de marge latérale)
+    Conteneur principal (2cm de marge latérale)
    ========================================================================== */
 .wrap {
   width: calc(100% - 4cm) !important;
@@ -343,7 +348,7 @@ header.site nav {
 }
 
 /* ==========================================================================
-   Responsive Mobile (< 860px)
+    Responsive Mobile (< 860px)
    ========================================================================== */
 
 @media (max-width: 860px) {
@@ -351,141 +356,4 @@ header.site nav {
   /* 1. Ajustement de la marge latérale globale sur mobile */
   .wrap {
     width: calc(100% - 3cm) !important;
-    margin-bottom: 1.5cm !important;
-  }
-
-  /* 2. En-tête : Hauteur automatique pour accueillir la liste à droite */
-  header.site {
-    height: auto;
-    padding-top: 0.8cm;
-    padding-bottom: 0.8cm;
-  }
-
-  header.site .wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
-  /* 3. Navigation : Alignement vertical sur la droite */
-  header.site nav {
-    display: flex;
-    flex-direction: column !important;
-    align-items: flex-end !important;
-    gap: 0.6rem;
-    margin-left: auto;
-    width: auto;
-  }
-
-  .nav-label {
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    text-align: right;
-  }
-
-  .logo a {
-    font-size: 16px !important;
-  }
-
-  /* 4. Grille Index : Passage à 3 colonnes sur smartphone */
-  .dot-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
-
-  /* Point de 3px sur mobile */
-  .grid-cell::before {
-    width: 3px !important;
-    height: 3px !important;
-    top: -1.5px !important;
-    left: -1.5px !important;
-  }
-
-  .grid-cell:nth-child(5n)::after {
-    content: none;
-  }
-
-  /* Point supplémentaire sur la 3e colonne (fin de ligne mobile) */
-  .grid-cell:nth-child(3n)::after {
-    content: "";
-    position: absolute;
-    top: -1.5px !important;
-    right: -1.5px !important;
-    width: 3px !important;
-    height: 3px !important;
-    background-color: var(--ink);
-    border-radius: 50%;
-    z-index: 10;
-    pointer-events: none;
-  }
-
-  .grid-cell {
-    padding: 0.2cm !important;
-  }
-
-  /* 5. Pages Secondaires (Architectures, Pratiques, Divers) : 2 colonnes sur mobile */
-  .masonry {
-    column-count: 2 !important;
-    column-gap: 0.3cm;
-    margin-top: 0.5cm;
-  }
-
-  .masonry a {
-    margin-bottom: 0.3cm;
-  }
-
-  /* 6. Page Contact (1 colonne sur mobile) */
-  .contact-grid-3col {
-    grid-template-columns: 1fr !important;
-    padding-top: 0.5cm;
-  }
-
-  .contact-grid-3col .col-left, 
-  .contact-grid-3col .col-right {
-    display: none;
-  }
-
-  .contact-info-block {
-    width: 100%;
-    margin-top: 0.8cm;
-  }
-
-  /* 7. Curseur tactile naturel sur mobile */
-  #custom-cursor {
-    display: none !important;
-  }
-
-  body.has-custom-cursor,
-  body.has-custom-cursor * {
-    cursor: auto !important;
-  }
-
-  /* Inversion Texte / Galerie sur les pages projets sur mobile */
-  .project-layout,
-  .project-container {
-    display: flex !important;
-    flex-direction: column-reverse !important;
-  }
-}
-
-/* ---------- Curseur Personnalisé (Origine) ---------- */
-
-#custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  backdrop-filter: invert(1) grayscale(1);
-  -webkit-backdrop-filter: invert(1) grayscale(1);
-}
-
-body.has-custom-cursor,
-body.has-custom-cursor * {
-  cursor: none !important;
-}
+    margin-bottom: 1.5
