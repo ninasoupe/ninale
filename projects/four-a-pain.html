@@ -88,7 +88,7 @@
       display: flex;
       flex-direction: column;
       align-items: center; /* Centre les images dans la colonne de droite */
-      gap: 1cm;           /* Espacement vertical de 1cm entre les images */
+      gap: 1cm;            /* Espacement vertical de 1cm entre les images */
     }
 
     .project-images img {
@@ -156,22 +156,23 @@
       
       <!-- Sous-colonne 1 (5cm) : Titre & Métadonnées -->
       <div class="project-meta-col">
-        <h1>Four à pain</h1>
+        <h1>Four à pain + maisonnette</h1>
         <div class="facts">
-          Lieu / Domaine des Martinets, Villeneuve-sur-Allier <br>
-          Année / 2026 <br>
-          Statut / construit
+          Lieu / Domaine des Martinets, Villeneuve-sur-Allier<br>
+          Année / 2026<br>
+          Statut / Construit
         </div>
       </div>
 
-      <!-- Sous-colonne 2 : Texte descriptif + Bouton retour -->
+      <!-- Sous-colonne 2 : Texte descriptif -->
       <div class="project-body-col">
         <div class="project-body">
           <p>Au cœur d’un massif boisé, une petite clairière abrite une maisonnette et son four à pain, tous deux décrépis et détériorés par le temps.</p>
           <p>Pour redonner vie à ce lieu, un chantier participatif a été organisé selon une suite logique d’étapes : la maçonnerie a d’abord permis de redresser les murs en pierres et mortier de chaux jusqu’à leur arase, puis une petite mezzanine a été aménagée au-dessus du four, avant de couronner l’ensemble par la pose d’une nouvelle toiture.</p>
         </div>
-        
-    </div>
+      </div> <!-- ✅ Fermeture ajoutée pour .project-body-col -->
+
+    </div> <!-- Fermeture de .project-info -->
 
     <!-- Colonne Droite : Images centrées de 12cm espacées de 1cm -->
     <div class="project-images">
