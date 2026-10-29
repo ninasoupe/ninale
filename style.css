@@ -35,9 +35,25 @@ body {
   font-size: 19px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  
-  /* --- Curseur personnalisé (Pensez à remplacer par le chemin ou une URL https://) --- */
-  cursor: url('chemin/vers/votre-curseur.png'), auto;
+}
+
+/* --- Masquage du curseur natif uniquement si le JS du curseur personnalisé est actif --- */
+body.has-custom-cursor,
+body.has-custom-cursor * {
+  cursor: none !important;
+}
+
+/* --- Style du curseur personnalisé piloté par le JS --- */
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none !important; /* Empêche le curseur de bloquer les clics */
+  z-index: 999999;                 /* Toujours au premier plan */
+  opacity: 0;                      /* Invisible par défaut, géré par le JS */
+  transform: translate(-50%, -50%);/* Centre l'élément sur la pointe de la souris */
+  transition: opacity 0.2s ease;
+  will-change: transform, left, top;
 }
 
 /* --- Filtre Noir et Blanc --- */
