@@ -44,7 +44,6 @@ body.has-custom-cursor * {
 }
 
 /* --- Style du curseur personnalisé (Point de 6px en négatif) --- */
-/* --- Style du curseur personnalisé : Point de 6px en négatif --- */
 #custom-cursor {
   position: fixed;
   top: 0;
@@ -61,6 +60,7 @@ body.has-custom-cursor * {
   transition: opacity 0.2s ease;
   will-change: transform;
 }
+
 /* --- Filtre Noir et Blanc --- */
 .bw-img {
   filter: grayscale(100%) !important;
