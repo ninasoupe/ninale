@@ -48,8 +48,8 @@ body.has-custom-cursor * {
   position: fixed;
   top: 0;
   left: 0;
-  width: 12px;                        /* Diamètre exact de 6px */
-  height: 12px;                       /* Diamètre exact de 6px */
+  width: 14px;                        /* Diamètre exact de 6px */
+  height: 14px;                       /* Diamètre exact de 6px */
   background-color: #ffffff;         /* Fond blanc pour créer l'inversion */
   border-radius: 50% !important;     /* Forme ronde parfaite */
   pointer-events: none !important;   /* Laisse passer les clics */
