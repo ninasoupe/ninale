@@ -43,17 +43,22 @@ body.has-custom-cursor * {
   cursor: none !important;
 }
 
-/* --- Style du curseur personnalisé piloté par le JS --- */
+/* --- Style du curseur personnalisé (Point de 6px en négatif) --- */
 #custom-cursor {
   position: fixed;
   top: 0;
   left: 0;
-  pointer-events: none !important; /* Empêche le curseur de bloquer les clics */
-  z-index: 999999;                 /* Toujours au premier plan */
-  opacity: 0;                      /* Invisible par défaut, géré par le JS */
-  transform: translate(-50%, -50%);/* Centre l'élément sur la pointe de la souris */
+  width: 6px;                        /* Diamètre exact de 6px */
+  height: 6px;                       /* Diamètre exact de 6px */
+  background-color: #ffffff;         /* Fond blanc nécessaire pour l'inversion */
+  border-radius: 50% !important;     /* Forme ronde parfaite */
+  pointer-events: none !important;   /* Empêche le curseur de bloquer les clics */
+  z-index: 999999;                   /* Toujours au premier plan */
+  opacity: 0;                        /* Invisible par défaut, géré par le JS */
+  transform: translate(-50%, -50%);  /* Centre le point pile sur la position de la souris */
+  mix-blend-mode: difference;        /* Effet "négatif" / inversion des couleurs en dessous */
   transition: opacity 0.2s ease;
-  will-change: transform, left, top;
+  will-change: transform;
 }
 
 /* --- Filtre Noir et Blanc --- */
