@@ -48,16 +48,14 @@ body.has-custom-cursor * {
   position: fixed;
   top: 0;
   left: 0;
-  width: 30px;                        /* Diamètre exact de 6px */
-  height: 30px;                       /* Diamètre exact de 6px */
-  background-color: #ffffff;         /* Fond blanc nécessaire pour l'inversion */
-  border-radius: 50% !important;     /* Forme ronde parfaite */
-  pointer-events: none !important;   /* Empêche le curseur de bloquer les clics */
-  z-index: 999999;                   /* Toujours au premier plan */
-  opacity: 0;                        /* Invisible par défaut, géré par le JS */
-  transform: translate(-50%, -50%);  /* Centre le point pile sur la position de la souris */
-  mix-blend-mode: difference;        /* Effet "négatif" / inversion des couleurs en dessous */
-  transition: opacity 0.2s ease;
+  width: 30px;                       /* On grossit temporairement à 30px */
+  height: 30px;                      
+  background-color: #ff0000 !important; /* ROUGE VISIBLE pour le test */
+  border-radius: 50% !important;     
+  pointer-events: none !important;   
+  z-index: 999999;                   
+  opacity: 1 !important;             /* Forcé à visible (on enlève le 0 du début) */
+  transform: translate(-50%, -50%);  
   will-change: transform;
 }
 
