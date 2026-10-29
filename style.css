@@ -44,21 +44,23 @@ body.has-custom-cursor * {
 }
 
 /* --- Style du curseur personnalisé (Point de 6px en négatif) --- */
+/* --- Style du curseur personnalisé : Point de 6px en négatif --- */
 #custom-cursor {
   position: fixed;
   top: 0;
   left: 0;
-  width: 30px;                       /* On grossit temporairement à 30px */
-  height: 30px;                      
-  background-color: #ff0000 !important; /* ROUGE VISIBLE pour le test */
-  border-radius: 50% !important;     
-  pointer-events: none !important;   
-  z-index: 999999;                   
-  opacity: 1 !important;             /* Forcé à visible (on enlève le 0 du début) */
-  transform: translate(-50%, -50%);  
+  width: 10px;                        /* Diamètre exact de 6px */
+  height: 10px;                       /* Diamètre exact de 6px */
+  background-color: #ffffff;         /* Fond blanc pour créer l'inversion */
+  border-radius: 50% !important;     /* Forme ronde parfaite */
+  pointer-events: none !important;   /* Laisse passer les clics */
+  z-index: 999999;                   /* Toujours au premier plan */
+  opacity: 0;                        /* Invisible au départ, géré par le JS */
+  transform: translate(-50%, -50%);  /* Centre le point pile sur la souris */
+  mix-blend-mode: difference;        /* Crée l'effet "négatif" sur les images/fonds */
+  transition: opacity 0.2s ease;
   will-change: transform;
 }
-
 /* --- Filtre Noir et Blanc --- */
 .bw-img {
   filter: grayscale(100%) !important;
