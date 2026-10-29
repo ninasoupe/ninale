@@ -11,7 +11,7 @@
     cursor.style.left = e.clientX + 'px';
     cursor.style.top = e.clientY + 'px';
     cursor.style.opacity = '1';
-  });
+  }, { passive: true });
 
   document.addEventListener('mouseleave', function () {
     cursor.style.opacity = '0';
