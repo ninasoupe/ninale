@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mur-murmure — Nina Lê</title>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../style.css?v=902">
   <style>
     /* Layout principal à deux colonnes */
     .project-layout {
@@ -33,7 +33,7 @@
 
     .project-meta-col h1 {
       font-size: 16px;
-      font-weight: normal; /* Titre non gras */
+      font-weight: normal;
       margin: 0;
       line-height: 1.2;
     }
@@ -55,7 +55,6 @@
       line-height: 1.7;
       border-top: none;
       padding-top: 0;
-      /* Ajustement du décalage pour s'aligner sous les métadonnées */
       margin-top: calc(16px + 0.5rem + (13px * 1.6 * 3));
     }
 
@@ -68,7 +67,7 @@
       margin-bottom: 0;
     }
 
-    /* Lien de retour : positionné 1cm sous le texte */
+    /* Lien de retour */
     .back-link {
       align-self: flex-start;
       margin-top: 1cm;
@@ -83,7 +82,7 @@
       opacity: 1;
     }
 
-    /* Colonne droite : images alignées à droite, hauteur 11cm, espacement de 0.3cm */
+    /* Colonne droite : images */
     .project-images {
       display: flex;
       flex-direction: column;
@@ -99,7 +98,7 @@
       display: block;
     }
 
-    /* Responsive : adaptation pour mobile et tablette */
+    /* Responsive Mobile et Tablette */
     @media (max-width: 900px) {
       .project-info {
         grid-template-columns: 1fr;
@@ -111,20 +110,29 @@
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 860px) {
+      /* Disposition en 1 colonne sur mobile : le texte (project-info) se place au-dessus des images */
       .project-layout {
-        grid-template-columns: 1fr;
+        display: flex !important;
+        flex-direction: column !important;
         gap: 2rem;
       }
 
+      .project-info {
+        order: 1 !important; /* Le texte s'affiche en premier */
+        width: 100%;
+      }
+
       .project-images {
-        order: -1;
-        align-items: stretch;
+        order: 2 !important; /* Les images s'affichent en second */
+        align-items: center !important;
+        width: 100%;
       }
 
       .project-images img {
-        height: auto;
-        width: 100%;
+        height: auto !important;
+        width: 100% !important;
+        max-width: 100%;
       }
     }
   </style>
@@ -133,7 +141,7 @@
 
 <header class="site">
   <div class="wrap">
-    <!-- Logo sous forme de texte -->
+    <!-- Logo -->
     <div class="logo">
       <a href="../index.html">NINA LÊ /</a>
     </div>
@@ -151,10 +159,10 @@
 <main class="wrap">
   <div class="project-layout">
     
-    <!-- Colonne Gauche : Divisée en 2 sous-colonnes (5cm / Reste) -->
+    <!-- Texte et Métadonnées (Apparaît en premier sur mobile) -->
     <div class="project-info">
       
-      <!-- Sous-colonne 1 (5cm) : Titre & Métadonnées -->
+      <!-- Titre & Métadonnées -->
       <div class="project-meta-col">
         <h1>Mur-murmure</h1>
         <div class="facts">
@@ -163,30 +171,18 @@
         </div>
       </div>
 
-      <!-- Sous-colonne 2 : Texte descriptif -->
+      <!-- Texte descriptif -->
       <div class="project-body-col">
         <div class="project-body">
           <p>Une ville au pied des montagnes doit-elle s’endormir sous l’asphalte ? À Loures-Barousse, la réhabilitation de la Maison Cachia pose une question essentielle : et si réinventer ce territoire commençait par faire sauter le bitume pour réapprendre à habiter le sol ?</p>
           <p>Pourquoi ne pas offrir l’espace public à la liberté offerte à l’enfance? C’est en voyant des enfants jouer spontanément sur un muret d’autrefois qu’est née l’intervention : le dessin d’un tracé de pierre locale qui serpente à travers le site. En métamorphosant ce campus en un jardin commun reliant la gare, les écoles et la Maison Cachia restaurée, cette ligne minérale efface les frontières pour retisser du lien. En se déployant face à la montagne, ce muret de pierre dépasse sa fonction d’obstacle pour réintégrer le paysage au cœur de l’expérience quotidienne.</p>
         </div>
-        <!-- Optionnel : Si vous souhaitez réactiver le lien retour -->
-        <!-- <a href="../architectures.html" class="back-link">← Retour aux projets</a> -->
       </div>
 
-    </div> <!-- Fermeture de project-info -->
-
-    <!-- Colonne Droite : Images empilées -->
-     <div class="project-images">
-      <img src="img/loures/loures_axo.jpg" alt="Mur-murmure — vue 1">
-      <img src="img/loures/loures-acetone.jpg" alt="Mur-murmure — vue 2">
-      <img src="img/loures/loures-sol.jpg" alt="Mur-murmure — vue 3">
     </div>
 
-  </div>
-</main>
-
-<div id="custom-cursor"></div>
-<script src="../cursor.js"></script>
-
-</body>
-</html>
+    <!-- Images empilées (Apparaît en second sur mobile) -->
+    <div class="project-images">
+      <img src="img/loures/loures_axo.jpg" alt="Mur-murmure — vue 1">
+      <img src="img/loures/loures-acetone.jpg" alt="Mur-murmure — vue 2">
+      <img src
