@@ -43,7 +43,7 @@ body.has-custom-cursor * {
   cursor: none !important;
 }
 
-/* --- Style du curseur personnalisé (Point en négatif) --- */
+/* --- Style du curseur personnalisé --- */
 #custom-cursor {
   position: fixed;
   top: 0;
@@ -173,7 +173,7 @@ header.site nav {
   text-decoration: underline;
 }
 
-/* ---------- Grille 5 Colonnes Centrée avec Points (Index) ---------- */
+/* ---------- Grille 5 Colonnes (Desktop) ---------- */
 
 .dot-grid-wrapper {
   position: relative;
@@ -201,7 +201,7 @@ header.site nav {
   padding: 0.3cm !important;
 }
 
-/* Point noir aux intersections (angle supérieur gauche) */
+/* Points d'intersection de grille (angle supérieur gauche) */
 .grid-cell::before {
   content: "";
   position: absolute;
@@ -215,7 +215,7 @@ header.site nav {
   pointer-events: none;
 }
 
-/* Point noir supplémentaire sur l'angle supérieur droit (masqué par défaut) */
+/* Point de fermeture à droite (Desktop : toutes les 5 colonnes) */
 .grid-cell::after {
   content: "";
   position: absolute;
@@ -230,29 +230,27 @@ header.site nav {
   display: none;
 }
 
-/* Affiché sur la 5ème colonne en mode Desktop */
 .grid-cell:nth-child(5n)::after {
   display: block !important;
 }
 
-/* Conteneur de l'image */
+/* Conteneur et affichage des images */
 .grid-cell a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
 }
 
-/* Images au format d'origine */
 .grid-cell img {
   max-width: 100% !important;
   max-height: 100% !important;
   width: auto !important;
   height: auto !important;
   object-fit: contain !important;
-  display: block;
+  display: block !important;
   transition: transform 0.4s ease;
 }
 
@@ -260,18 +258,7 @@ header.site nav {
   transform: scale(1.05);
 }
 
-/* Textes placés éventuellement dans certaines cases */
-.cell-text {
-  font-family: var(--mono-light);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--ink);
-  padding: 10px;
-  text-align: center;
-}
-
-/* ---------- Pages Secondaires (Architectures, Pratiques, Divers) ---------- */
+/* ---------- Pages Secondaires & Contact ---------- */
 
 .section-head {
   padding: 10px 0 40px;
@@ -286,13 +273,6 @@ header.site nav {
   display: inline-block;
 }
 
-.section-head p {
-  max-width: 56ch;
-  color: var(--ink-soft);
-  margin: 0;
-}
-
-/* Grille Masonry 3 colonnes pour les pages secondaires */
 .masonry {
   width: 100%;
   column-count: 3;
@@ -304,7 +284,6 @@ header.site nav {
   display: block;
   margin-bottom: 1.2cm !important;
   break-inside: avoid;
-  -webkit-column-break-inside: avoid;
   background: var(--paper-deep);
   overflow: hidden;
 }
@@ -313,14 +292,7 @@ header.site nav {
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 0.5s ease;
 }
-
-.masonry a:hover img {
-  transform: scale(1.03);
-}
-
-/* ---------- Page Contact (3 Colonnes Égales) ---------- */
 
 .contact-grid-3col {
   display: grid;
@@ -341,80 +313,25 @@ header.site nav {
   text-align: center;
 }
 
-.business-card-img {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.business-card-img img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-}
-
-.contact-info-block {
-  margin-top: 1cm;
-  width: 4cm;
-  max-width: 100%;
-  text-align: center;
-  font-size: 15px;
-  line-height: 1.5;
-  color: var(--ink-soft);
-}
-
-.contact-info-block p {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.contact-info-block a {
-  color: var(--ink);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
 /* ==========================================================================
-    Responsive Mobile (< 860px)
+    Responsive Mobile (< 860px) - Sécurisé et Fluide
    ========================================================================== */
 
 @media (max-width: 860px) {
 
-  /* 1. Marge latérale globale */
   .wrap {
     width: calc(100% - 2cm) !important;
     margin-bottom: 1.5cm !important;
   }
 
-  /* 2. Grille mobile en 2 colonnes d'images + 3 colonnes de points fixes (Structure 5 pistes) */
+  /* Grille 2 colonnes standard robuste et propre */
   .dot-grid {
     display: grid !important;
-    grid-template-columns: 6px 1fr 6px 1fr 6px !important;
+    grid-template-columns: repeat(2, 1fr) !important;
     width: 100% !important;
   }
 
-  /* Chaque cellule s'aligne sur cette nouvelle structure */
-  .grid-cell {
-    position: relative;
-    aspect-ratio: 1 / 1 !important;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.2cm !important;
-  }
-
-  /* Nettoyage des anciens pseudo-éléments automatiques sur mobile */
-  .grid-cell::before,
-  .grid-cell::after {
-    display: none !important;
-  }
-
-  /* 3. Header et navigation en colonne alignée à droite */
+  /* Header mobile avec menu vertical à droite */
   header.site {
     height: auto !important;
     padding: 1cm 0;
@@ -439,10 +356,18 @@ header.site nav {
     font-size: 16px !important;
   }
 
-  /* 4. Pages Secondaires et Contact */
+  /* Gestion des points de grille en mode 2 colonnes mobile */
+  .grid-cell:nth-child(5n)::after {
+    display: none !important;
+  }
+  
+  .grid-cell:nth-child(2n)::after {
+    display: block !important;
+  }
+
+  /* Pages secondaires et contact sur mobile */
   .masonry {
     column-count: 1 !important;
-    column-gap: 0 !important;
   }
 
   .contact-grid-3col {
@@ -450,11 +375,5 @@ header.site nav {
     flex-direction: column !important;
     align-items: center !important;
     gap: 2cm !important;
-    padding-top: 0.5cm !important;
-  }
-
-  .col-center {
-    width: 100% !important;
-    margin: 0 auto !important;
   }
 }
