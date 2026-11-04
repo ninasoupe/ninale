@@ -416,14 +416,23 @@ header.site nav {
     font-size: 16px !important;
   }
 
-  /* 4. Adaptation Masonry et Contact pour les autres pages */
+  /* 4. Pages Secondaires (Masonry) */
   .masonry {
     column-count: 1 !important;
     column-gap: 0 !important;
   }
 
+  /* 5. Page Contact corrigée pour mobile */
   .contact-grid-3col {
-    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
     gap: 2cm !important;
+    padding-top: 0.5cm !important;
+  }
+
+  .col-center {
+    width: 100% !important;
+    margin: 0 auto !important;
   }
 }
