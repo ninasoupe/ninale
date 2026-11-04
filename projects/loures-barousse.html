@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mur-murmure — Nina Lê</title>
-  <link rel="stylesheet" href="../style.css?v=902">
+  <link rel="stylesheet" href="../style.css?v=903">
   <style>
     /* Layout principal à deux colonnes */
     .project-layout {
@@ -44,7 +44,7 @@
       opacity: 0.8;
     }
 
-    /* Sous-colonne 2 : Texte descriptif + Bouton retour */
+    /* Sous-colonne 2 : Texte descriptif */
     .project-body-col {
       display: flex;
       flex-direction: column;
@@ -82,18 +82,18 @@
       opacity: 1;
     }
 
-    /* Colonne droite : images */
+    /* Colonne droite : images centrées, largeur 12cm, espacement 1cm */
     .project-images {
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
-      gap: 0.3cm;
+      align-items: center; /* Centre les images horizontalement dans la colonne */
+      gap: 1cm;          /* Espacement de 1cm entre chaque image */
     }
 
     .project-images img {
-      height: 11cm;
-      width: auto;
-      max-width: 100%;
+      width: 12cm;         /* Largeur fixe de 12cm sur desktop */
+      max-width: 100%;     /* Sécurité pour ne pas dépasser l'écran */
+      height: auto;        /* Conserve les proportions d'origine */
       object-fit: contain;
       display: block;
     }
@@ -111,7 +111,7 @@
     }
 
     @media (max-width: 860px) {
-      /* Disposition en 1 colonne sur mobile : le texte (project-info) se place au-dessus des images */
+      /* Disposition en 1 colonne sur mobile : le texte passe au-dessus des images */
       .project-layout {
         display: flex !important;
         flex-direction: column !important;
@@ -119,20 +119,20 @@
       }
 
       .project-info {
-        order: 1 !important; /* Le texte s'affiche en premier */
+        order: 1 !important;
         width: 100%;
       }
 
       .project-images {
-        order: 2 !important; /* Les images s'affichent en second */
+        order: 2 !important;
         align-items: center !important;
         width: 100%;
+        gap: 0.5cm !important; /* Espacement légèrement réduit sur mobile */
       }
 
       .project-images img {
+        width: 100% !important; /* Pleine largeur sur mobile */
         height: auto !important;
-        width: 100% !important;
-        max-width: 100%;
       }
     }
   </style>
@@ -181,7 +181,7 @@
 
     </div>
 
-    <!-- Images empilées (Apparaît en second sur mobile) -->
+    <!-- Images empilées -->
     <div class="project-images">
       <img src="img/loures/loures_axo.jpg" alt="Mur-murmure — vue 1">
       <img src="img/loures/loures-acetone.jpg" alt="Mur-murmure — vue 2">
