@@ -377,15 +377,46 @@ header.site nav {
    ========================================================================== */
 
 @media (max-width: 860px) {
+
+  /* 1. Marge latérale globale */
   .wrap {
     width: calc(100% - 2cm) !important;
     margin-bottom: 1.5cm !important;
   }
 
+  /* 2. Grille principale de l'index en 2 colonnes */
   .dot-grid {
     grid-template-columns: repeat(2, 1fr) !important;
+    width: 100% !important;
   }
 
+  /* 3. Header et navigation en colonne alignée à droite */
+  header.site {
+    height: auto !important;
+    padding: 1cm 0;
+  }
+
+  header.site .wrap {
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    gap: 1.5rem !important;
+  }
+
+  header.site nav {
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    gap: 0.8rem !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Alignement à droite des liens du menu */
+  .nav-label {
+    text-align: right !important;
+    font-size: 16px !important;
+  }
+
+  /* 4. Adaptation Masonry et Contact pour les autres pages */
   .masonry {
     column-count: 1 !important;
     column-gap: 0 !important;
