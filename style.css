@@ -215,8 +215,8 @@ header.site nav {
   pointer-events: none;
 }
 
-/* Point noir supplémentaire pour fermer le bord supérieur droit de la dernière colonne */
-.grid-cell:nth-child(5n)::after {
+/* Point noir supplémentaire sur l'angle supérieur droit (masqué par défaut) */
+.grid-cell::after {
   content: "";
   position: absolute;
   top: -3px;
@@ -227,6 +227,12 @@ header.site nav {
   border-radius: 50%;
   z-index: 10;
   pointer-events: none;
+  display: none;
+}
+
+/* Affiché sur la 5ème colonne en mode Desktop */
+.grid-cell:nth-child(5n)::after {
+  display: block !important;
 }
 
 /* Conteneur de l'image */
@@ -435,12 +441,10 @@ header.site nav {
     width: 100% !important;
     margin: 0 auto !important;
   }
-/* Réinitialise les points de droite pour la grille à 2 colonnes */
+
+  /* 6. Points de droite adaptés à la grille à 2 colonnes sur mobile */
   .grid-cell:nth-child(5n)::after {
     display: none !important;
   }
   
-  .grid-cell:nth-child(2n)::after {
-    display: block !important;
-  }
-}
+  .grid-cell:nth-child(
