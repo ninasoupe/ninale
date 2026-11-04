@@ -376,4 +376,18 @@ header.site nav {
     align-items: center !important;
     gap: 2cm !important;
   }
+  /* Correction spécifique pour l'image de la page Contact sur mobile */
+  .business-card-img {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .business-card-img img {
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    margin: 0 auto !important;
+  }
 }
