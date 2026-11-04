@@ -43,20 +43,20 @@ body.has-custom-cursor * {
   cursor: none !important;
 }
 
-/* --- Style du curseur personnalisé (Point de 6px en négatif) --- */
+/* --- Style du curseur personnalisé (Point en négatif) --- */
 #custom-cursor {
   position: fixed;
   top: 0;
   left: 0;
-  width: 14px;                        /* Diamètre exact de 6px */
-  height: 14px;                       /* Diamètre exact de 6px */
-  background-color: #ffffff;         /* Fond blanc pour créer l'inversion */
-  border-radius: 50% !important;     /* Forme ronde parfaite */
-  pointer-events: none !important;   /* Laisse passer les clics */
-  z-index: 999999;                   /* Toujours au premier plan */
-  opacity: 0;                        /* Invisible au départ, géré par le JS */
-  transform: translate(-50%, -50%);  /* Centre le point pile sur la souris */
-  mix-blend-mode: difference;        /* Crée l'effet "négatif" sur les images/fonds */
+  width: 14px;
+  height: 14px;
+  background-color: #ffffff;
+  border-radius: 50% !important;
+  pointer-events: none !important;
+  z-index: 999999;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
   transition: opacity 0.2s ease;
   will-change: transform;
 }
@@ -64,7 +64,7 @@ body.has-custom-cursor * {
 /* --- Filtre Noir et Blanc --- */
 .bw-img {
   filter: grayscale(100%) !important;
-  -webkit-filter: grayscale(100%) !important; /* Pour la compatibilité Safari/Mac */
+  -webkit-filter: grayscale(100%) !important;
 }
 
 img { 
@@ -377,27 +377,22 @@ header.site nav {
    ========================================================================== */
 
 @media (max-width: 860px) {
-
-  /* 1. Ajustement de la marge latérale globale sur mobile */
   .wrap {
-    width: calc(100% - 3cm) !important;
+    width: calc(100% - 2cm) !important;
     margin-bottom: 1.5cm !important;
   }
 
-  /* 2. Passage de la grille principale à un format 2 colonnes sur mobile */
   .dot-grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 
-  /* 3. Adaptation du Masonry en 1 colonne sur mobile */
   .masonry {
-    column-count: 1;
+    column-count: 1 !important;
     column-gap: 0 !important;
   }
 
-  /* 4. Adaptation de la grille de contact en colonne unique */
   .contact-grid-3col {
     grid-template-columns: 1fr !important;
-    gap: 2cm;
+    gap: 2cm !important;
   }
 }
