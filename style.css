@@ -435,4 +435,12 @@ header.site nav {
     width: 100% !important;
     margin: 0 auto !important;
   }
+/* Réinitialise les points de droite pour la grille à 2 colonnes */
+  .grid-cell:nth-child(5n)::after {
+    display: none !important;
+  }
+  
+  .grid-cell:nth-child(2n)::after {
+    display: block !important;
+  }
 }
