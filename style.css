@@ -234,6 +234,15 @@ header.site nav {
   display: block !important;
 }
 
+/* Points de fermeture inférieure pour la dernière ligne (6e ligne : éléments 26 à 30) */
+.grid-cell:nth-child(n+26)::before {
+  box-shadow: 0 calc(100% + 6px) 0 0 var(--ink);
+}
+
+.grid-cell:nth-child(30)::after {
+  box-shadow: 0 calc(100% + 6px) 0 0 var(--ink);
+}
+
 /* Conteneur et affichage des images */
 .grid-cell a {
   display: flex !important;
@@ -363,6 +372,23 @@ header.site nav {
   
   .grid-cell:nth-child(2n)::after {
     display: block !important;
+  }
+
+  /* Adaptation des points de la dernière ligne en mobile */
+  .grid-cell:nth-child(n+26)::before {
+    box-shadow: none !important;
+  }
+
+  .grid-cell:nth-child(30)::after {
+    box-shadow: none !important;
+  }
+
+  .grid-cell:nth-child(n+29)::before {
+    box-shadow: 0 calc(100% + 6px) 0 0 var(--ink) !important;
+  }
+
+  .grid-cell:nth-child(30)::after {
+    box-shadow: 0 calc(100% + 6px) 0 0 var(--ink) !important;
   }
 
   /* Pages secondaires et contact sur mobile */
