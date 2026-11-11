@@ -365,6 +365,35 @@ header.site nav {
     font-size: 16px !important;
   }
 
+  @media (max-width: 860px) {
+
+  /* --- Inversion Texte / Images sur les pages projets --- */
+  
+  /* Conteneur principal de la page projet */
+  .project-layout,
+  .project-container,
+  .project-content {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Bloc de texte (passe en premier) */
+  .project-text,
+  .project-description,
+  .project-info,
+  .project-details {
+    order: 1 !important;
+  }
+
+  /* Bloc d'images ou galerie (passe en second) */
+  .project-images,
+  .project-gallery,
+  .project-media,
+  .masonry {
+    order: 2 !important;
+  }
+}
+  
   /* Gestion des points de grille en mode 2 colonnes mobile */
   .grid-cell:nth-child(5n)::after {
     display: none !important;
