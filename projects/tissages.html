@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tissages — Nina Lê</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Layout principal à deux colonnes */
+    .project-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* Colonne gauche : divisée en 2 sous-colonnes (5cm pour titre/meta, 1fr pour le texte) */
+    .project-info {
+      display: grid;
+      grid-template-columns: 5cm 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    /* Sous-colonne 1 (5cm) : Titre & Métadonnées */
+    .project-meta-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      border: none;
+      padding: 0;
+    }
+
+    .project-meta-col h1 {
+      font-size: 16px;
+      font-weight: normal;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .project-meta-col .facts {
+      font-size: 13px;
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+
+    /* Sous-colonne 2 : Texte descriptif + Bouton retour */
+    .project-body-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-body {
+      font-size: 13px;
+      line-height: 1.7;
+      border-top: none;
+      padding-top: 0;
+      /* Ajustement vertical : débute 1 ligne sous l'année */
+      margin-top: calc(16px + 0.5rem + (13px * 1.6));
+    }
+
+    .project-body p {
+      margin: 0 0 1.2rem 0;
+      text-align: justify;
+    }
+
+    .project-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Colonne droite : images centrées, largeur 12cm, espacement 1cm */
+    .project-images {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centre les images dans la colonne */
+      gap: 1cm;           /* Espacement de 1cm entre chaque image */
+    }
+
+    .project-images img {
+      width: 12cm;         /* Largeur fixe de 12cm */
+      height: auto;        /* Hauteur automatique pour conserver les proportions */
+      max-width: 100%;     /* Évite tout débordement sur petit écran */
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Responsive : adaptation pour mobile */
+    @media (max-width: 900px) {
+      .project-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .project-body {
+        margin-top: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .project-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .project-images {
+        order: -1;
+        align-items: center;
+      }
+
+      .project-images img {
+        height: auto;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <!-- Logo sous forme de texte -->
+    <div class="logo">
+      <a href="../index.html">NINA LÊ /</a>
+    </div>
+
+    <!-- Navigation principale -->
+    <nav>
+      <a class="nav-label" href="../architectures.html">Architectures</a>
+      <a class="nav-label" href="../pratiques-chantiers.html">Pratiques</a>
+      <a class="nav-label" href="../divers.html">Divers</a>
+      <a class="nav-label" href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="project-layout">
+    
+    <!-- Colonne Gauche : Divisée en 2 sous-colonnes (5cm / Reste) -->
+    <div class="project-info">
+      
+      <!-- Sous-colonne 1 (5cm) : Titre & Métadonnées -->
+      <div class="project-meta-col">
+        <h1>Tissages, langage exploratoire</h1>
+        <div class="facts">
+          Nature / Expérimentations tissées <br>
+          Année / 2025-2026
+        </div>
+      </div>
+
+      <!-- Sous-colonne 2 : Texte descriptif -->
+      <div class="project-body-col">
+        <div class="project-body">
+          <p>Cette recherche explore les potentiels du tissage en tant que langage abstrait et exploratoire. En intégrant des structures/objets directement à la trame et en jouant sur des basculements d’échelle, l’expérimentation transforme le textile en une structure complexe. L’ornementation y est révélée : elle n’est plus motif passif, mais une construction architecturée qui fonctionne à la manière d’un langage programmatique.</p>
+          <p>Chaque pièce produite devient une banque de données artisanale, un espace de mémoire physique où l’information est archivée dans la matière. L’enjeu est de pousser plus loin cette analogie entre textile et code : l’ornementation architecturale peut-elle être pensée comme un outil de codification abstraite, capable de stocker de l’information sous une forme non figurative ?</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Colonne Droite : Images centrées de 12cm espacées de 1cm -->
+    <div class="project-images">
+      <img src="img/tissage/tissage-1.psd" alt="Tissage — fragment 1">
+      <img src="img/tissage/tissage-2.png" alt="Tissage — fragment 2">
+      <img src="img/tissage/tissage-3.jpg" alt="Tissage — fragment 3">
+    </div>
+
+  </div>
+</main>
+
+<div id="custom-cursor"></div>
+<script src="../cursor.js"></script>
+
+</body>
+</html>
