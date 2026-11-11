@@ -234,7 +234,7 @@ header.site nav {
   display: block !important;
 }
 
-/* Points de fermeture inférieure pour la dernière ligne (6e ligne : éléments 26 à 30) */
+/* Points de fermeture inférieure pour la dernière ligne (6e ligne Desktop : éléments 26 à 30) */
 .grid-cell:nth-child(n+26)::before {
   box-shadow: 0 calc(100% + 6px) 0 0 var(--ink);
 }
@@ -333,6 +333,29 @@ header.site nav {
     margin-bottom: 1.5cm !important;
   }
 
+  /* --- Inversion Texte / Images sur les pages projets --- */
+  .project-layout,
+  .project-container,
+  .project-content {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .project-text,
+  .project-description,
+  .project-info,
+  .project-details,
+  .section-head {
+    order: 1 !important;
+  }
+
+  .project-images,
+  .project-gallery,
+  .project-media,
+  .masonry {
+    order: 2 !important;
+  }
+
   /* Grille 2 colonnes standard robuste et propre */
   .dot-grid {
     display: grid !important;
@@ -365,35 +388,6 @@ header.site nav {
     font-size: 16px !important;
   }
 
-  @media (max-width: 860px) {
-
-  /* --- Inversion Texte / Images sur les pages projets --- */
-  
-  /* Conteneur principal de la page projet */
-  .project-layout,
-  .project-container,
-  .project-content {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-
-  /* Bloc de texte (passe en premier) */
-  .project-text,
-  .project-description,
-  .project-info,
-  .project-details {
-    order: 1 !important;
-  }
-
-  /* Bloc d'images ou galerie (passe en second) */
-  .project-images,
-  .project-gallery,
-  .project-media,
-  .masonry {
-    order: 2 !important;
-  }
-}
-  
   /* Gestion des points de grille en mode 2 colonnes mobile */
   .grid-cell:nth-child(5n)::after {
     display: none !important;
@@ -403,7 +397,7 @@ header.site nav {
     display: block !important;
   }
 
-  /* Adaptation des points de la dernière ligne en mobile */
+  /* Réinitialisation des ombres desktop sur mobile */
   .grid-cell:nth-child(n+26)::before {
     box-shadow: none !important;
   }
@@ -412,37 +406,10 @@ header.site nav {
     box-shadow: none !important;
   }
 
+  /* Points sous la dernière ligne en mobile (29e et 30e éléments) */
   .grid-cell:nth-child(n+29)::before {
     box-shadow: 0 calc(100% + 6px) 0 0 var(--ink) !important;
   }
 
   .grid-cell:nth-child(30)::after {
-    box-shadow: 0 calc(100% + 6px) 0 0 var(--ink) !important;
-  }
-
-  /* Pages secondaires et contact sur mobile */
-  .masonry {
-    column-count: 1 !important;
-  }
-
-  .contact-grid-3col {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 2cm !important;
-  }
-  /* Correction spécifique pour l'image de la page Contact sur mobile */
-  .business-card-img {
-    width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-  }
-
-  .business-card-img img {
-    width: auto !important;
-    max-width: 100% !important;
-    height: auto !important;
-    object-fit: contain !important;
-    margin: 0 auto !important;
-  }
-}
+    box-shadow: 0 calc(
